@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: "fffFF"),
+      home: MyHomePage(
+        title: "fffFF",
+      ),
     );
   }
 }
