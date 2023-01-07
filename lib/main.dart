@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
+      home: MyHomePage(title: "fffFF"),
     );
   }
 }
