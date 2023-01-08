@@ -8,6 +8,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  //double width = MediaQuery.of(context).size.width;
+  //double height = MediaQuery.of(context).size.height;
 
   // This widget is the root of your application.
   @override

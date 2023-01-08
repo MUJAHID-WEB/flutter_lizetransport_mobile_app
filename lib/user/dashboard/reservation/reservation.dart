@@ -10,20 +10,25 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 48),
                   child: Column(
                     children: [
-                      makeInput(label: "Email"),
-                      makeInput(label: "Password", obscureText: true),
+                      makeInput(
+                        label: "Departing City",
+                        hintText: "Enter your city name",
+                      ),
+                      makeInput(
+                        label: "Returning City",
+                        hintText: "Enter your city name",
+                      ),
                     ],
                   ),
                 ),

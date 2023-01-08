@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/text_style.dart';
 
-Widget makeInput({label, obscureText = false}) {
+Widget makeInput({label, hintText, obscureText = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
         label,
-        style: TextStyle(
-            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
+        style: CustomTextStyle.tp14semi,
       ),
       SizedBox(
-        height: 5,
+        height: 10,
       ),
       TextField(
         obscureText: obscureText,
@@ -21,12 +21,15 @@ Widget makeInput({label, obscureText = false}) {
               color: Colors.grey,
             ),
           ),
-          border:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey),
+          ),
+          hintText: hintText,
+          hintStyle: TextStyle(fontSize: 20.0, color: Colors.redAccent),
         ),
       ),
       SizedBox(
-        height: 30,
+        height: 25,
       )
     ],
   );
