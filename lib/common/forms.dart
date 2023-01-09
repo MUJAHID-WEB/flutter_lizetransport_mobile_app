@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/colors.dart';
 import 'package:lize/common/text_style.dart';
 
 Widget makeInput({label, hintText, obscureText = false}) {
@@ -15,17 +16,19 @@ Widget makeInput({label, hintText, obscureText = false}) {
       TextField(
         obscureText: obscureText,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
           enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.grey,
+              color: borderColor,
             ),
           ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
-          ),
+
+          // border: OutlineInputBorder(
+          //   borderSide: BorderSide(color: borderColor),
+          // ),
           hintText: hintText,
-          hintStyle: TextStyle(fontSize: 20.0, color: Colors.redAccent),
+          hintStyle: CustomTextStyle.ts12med,
         ),
       ),
       SizedBox(

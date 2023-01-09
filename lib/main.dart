@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/colors.dart';
 
-import 'user/dashboard/reservation/reservation.dart';
+import 'admin/reservation_admin/new_passenger.dart';
+import 'user/plane/reservation_form/reservation_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-        primarySwatch: Colors.blue,
-      ),
-      home: const LoginPage(),
+      theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
+      home: const NewPassenger(),
     );
   }
 }
