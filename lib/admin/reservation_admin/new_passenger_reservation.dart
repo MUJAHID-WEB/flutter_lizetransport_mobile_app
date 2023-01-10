@@ -3,14 +3,15 @@ import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
 
-class NewPassenger extends StatefulWidget {
-  const NewPassenger({super.key});
+class NewPassengerReservation extends StatefulWidget {
+  const NewPassengerReservation({super.key});
 
   @override
-  State<NewPassenger> createState() => _NewPassengerState();
+  State<NewPassengerReservation> createState() =>
+      _NewPassengerReservationState();
 }
 
-class _NewPassengerState extends State<NewPassenger> {
+class _NewPassengerReservationState extends State<NewPassengerReservation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,19 +28,19 @@ class _NewPassengerState extends State<NewPassenger> {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 48),
                   child: Column(
                     children: [
-                      makeInput(
+                      makeInput30(
                         label: "First Name",
                         hintText: "Mariame Ba",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Last Name",
                         hintText: "Mariame Ba",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Middle Name",
                         hintText: "Mariame Ba",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Citizenship",
                         hintText: "Senegal",
                       ),

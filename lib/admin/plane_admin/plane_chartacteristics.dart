@@ -3,14 +3,14 @@ import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
 
-class ContactsNew extends StatefulWidget {
-  const ContactsNew({super.key});
+class PlaneChar extends StatefulWidget {
+  const PlaneChar({super.key});
 
   @override
-  State<ContactsNew> createState() => _ContactsNewState();
+  State<PlaneChar> createState() => _PlaneCharState();
 }
 
-class _ContactsNewState extends State<ContactsNew> {
+class _PlaneCharState extends State<PlaneChar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,25 +27,30 @@ class _ContactsNewState extends State<ContactsNew> {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 48),
                   child: Column(
                     children: [
-                      //
-                      //
                       makeInput30(
-                        label: "Full Name",
-                        hintText: "John Doe",
+                        label: "Passengers",
+                        hintText: "19",
                       ),
                       makeInput30(
-                        label: "Title",
-                        hintText: "Facility Manager",
+                        label: "Length",
+                        hintText: "14.224M",
                       ),
                       makeInput30(
-                        label: "Mobile Number",
-                        hintText: "+1",
+                        label: "Wingspan",
+                        hintText: "7.653M",
                       ),
                       makeInput30(
-                        label: "Email",
-                        hintText: "johndoe@gmail.com",
+                        label: "Max takeoff weight",
+                        hintText: "680Kgs",
                       ),
-
+                      makeInput30(
+                        label: "Fuel Capacity",
+                        hintText: "3611 Lbs",
+                      ),
+                      makeInput30(
+                        label: "Height",
+                        hintText: "4.369M",
+                      ),
                       //
                     ],
                   ),

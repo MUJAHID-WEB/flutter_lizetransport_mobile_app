@@ -3,14 +3,14 @@ import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
 
-class InvoiceConfirmAdmin extends StatefulWidget {
-  const InvoiceConfirmAdmin({super.key});
+class InvoiceTripsEdit extends StatefulWidget {
+  const InvoiceTripsEdit({super.key});
 
   @override
-  State<InvoiceConfirmAdmin> createState() => _InvoiceConfirmAdminState();
+  State<InvoiceTripsEdit> createState() => _InvoiceTripsEditState();
 }
 
-class _InvoiceConfirmAdminState extends State<InvoiceConfirmAdmin> {
+class _InvoiceTripsEditState extends State<InvoiceTripsEdit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -27,23 +27,23 @@ class _PricingState extends State<Pricing> {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 48),
                   child: Column(
                     children: [
-                      makeInput(
+                      makeInput30(
                         label: "Price",
                         hintText: "25,000,00",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Discount",
                         hintText: "0%",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Discount Value",
                         hintText: "0%",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Discount Code",
                         hintText: "LTIDI0029",
                       ),
-                      makeInput(
+                      makeInput30(
                         label: "Final Price",
                         hintText: "25,000,00",
                       ),
