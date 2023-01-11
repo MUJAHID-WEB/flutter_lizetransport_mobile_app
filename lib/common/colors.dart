@@ -10,6 +10,7 @@ const textSecondary = Color(0xFF84878B);
 const textSecondary50 = Color(0x8084878B);
 const textSecondary10 = Color(0x1A84878B);
 const borderColor = Color(0xFFDCDCDC);
+const tRowBgColor = Color(0xFFFAFAFA);
 const paidBtn = Color(0xFF42c15F);
 const unpaidBtn = Color(0xFFF36A6A);
 const rcvdBtn = Color(0xFFF8BB54);

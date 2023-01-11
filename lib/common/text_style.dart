@@ -4,8 +4,12 @@ import 'package:lize/common/colors.dart';
 class CustomTextStyle {
   static TextStyle tp14semi =
       TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w600);
+  static TextStyle tp12semi =
+      TextStyle(color: textPrimary, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle ts12med = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle ts12reg = TextStyle(
+      color: textSecondary, fontSize: 12, fontWeight: FontWeight.w400);
 }
 
 
