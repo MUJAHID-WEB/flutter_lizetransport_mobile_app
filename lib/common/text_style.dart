@@ -6,6 +6,12 @@ class CustomTextStyle {
       TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w600);
   static TextStyle tp12semi =
       TextStyle(color: textPrimary, fontSize: 12, fontWeight: FontWeight.w600);
+  static TextStyle tp16bold =
+      TextStyle(color: textPrimary, fontSize: 16, fontWeight: FontWeight.w700);
+  static TextStyle pc12semi =
+      TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w600);
+  static TextStyle pc12med =
+      TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle ts12med = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle ts12reg = TextStyle(
