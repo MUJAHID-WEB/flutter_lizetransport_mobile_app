@@ -1,72 +1,120 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/colors.dart';
+import '../../../common/table.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class ProfileVisa extends StatefulWidget {
+  const ProfileVisa({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ProfileVisa> createState() => _ProfileVisaState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _ProfileVisaState extends State<ProfileVisa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('My Profile'),
       ),
-      body: Center(
+      body: Container(
+        color: cardColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          children: [
+            //
+            Column(
+              children: [
+                //
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Divider(),
+                ),
+                //creator
+                PaidVarTitle(
+                  id: 'Togo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Valid',
+                ),
+
+                //Table
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Type',
+                        data: 'Diplomatique',
+                      ),
+                      TableC(
+                        heading: 'Number',
+                        data: '48982244',
+                      ),
+                      TableW(
+                        heading: 'First Name',
+                        data: 'John',
+                      ),
+                      TableC(
+                        heading: 'Middle Name',
+                        data: 'Goza',
+                      ),
+                      TableW(
+                        heading: 'Last Name',
+                        data: 'Doe',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            //
+            Column(
+              children: [
+                //
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Divider(),
+                ),
+                //creator
+                UnpExTitle(
+                  id: 'Togo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Expired',
+                ),
+
+                //Table
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Type',
+                        data: 'Diplomatique',
+                      ),
+                      TableC(
+                        heading: 'Number',
+                        data: '48982244',
+                      ),
+                      TableW(
+                        heading: 'First Name',
+                        data: 'John',
+                      ),
+                      TableC(
+                        heading: 'Middle Name',
+                        data: 'Goza',
+                      ),
+                      TableW(
+                        heading: 'Last Name',
+                        data: 'Doe',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
