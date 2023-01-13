@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lize/common/text_style.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
@@ -30,7 +29,7 @@ class _DashboardUserState extends State<DashboardUser> {
                 child: Divider(),
               ),
               //creator
-              Ttitle(
+              StartedTitle(
                 id: 'Moses Dabo',
                 date: '23/08/2022 -> 30/08/2022',
                 btntext: 'Started',

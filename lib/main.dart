@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
-
-import 'user/dashboard/dboard/dboard.dart';
+import 'package:lize/user/invoice/cancelled/cancelled.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
       theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
-      home: const DashboardUser(),
+      home: const CancelledInvoice(),
     );
   }
 }

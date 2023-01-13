@@ -71,7 +71,7 @@ class TableC extends StatelessWidget {
 }
 
 //
-//
+//WHite Table data colored
 //
 class TableWDblue extends StatelessWidget {
   const TableWDblue({super.key, required this.heading, required this.data});
@@ -108,11 +108,16 @@ class TableWDblue extends StatelessWidget {
 }
 
 //
-// Table Title
+// Table Title //
 //
-class Ttitle extends StatelessWidget {
-  const Ttitle(
-      {super.key, required this.id, required this.date, required this.btntext});
+// Started Table
+class StartedTitle extends StatelessWidget {
+  const StartedTitle({
+    super.key,
+    required this.id,
+    required this.date,
+    required this.btntext,
+  });
   final String id, date, btntext;
   @override
   Widget build(BuildContext context) {
@@ -147,6 +152,161 @@ class Ttitle extends StatelessWidget {
             child: Text(
               btntext,
               style: CustomTextStyle.pc12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//
+// Unpaid/Unverified/Expired Table
+class UnpExTitle extends StatelessWidget {
+  const UnpExTitle({
+    super.key,
+    required this.id,
+    required this.date,
+    required this.btntext,
+  });
+  final String id, date, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+              Text(
+                date,
+                style: CustomTextStyle.ts12med,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(unpaidBtn20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.unpaidbtn12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//
+//
+// paid/verified/Valid Table
+class PaidVarTitle extends StatelessWidget {
+  const PaidVarTitle({
+    super.key,
+    required this.id,
+    required this.date,
+    required this.btntext,
+  });
+  final String id, date, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+              Text(
+                date,
+                style: CustomTextStyle.ts12med,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(paidBtn20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.paidbtn12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//
+//
+// Cancelled Table
+class CancelledTitle extends StatelessWidget {
+  const CancelledTitle({
+    super.key,
+    required this.id,
+    required this.date,
+    required this.btntext,
+  });
+  final String id, date, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+              Text(
+                date,
+                style: CustomTextStyle.ts12med,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(textPrimary20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.cancelbtn12med,
             ),
           ),
         ],
