@@ -12,12 +12,22 @@ class CustomTextStyle {
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle pc12med =
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w500);
+  //
   static TextStyle unpaidbtn12med =
       TextStyle(color: unpaidBtn, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle paidbtn12med =
       TextStyle(color: paidBtn, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle cancelbtn12med =
       TextStyle(color: textPrimary, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle canceltsbtn12med = TextStyle(
+      color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle rcvdbtn12med =
+      TextStyle(color: rcvdBtn, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle assignbtn12med =
+      TextStyle(color: assignBtn, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle completedbtn12med =
+      TextStyle(color: completedBtn, fontSize: 12, fontWeight: FontWeight.w500);
+  //
   static TextStyle ts12med = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle ts12reg = TextStyle(
