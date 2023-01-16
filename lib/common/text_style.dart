@@ -27,7 +27,8 @@ class CustomTextStyle {
       TextStyle(color: assignBtn, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle completedbtn12med =
       TextStyle(color: completedBtn, fontSize: 12, fontWeight: FontWeight.w500);
-  //
+
+  ///
   static TextStyle ts12med = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle ts12reg = TextStyle(
