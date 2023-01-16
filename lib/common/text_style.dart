@@ -12,6 +12,8 @@ class CustomTextStyle {
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle pc12med =
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle pc16med =
+      TextStyle(color: primaryColor, fontSize: 16, fontWeight: FontWeight.w500);
   //
   static TextStyle unpaidbtn12med =
       TextStyle(color: unpaidBtn, fontSize: 12, fontWeight: FontWeight.w500);
