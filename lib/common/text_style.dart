@@ -33,8 +33,12 @@ class CustomTextStyle {
   ///
   static TextStyle ts12med = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle ts16med = TextStyle(
+      color: textSecondary, fontSize: 16, fontWeight: FontWeight.w500);
   static TextStyle ts12reg = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w400);
+  static TextStyle cc16med =
+      TextStyle(color: cardColor, fontSize: 16, fontWeight: FontWeight.w500);
 }
 
 

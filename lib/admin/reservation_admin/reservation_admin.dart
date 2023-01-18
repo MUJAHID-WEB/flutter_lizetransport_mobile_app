@@ -65,7 +65,7 @@ class _ReservationAdminState extends State<ReservationAdmin> {
                           heading: 'Cost',
                           data: '-',
                         ),
-                        CustomButtonEdit(
+                        EditButton(
                           btnText: 'Edit',
                         ),
                       ],
@@ -113,7 +113,7 @@ class _ReservationAdminState extends State<ReservationAdmin> {
                           heading: 'Cost',
                           data: '2,000.00',
                         ),
-                        CustomButtonEdit(
+                        EditButton(
                           btnText: 'Edit',
                         ),
                       ],
