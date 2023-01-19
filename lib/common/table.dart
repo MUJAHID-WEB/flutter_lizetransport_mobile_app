@@ -242,19 +242,23 @@ class PaidVarTitle extends StatelessWidget {
               ),
             ],
           ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
-                backgroundColor: MaterialStatePropertyAll(paidBtn20),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ))),
-            child: Text(
-              btntext,
-              style: CustomTextStyle.paidbtn12med,
+          SizedBox(
+            height: 34,
+            width: 100,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                  backgroundColor: MaterialStatePropertyAll(paidBtn20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.paidbtn12med,
+              ),
             ),
           ),
         ],
@@ -454,19 +458,23 @@ class CompletedTitle extends StatelessWidget {
               ),
             ],
           ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
-                backgroundColor: MaterialStatePropertyAll(completedBtn20),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ))),
-            child: Text(
-              btntext,
-              style: CustomTextStyle.completedbtn12med,
+          SizedBox(
+            width: 100,
+            height: 34,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                  backgroundColor: MaterialStatePropertyAll(completedBtn20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.completedbtn12med,
+              ),
             ),
           ),
         ],
@@ -476,7 +484,42 @@ class CompletedTitle extends StatelessWidget {
 }
 
 //
-// Started Table
+//Without Btn Table
+class WithoutBtnTitle extends StatelessWidget {
+  const WithoutBtnTitle({
+    super.key,
+    required this.id,
+    required this.date,
+  });
+  final String id, date;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+              Text(
+                date,
+                style: CustomTextStyle.ts12med,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//
+// New Passenger Table
 class NpassangerTitle extends StatelessWidget {
   const NpassangerTitle({
     super.key,
@@ -516,6 +559,153 @@ class NpassangerTitle extends StatelessWidget {
               child: Text(
                 btntext,
                 style: CustomTextStyle.cardbtn12med,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Inprogress Table
+class InprogressTitle extends StatelessWidget {
+  const InprogressTitle({
+    super.key,
+    required this.id,
+    required this.btntext,
+  });
+  final String id, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 100,
+            height: 34,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                  backgroundColor: MaterialStatePropertyAll(paidBtn20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.paidbtn12med,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Status Onboard Table
+class StatusOnTitle extends StatelessWidget {
+  const StatusOnTitle({
+    super.key,
+    required this.id,
+    required this.btntext,
+  });
+  final String id, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.ts12reg,
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 100,
+            height: 34,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                  backgroundColor: MaterialStatePropertyAll(primaryColor20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.pc12med,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Status Cancelled Table
+class StatusCancelTitle extends StatelessWidget {
+  const StatusCancelTitle({
+    super.key,
+    required this.id,
+    required this.btntext,
+  });
+  final String id, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.ts12reg,
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 100,
+            height: 34,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                  backgroundColor: MaterialStatePropertyAll(secondaryColor20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.sc12med,
               ),
             ),
           ),

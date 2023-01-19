@@ -7,6 +7,7 @@ const cardColor = Color(0xFFFFFFFF);
 const primaryColor = Color(0xFF72ADD7);
 const primaryColor20 = Color(0x3372ADD7);
 const secondaryColor = Color(0xFF172066);
+const secondaryColor20 = Color(0x33172066);
 const textPrimary = Color(0xFF3B3E44);
 const textPrimary20 = Color(0x333B3E44);
 const textSecondary = Color(0xFF84878B);
