@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class Pricing extends StatefulWidget {
   const Pricing({super.key});
@@ -46,6 +47,14 @@ class _PricingState extends State<Pricing> {
                       makeInput30(
                         label: "Final Price",
                         hintText: "25,000,00",
+                      ),
+                      //
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          BacknCancelBtn(btnText: 'Back'),
+                          NextBtn(btnText: 'Reserve')
+                        ],
                       ),
                     ],
                   ),

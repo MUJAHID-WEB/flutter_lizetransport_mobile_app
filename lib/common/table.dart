@@ -346,19 +346,23 @@ class RcvdTitle extends StatelessWidget {
               ),
             ],
           ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
-                backgroundColor: MaterialStatePropertyAll(rcvdBtn20),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ))),
-            child: Text(
-              btntext,
-              style: CustomTextStyle.rcvdbtn12med,
+          SizedBox(
+            height: 34,
+            width: 100,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 18)),
+                  backgroundColor: MaterialStatePropertyAll(rcvdBtn20),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.rcvdbtn12med,
+              ),
             ),
           ),
         ],
@@ -463,6 +467,56 @@ class CompletedTitle extends StatelessWidget {
             child: Text(
               btntext,
               style: CustomTextStyle.completedbtn12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//
+// Started Table
+class NpassangerTitle extends StatelessWidget {
+  const NpassangerTitle({
+    super.key,
+    required this.id,
+    required this.btntext,
+  });
+  final String id, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 135,
+            height: 34,
+            child: TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  // padding: MaterialStateProperty.all<EdgeInsets>(
+                  //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                  backgroundColor: MaterialStatePropertyAll(primaryColor),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ))),
+              child: Text(
+                btntext,
+                style: CustomTextStyle.cardbtn12med,
+              ),
             ),
           ),
         ],

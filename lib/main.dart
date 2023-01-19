@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
-import 'admin/reservation_admin/reservation_admin.dart';
+import 'admin/trips_admin/schedule_trips_admin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
       theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
-      home: const ReservationAdmin(),
+      home: const ScheduleTripAdmin(),
     );
   }
 }

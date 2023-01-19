@@ -1,72 +1,204 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/colors.dart';
+import '../../../common/table.dart';
+import '../../common/custom_button.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class EditResAdmin extends StatefulWidget {
+  const EditResAdmin({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<EditResAdmin> createState() => _EditResAdminState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _EditResAdminState extends State<EditResAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Reservation'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: Container(
+        color: cardColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        child: ListView(children: [
+          Column(
+            children: [
+              //RCVD
+              Column(
+                children: [
+                  //
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(),
+                  ),
+                  //creator
+                  RcvdTitle(
+                    id: 'Moses Dabo',
+                    date: '23/08/2022 -> 30/08/2022',
+                    btntext: 'Received',
+                  ),
+
+                  //Table
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        TableW(
+                          heading: 'Reservation',
+                          data: 'R2902',
+                        ),
+                        TableC(
+                          heading: 'Passengers',
+                          data: '06',
+                        ),
+                        TableW(
+                          heading: 'Aircraft',
+                          data: 'A319',
+                        ),
+                        TableC(
+                          heading: 'City',
+                          data: 'Abidjan',
+                        ),
+                        TableW(
+                          heading: 'Cost',
+                          data: '-',
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              // Passenger
+              Column(
+                children: [
+                  //
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Divider(),
+                  ),
+
+                  //Table
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        TableW(
+                          heading: 'First Name',
+                          data: 'Mariam',
+                        ),
+                        TableC(
+                          heading: 'Last Name',
+                          data: 'Solei',
+                        ),
+                        TableW(
+                          heading: 'MIddle Name',
+                          data: 'Ba',
+                        ),
+                        TableC(
+                          heading: 'Citizenship',
+                          data: 'Abidjan',
+                        ),
+                        //
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          child: Divider(),
+                        ),
+                        //
+                        TableW(
+                          heading: 'First Name',
+                          data: 'Mariam',
+                        ),
+                        TableC(
+                          heading: 'Last Name',
+                          data: 'Solei',
+                        ),
+                        TableW(
+                          heading: 'MIddle Name',
+                          data: 'Ba',
+                        ),
+                        TableC(
+                          heading: 'Citizenship',
+                          data: 'Abidjan',
+                        ),
+
+                        //
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          child: Divider(),
+                        ),
+                        //
+                        TableW(
+                          heading: 'First Name',
+                          data: 'Mariam',
+                        ),
+                        TableC(
+                          heading: 'Last Name',
+                          data: 'Solei',
+                        ),
+                        TableW(
+                          heading: 'MIddle Name',
+                          data: 'Ba',
+                        ),
+                        TableC(
+                          heading: 'Citizenship',
+                          data: 'Abidjan',
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              // Pricing
+
+              Column(
+                children: [
+                  //
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(),
+                  ),
+
+                  //Table
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        TableW(
+                          heading: 'Price',
+                          data: '25,000.00',
+                        ),
+                        TableC(
+                          heading: 'Discount',
+                          data: '0%',
+                        ),
+                        TableW(
+                          heading: 'Discount Value',
+                          data: '0%',
+                        ),
+                        TableC(
+                          heading: 'Discount Code',
+                          data: 'LTIDI0029',
+                        ),
+                        TableWDblue(
+                          heading: 'Final Price',
+                          data: '25,000.00',
+                        ),
+                        //
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 25),
+                          child: EditButton(btnText: 'Edit'),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ]),
       ),
     );
   }
