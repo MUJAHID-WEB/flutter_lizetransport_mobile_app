@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class InvoiceTripsEdit extends StatefulWidget {
   const InvoiceTripsEdit({super.key});
@@ -37,7 +38,10 @@ class _InvoiceTripsEditState extends State<InvoiceTripsEdit> {
                       makeInput30(
                         label: "Total",
                         hintText: "Private Jet",
-                      )
+                      ),
+                      DeleteButton330(
+                        btnText: 'Delete',
+                      ),
                     ],
                   ),
                 ),
@@ -56,7 +60,10 @@ class _InvoiceTripsEditState extends State<InvoiceTripsEdit> {
                       makeInput30(
                         label: "Total",
                         hintText: "Private Jet",
-                      )
+                      ),
+                      DeleteButton330(
+                        btnText: 'Delete',
+                      ),
                     ],
                   ),
                 ),

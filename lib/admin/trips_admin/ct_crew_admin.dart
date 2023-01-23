@@ -1,72 +1,248 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/colors.dart';
+import '../../../common/table.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class CtCrewAdmin extends StatefulWidget {
+  const CtCrewAdmin({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CtCrewAdmin> createState() => _CtCrewAdminState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _CtCrewAdminState extends State<CtCrewAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Trips'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+      body: Container(
+        color: cardColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                //Inprogress
+                Column(
+                  children: [
+                    //
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(),
+                    ),
+                    //creator
+                    InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
+
+                    //Table
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          TableW(
+                            heading: 'Date Departed',
+                            data: '02/31/2022',
+                          ),
+                          TableC(
+                            heading: 'Pilot',
+                            data: 'Jerome Baga',
+                          ),
+                          TableW(
+                            heading: 'Plane',
+                            data: 'A319',
+                          ),
+                          TableC(
+                            heading: 'Key Passenger',
+                            data: 'Moses Barry',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+
+                //New Passenger
+
+                Column(
+                  children: [
+                    //
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(),
+                    ),
+                    //creator
+                    NpassangerTitle(
+                      id: 'Crew',
+                      btntext: 'New Crew',
+                    ),
+                  ],
+                ),
+                //Onboard
+                Column(
+                  children: [
+                    //
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(),
+                    ),
+                    //creator
+                    StatusOnTitle(
+                      id: 'Status',
+                      btntext: 'Onboard',
+                    ),
+
+                    //Table
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          TableW(
+                            heading: 'First Name',
+                            data: 'Mariam',
+                          ),
+                          TableC(
+                            heading: 'Last Name',
+                            data: 'Solei',
+                          ),
+                          TableW(
+                            heading: 'Middle Name',
+                            data: 'Ba',
+                          ),
+                          TableC(
+                            heading: 'Citizenship',
+                            data: 'Abidjan',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                //Onboard
+                Column(
+                  children: [
+                    //
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(),
+                    ),
+                    //creator
+                    StatusOnTitle(
+                      id: 'Status',
+                      btntext: 'Onboard',
+                    ),
+
+                    //Table
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          TableW(
+                            heading: 'First Name',
+                            data: 'Mariam',
+                          ),
+                          TableC(
+                            heading: 'Last Name',
+                            data: 'Solei',
+                          ),
+                          TableW(
+                            heading: 'Middle Name',
+                            data: 'Ba',
+                          ),
+                          TableC(
+                            heading: 'Citizenship',
+                            data: 'Abidjan',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                //Cancelled
+                Column(
+                  children: [
+                    //
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(),
+                    ),
+                    //creator
+                    StatusCancelTitle(
+                      id: 'Status',
+                      btntext: 'Cancelled',
+                    ),
+
+                    //Table
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          TableW(
+                            heading: 'First Name',
+                            data: 'Mariam',
+                          ),
+                          TableC(
+                            heading: 'Last Name',
+                            data: 'Solei',
+                          ),
+                          TableW(
+                            heading: 'Middle Name',
+                            data: 'Ba',
+                          ),
+                          TableC(
+                            heading: 'Citizenship',
+                            data: 'Abidjan',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                //Onboard
+                Column(
+                  children: [
+                    //
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: Divider(),
+                    ),
+                    //creator
+                    StatusOnTitle(
+                      id: 'Status',
+                      btntext: 'Onboard',
+                    ),
+
+                    //Table
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          TableW(
+                            heading: 'First Name',
+                            data: 'Mariam',
+                          ),
+                          TableC(
+                            heading: 'Last Name',
+                            data: 'Solei',
+                          ),
+                          TableW(
+                            heading: 'Middle Name',
+                            data: 'Ba',
+                          ),
+                          TableC(
+                            heading: 'Citizenship',
+                            data: 'Abidjan',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

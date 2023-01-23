@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class NewPassengerTrips extends StatefulWidget {
   const NewPassengerTrips({super.key});
@@ -42,6 +43,10 @@ class _NewPassengerTripsState extends State<NewPassengerTrips> {
                       makeInput30(
                         label: "Citizenship",
                         hintText: "Senegal",
+                      ),
+                      //
+                      AddButton335(
+                        btnText: 'Add Passenger',
                       ),
                     ],
                   ),

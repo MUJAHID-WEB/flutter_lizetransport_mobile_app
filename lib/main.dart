@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
-import 'admin/trips_admin/ct_passangers_admin.dart';
+import 'admin/trips_admin/invoice_edit_trips_admin.dart';
+import 'admin/trips_admin/invoice_unpaid_admin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
       theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
-      home: const CtPassengerAdmin(),
+      home: const InvoiceTripsEdit(),
     );
   }
 }

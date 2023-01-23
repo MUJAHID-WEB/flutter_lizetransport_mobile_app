@@ -189,7 +189,7 @@ class _EditResAdminState extends State<EditResAdmin> {
 
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 25),
-                          child: EditButton(btnText: 'Edit'),
+                          child: EditButton330(btnText: 'Edit'),
                         )
                       ],
                     ),

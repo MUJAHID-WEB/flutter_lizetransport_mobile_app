@@ -19,6 +19,8 @@ class CustomTextStyle {
   //
   static TextStyle unpaidbtn12med =
       TextStyle(color: unpaidBtn, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle unpaidbtn16med =
+      TextStyle(color: unpaidBtn, fontSize: 16, fontWeight: FontWeight.w500);
   static TextStyle paidbtn12med =
       TextStyle(color: paidBtn, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle cancelbtn12med =

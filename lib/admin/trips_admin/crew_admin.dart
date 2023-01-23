@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class CrewTrips extends StatefulWidget {
   const CrewTrips({super.key});
@@ -40,6 +41,9 @@ class _CrewTripsState extends State<CrewTrips> {
                         hintText: "Mariame Ba",
                       ),
                       //
+                      AddButton335(
+                        btnText: 'Add Crew',
+                      ),
                     ],
                   ),
                 ),
