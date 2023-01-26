@@ -1,73 +1,90 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/colors.dart';
+import '../../../common/table.dart';
+import '../../common/custom_button.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class PrivateJetAdmin extends StatefulWidget {
+  const PrivateJetAdmin({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<PrivateJetAdmin> createState() => _PrivateJetAdminState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _PrivateJetAdminState extends State<PrivateJetAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Planes'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Container(
+          color: cardColor,
+          height: MediaQuery.of(context).size.height,
+          width: double.infinity,
+          child: ListView(children: [
+            Column(
+              children: [
+                //Unpaid
+                Column(
+                  children: [
+                    //Table
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          TableW(
+                            heading: 'LTI Name',
+                            data: 'Airbus A319 LTI-LBZ',
+                          ),
+                          TableC(
+                            heading: 'Manufacturer',
+                            data: 'Airbus',
+                          ),
+                          TableW(
+                            heading: 'Model',
+                            data: 'A319',
+                          ),
+                          TableC(
+                            heading: 'LTI Plane Number',
+                            data: 'LTI-J3209911',
+                          ),
+                          TableW(
+                            heading: 'Wingspan',
+                            data: '26,2128M',
+                          ),
+                          TableC(
+                            heading: 'Height',
+                            data: '7,9248M',
+                          ),
+                          TableW(
+                            heading: 'Length',
+                            data: '14.224M',
+                          ),
+                          TableC(
+                            heading: 'Fuel capacity',
+                            data: '3611 Lbs',
+                          ),
+                          TableW(
+                            heading: 'Max takeoff weight',
+                            data: '6804Kgs',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+
+                // Add New Plane
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: AddButton335(
+                    btnText: 'Add New Plane',
+                  ),
+                )
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+          ])),
     );
   }
 }

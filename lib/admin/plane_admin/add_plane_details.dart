@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
+import 'package:lize/common/custom_button.dart';
 
 import '../../../common/forms.dart';
 
@@ -44,6 +45,13 @@ class _AddPlaneDetailsState extends State<AddPlaneDetails> {
                         hintText: "LTI-J3209911",
                       ),
                       //
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          BacknCancelBtn(btnText: 'Cancel'),
+                          NextBtn(btnText: "Next")
+                        ],
+                      ),
                     ],
                   ),
                 ),

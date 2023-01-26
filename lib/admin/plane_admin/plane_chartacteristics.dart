@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class PlaneChar extends StatefulWidget {
   const PlaneChar({super.key});
@@ -52,6 +53,14 @@ class _PlaneCharState extends State<PlaneChar> {
                         hintText: "4.369M",
                       ),
                       //
+                      //
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          BacknCancelBtn(btnText: 'Back'),
+                          NextBtn(btnText: "Add")
+                        ],
+                      ),
                     ],
                   ),
                 ),
