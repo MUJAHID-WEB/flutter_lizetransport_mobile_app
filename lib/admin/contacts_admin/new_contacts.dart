@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class ContactsNew extends StatefulWidget {
   const ContactsNew({super.key});
@@ -47,6 +48,14 @@ class _ContactsNewState extends State<ContactsNew> {
                       ),
 
                       //
+                      //
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          BacknCancelBtn(btnText: 'Cancel'),
+                          NextBtn(btnText: "Add")
+                        ],
+                      ),
                     ],
                   ),
                 ),

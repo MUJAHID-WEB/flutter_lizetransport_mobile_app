@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:lize/common/colors.dart';
 
-import 'admin/plane_admin/plane_past_trip.dart';
+import 'admin/team_admin/invite_member.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
       theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
-      home: const PlanePastTripAdmin(),
+      home: const TeamInviteAdmin(),
     );
   }
 }
