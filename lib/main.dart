@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
 
-import 'admin/flying_team_admin/ft_planes.dart';
+import 'admin/auth_admin/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
       theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
-      home: const FtPlanesAdmin(),
+      home: const LogInAdmin(),
     );
   }
 }
