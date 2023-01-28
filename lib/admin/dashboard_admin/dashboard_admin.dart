@@ -1,72 +1,108 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/colors.dart';
+import 'package:lize/common/forms.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../common/custom_button.dart';
+import '../../common/text_style.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class DashboardAdmin extends StatefulWidget {
+  const DashboardAdmin({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<DashboardAdmin> createState() => _DashboardAdminState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _DashboardAdminState extends State<DashboardAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+      appBar: AppBar(title: Text('Dashboard')),
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        color: bgColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                //
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //
+                    DboardCard(),
+                    //
+                    DboardCard(),
+                    //
+                  ],
+                ),
+                //
+                SizedBox(
+                  height: 11,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    //
+                    DboardCard(),
+                    //
+                    DboardCard(),
+                    //
+                  ],
+                ),
+              ],
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+    );
+  }
+}
+
+//card
+class DboardCard extends StatelessWidget {
+  const DboardCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: cardColor,
+      height: 177,
+      width: 172,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //icon
+                Container(
+                    color: bgColor,
+                    height: 50,
+                    width: 50,
+                    child: Icon(Icons.home)),
+                //3 dots
+                Icon(Icons.more_vert)
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            // Number
+            Text(
+              '111,875',
+              style: CustomTextStyle.sc26bold,
+            ),
+            // Total Trips
+            Text(
+              'Total Trips',
+              style: CustomTextStyle.bc16semi,
+            ),
+          ],
+        ),
       ),
     );
   }

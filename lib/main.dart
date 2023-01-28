@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
 
-import 'admin/auth_admin/registration.dart';
+import 'admin/dashboard_admin/dashboard_admin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
       theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
-      home: const SignUpAdmin(),
+      home: const DashboardAdmin(),
     );
   }
 }
