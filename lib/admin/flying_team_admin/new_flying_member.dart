@@ -1,72 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/colors.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class FlyingTeamNew extends StatefulWidget {
+  const FlyingTeamNew({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<FlyingTeamNew> createState() => _FlyingTeamNewState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _FlyingTeamNewState extends State<FlyingTeamNew> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        color: cardColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+          children: [
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 48),
+                  child: Column(
+                    children: [
+                      //
+                      //
+                      makeInput30(
+                        label: "Full Name",
+                        hintText: "John Doe",
+                      ),
+                      makeInput30(
+                        label: "Department",
+                        hintText: "Facility Manager",
+                      ),
+                      makeInput30(
+                        label: "Role",
+                        hintText: "Facility Manager",
+                      ),
+                      makeInput30(
+                        label: "Manager",
+                        hintText: "Jennifer Harris",
+                      ),
+
+                      //
+                      //
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          BacknCancelBtn(btnText: 'Cancel'),
+                          NextBtn(btnText: "Add")
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
