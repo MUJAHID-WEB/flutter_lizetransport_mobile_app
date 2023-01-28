@@ -4,6 +4,9 @@ const bgColor2 = Color(0xFFE1DEDE);
 const bgColor = Color(0xFFEDF2F6);
 
 const cardColor = Color(0xFFFFFFFF);
+const cardColor05 = Color(0x0DFFFFFF);
+const cardColor50 = Color(0x80FFFFFF);
+const cardColor60 = Color(0x99FFFFFF);
 const primaryColor = Color(0xFF72ADD7);
 const primaryColor20 = Color(0x3372ADD7);
 const secondaryColor = Color(0xFF172066);

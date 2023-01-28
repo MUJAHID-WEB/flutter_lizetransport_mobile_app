@@ -297,3 +297,40 @@ class NextBtn extends StatelessWidget {
     );
   }
 }
+
+//
+//White Button 330
+class WhiteBtn330 extends StatelessWidget {
+  const WhiteBtn330({super.key, required this.btnText});
+  final String btnText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 50,
+          width: 335,
+          child: TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(cardColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.sc18med,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

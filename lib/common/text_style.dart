@@ -14,6 +14,9 @@ class CustomTextStyle {
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle sc12med = TextStyle(
       color: secondaryColor, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle sc18med = TextStyle(
+      color: secondaryColor, fontSize: 18, fontWeight: FontWeight.w500);
+
   static TextStyle pc16med =
       TextStyle(color: primaryColor, fontSize: 16, fontWeight: FontWeight.w500);
   //
@@ -45,6 +48,18 @@ class CustomTextStyle {
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w400);
   static TextStyle cc16med =
       TextStyle(color: cardColor, fontSize: 16, fontWeight: FontWeight.w500);
+  static TextStyle cc26reg =
+      TextStyle(color: cardColor, fontSize: 26, fontWeight: FontWeight.w300);
+  static TextStyle cc5016med =
+      TextStyle(color: cardColor50, fontSize: 16, fontWeight: FontWeight.w500);
+  static TextStyle cc14reg =
+      TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w400);
+  static TextStyle cc14med =
+      TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle cc6014reg =
+      TextStyle(color: cardColor60, fontSize: 14, fontWeight: FontWeight.w400);
+  static TextStyle cc14semi =
+      TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w600);
 }
 
 
