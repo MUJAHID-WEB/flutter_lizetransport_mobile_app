@@ -24,34 +24,57 @@ class _DashboardAdminState extends State<DashboardAdmin> {
         width: double.infinity,
         child: ListView(
           children: [
-            Column(
-              children: [
-                //
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    //
-                    DboardCard(),
-                    //
-                    DboardCard(),
-                    //
-                  ],
-                ),
-                //
-                SizedBox(
-                  height: 11,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    //
-                    DboardCard(),
-                    //
-                    DboardCard(),
-                    //
-                  ],
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                children: [
+                  //
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      //
+                      DboardCard(
+                        iconMain: AssetImage("assets/image/home.png"),
+                        iconMore: AssetImage("assets/image/more.png"),
+                        number: '111,875',
+                        title: 'Total Numbers',
+                      ),
+                      //
+                      DboardCard(
+                        iconMain: AssetImage("assets/image/users.png"),
+                        iconMore: AssetImage("assets/image/more.png"),
+                        number: '45',
+                        title: 'Total Teams',
+                      ),
+                      //
+                    ],
+                  ),
+                  //
+                  SizedBox(
+                    height: 11,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      //
+                      DboardCard(
+                        iconMain: AssetImage("assets/image/crews.png"),
+                        iconMore: AssetImage("assets/image/more.png"),
+                        number: '1,500',
+                        title: 'Total Crews',
+                      ),
+                      //
+                      DboardCard(
+                        iconMain: AssetImage("assets/image/files.png"),
+                        iconMore: AssetImage("assets/image/more.png"),
+                        number: '754,222',
+                        title: 'Total Files',
+                      ),
+                      //
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -62,14 +85,27 @@ class _DashboardAdminState extends State<DashboardAdmin> {
 
 //card
 class DboardCard extends StatelessWidget {
-  const DboardCard({super.key});
-
+  const DboardCard(
+      {super.key,
+      required this.iconMain,
+      required this.iconMore,
+      required this.number,
+      required this.title});
+  final AssetImage iconMain, iconMore;
+  final String number, title;
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: cardColor,
+      //color: cardColor,
       height: 177,
       width: 172,
+      decoration: BoxDecoration(
+        color: cardColor,
+        border: Border.all(width: 1, color: blackColor05),
+        borderRadius: BorderRadius.all(
+            Radius.circular(10.0) //                 <--- border radius here
+            ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -80,12 +116,28 @@ class DboardCard extends StatelessWidget {
               children: [
                 //icon
                 Container(
+                  // color: bgColor,
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
                     color: bgColor,
-                    height: 50,
-                    width: 50,
-                    child: Icon(Icons.home)),
+                    //border: Border.all(width: 5, color: blackColor05),
+                    borderRadius: BorderRadius.all(Radius.circular(
+                            50.0) //                 <--- border radius here
+                        ),
+                  ),
+                  child: ImageIcon(
+                    iconMain,
+                    color: secondaryColor,
+                    size: 24,
+                  ),
+                ),
                 //3 dots
-                Icon(Icons.more_vert)
+                ImageIcon(
+                  iconMore,
+                  color: secondaryColor,
+                  size: 24,
+                ),
               ],
             ),
             SizedBox(
@@ -93,12 +145,12 @@ class DboardCard extends StatelessWidget {
             ),
             // Number
             Text(
-              '111,875',
+              number,
               style: CustomTextStyle.sc26bold,
             ),
             // Total Trips
             Text(
-              'Total Trips',
+              title,
               style: CustomTextStyle.bc16semi,
             ),
           ],
