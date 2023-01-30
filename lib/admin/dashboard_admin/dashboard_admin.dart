@@ -73,6 +73,75 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                       //
                     ],
                   ),
+                  //
+
+                  Container(
+                    width: 360.01,
+                    height: 136,
+                    decoration: BoxDecoration(
+                      color: cardColor,
+                      border: Border.all(width: 1, color: blackColor05),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 20, 0, 12),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('New Reservations',
+                                  style: CustomTextStyle.tp16semi),
+                              Container(
+                                  width: 72,
+                                  height: 28,
+                                  decoration: BoxDecoration(
+                                    color: paidBtn10,
+                                    // border:
+                                    //     Border.all(width: 1, color: blackColor05),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(26.0)),
+                                  ),
+                                  child: Text('+ 18.7%',
+                                      style: CustomTextStyle.paid14med)),
+                              Text('1,315', style: CustomTextStyle.pc28bold),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 1),
+                          child: Divider(
+                            thickness: 5,
+                            color: paidBtn,
+                            height: 15,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 20, 0, 12),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('New Reservations',
+                                  style: CustomTextStyle.tp16semi),
+                              Container(
+                                  width: 72,
+                                  height: 28,
+                                  decoration: BoxDecoration(
+                                    color: unpaidBtn10,
+                                    // border:
+                                    //     Border.all(width: 1, color: blackColor05),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(26.0)),
+                                  ),
+                                  child: Text('+ 18.7%',
+                                      style: CustomTextStyle.unpaid14med)),
+                              Text('1,315', style: CustomTextStyle.pc28bold),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
@@ -102,9 +171,7 @@ class DboardCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: cardColor,
         border: Border.all(width: 1, color: blackColor05),
-        borderRadius: BorderRadius.all(
-            Radius.circular(10.0) //                 <--- border radius here
-            ),
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -122,9 +189,7 @@ class DboardCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: bgColor,
                     //border: Border.all(width: 5, color: blackColor05),
-                    borderRadius: BorderRadius.all(Radius.circular(
-                            50.0) //                 <--- border radius here
-                        ),
+                    borderRadius: BorderRadius.all(Radius.circular(50.0)),
                   ),
                   child: ImageIcon(
                     iconMain,
