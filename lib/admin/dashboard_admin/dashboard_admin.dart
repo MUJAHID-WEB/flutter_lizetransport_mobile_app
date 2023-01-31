@@ -16,7 +16,17 @@ class _DashboardAdminState extends State<DashboardAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Dashboard')),
+      appBar: AppBar(
+        title: Text(
+          'Dashboard',
+          style: CustomTextStyle.tp18semi,
+        ),
+        leading: ImageIcon(
+          AssetImage('assets/image/menu.png'),
+          color: textPrimary,
+          size: 24,
+        ),
+      ),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: bgColor,
@@ -25,7 +35,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 15),
               child: Column(
                 children: [
                   //

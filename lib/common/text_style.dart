@@ -8,6 +8,8 @@ class CustomTextStyle {
       TextStyle(color: textPrimary, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle tp16semi =
       TextStyle(color: textPrimary, fontSize: 16, fontWeight: FontWeight.w600);
+  static TextStyle tp18semi =
+      TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w600);
   static TextStyle tp16bold =
       TextStyle(color: textPrimary, fontSize: 16, fontWeight: FontWeight.w700);
   static TextStyle pc12semi =

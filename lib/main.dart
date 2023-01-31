@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
+import 'package:lize/common/text_style.dart';
 
 import 'admin/dashboard_admin/dashboard_admin.dart';
 
@@ -20,7 +21,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Lize Transport',
-      theme: ThemeData(fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor),
+      theme: ThemeData(
+        fontFamily: 'Poppins', scaffoldBackgroundColor: bgColor,
+        //scaffoldBackgroundColor: Colors.white,
+        // Here we set DM Sans as our default fonts
+        // Now we also apply out text color to all flutter textTheme
+        // textTheme:
+        //     GoogleFonts.dmSansTextTheme().apply(displayColor: kTextColor),
+        // Almost all of our app bar have this style
+        appBarTheme: AppBarTheme(
+          color: cardColor,
+          elevation: 5,
+          foregroundColor: textPrimary,
+          scrolledUnderElevation: 5,
+          shadowColor: textPrimary20,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30.0),
+              bottomRight: Radius.circular(30.0),
+            ),
+          ),
+          centerTitle: true,
+          toolbarHeight: 61,
+        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: const DashboardAdmin(),
     );
   }
