@@ -72,6 +72,8 @@ class CustomTextStyle {
       TextStyle(color: cardColor60, fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle cc14semi =
       TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w600);
+  static TextStyle cc10bold =
+      TextStyle(color: cardColor, fontSize: 10, fontWeight: FontWeight.w700);
   static TextStyle bc16semi =
       TextStyle(color: blackColor, fontSize: 16, fontWeight: FontWeight.w600);
 }
