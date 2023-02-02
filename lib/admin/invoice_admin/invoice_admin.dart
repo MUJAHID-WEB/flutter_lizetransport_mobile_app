@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class InvoiceAdmin extends StatefulWidget {
@@ -15,8 +16,8 @@ class _InvoiceAdminState extends State<InvoiceAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Reservation'),
+      appBar: AppBarAdmin(
+        title: 'Invoices',
       ),
       body: Container(
           color: cardColor,

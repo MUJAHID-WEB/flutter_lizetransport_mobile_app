@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class AmenitiesAdd extends StatefulWidget {
@@ -15,6 +16,9 @@ class _AmenitiesAddState extends State<AmenitiesAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarAdmin(
+        title: 'Add Amenities',
+      ),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: cardColor,

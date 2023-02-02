@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 import '../../common/text_style.dart';
 
@@ -16,9 +17,7 @@ class _ReservationAdminState extends State<ReservationAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Reservation'),
-      ),
+      appBar: AppBarAdmin(title: 'Reservation'),
       body: Container(
           color: cardColor,
           height: MediaQuery.of(context).size.height,

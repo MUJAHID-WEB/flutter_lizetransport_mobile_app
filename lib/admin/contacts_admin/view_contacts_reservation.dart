@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class ContactReservationAdmin extends StatefulWidget {
@@ -16,8 +17,8 @@ class _ContactReservationAdminState extends State<ContactReservationAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Plane'),
+      appBar: AppBarAdmin(
+        title: 'View Contacts',
       ),
       body: Container(
           color: cardColor,

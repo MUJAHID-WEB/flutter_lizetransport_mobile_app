@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class ConfOrderAdmin extends StatefulWidget {
@@ -15,8 +16,8 @@ class _ConfOrderAdminState extends State<ConfOrderAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Confirm the Order'),
+      appBar: AppBarAdmin(
+        title: 'Trips',
       ),
       body: Container(
           color: cardColor,

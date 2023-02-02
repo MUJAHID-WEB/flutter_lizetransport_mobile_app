@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class ContactTripAdmin extends StatefulWidget {
@@ -15,8 +16,8 @@ class _ContactTripAdminState extends State<ContactTripAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('View Contact'),
+      appBar: AppBarAdmin(
+        title: 'View Contacts',
       ),
       body: Container(
           color: cardColor,

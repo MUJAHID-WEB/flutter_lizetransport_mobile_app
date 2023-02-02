@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 import '../../common/forms.dart';
 
@@ -16,8 +17,8 @@ class _TeamLtlAdminState extends State<TeamLtlAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Team'),
+      appBar: AppBarAdmin(
+        title: 'Lize transport INTL',
       ),
       body: Container(
           color: cardColor,

@@ -4,6 +4,7 @@ import 'package:lize/user/amenities/confirm_order/confirm_order.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 
 class AmenitiesOrderAdmin extends StatefulWidget {
   const AmenitiesOrderAdmin({super.key});
@@ -16,8 +17,8 @@ class _AmenitiesOrderAdminState extends State<AmenitiesOrderAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Plane'),
+      appBar: AppBarAdmin(
+        title: 'Barbera/LTI-90',
       ),
       body: Container(
           color: cardColor,

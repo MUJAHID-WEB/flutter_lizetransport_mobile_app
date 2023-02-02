@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/appbar.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
@@ -14,8 +15,8 @@ class _CurrentTripAdminState extends State<CurrentTripAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Trips'),
+      appBar: AppBarAdmin(
+        title: 'Trips',
       ),
       body: Container(
         color: cardColor,

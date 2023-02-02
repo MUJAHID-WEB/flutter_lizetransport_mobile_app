@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/appbar.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
@@ -15,6 +16,7 @@ class _NewPassengerReservationState extends State<NewPassengerReservation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarAdmin(title: 'New Passengers'),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: cardColor,

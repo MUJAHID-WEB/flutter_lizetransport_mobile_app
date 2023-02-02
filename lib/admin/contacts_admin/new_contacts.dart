@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class ContactsNew extends StatefulWidget {
@@ -15,6 +16,9 @@ class _ContactsNewState extends State<ContactsNew> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarAdmin(
+        title: 'Add Contacts',
+      ),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: cardColor,

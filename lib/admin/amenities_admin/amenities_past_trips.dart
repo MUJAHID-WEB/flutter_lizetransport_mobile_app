@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 
 class AmenitiesPastTripAdmin extends StatefulWidget {
   const AmenitiesPastTripAdmin({super.key});
@@ -14,8 +15,8 @@ class _AmenitiesPastTripAdminState extends State<AmenitiesPastTripAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Plane'),
+      appBar: AppBarAdmin(
+        title: 'Barbera/LTI-90',
       ),
       body: Container(
           color: cardColor,

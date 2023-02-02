@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/common/forms.dart';
 
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 import '../../common/text_style.dart';
 
@@ -16,72 +17,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Dashboard',
-          style: CustomTextStyle.tp18semi,
-        ),
-        leading: IconButton(
-          icon: ImageIcon(
-            AssetImage('assets/image/menu.png'),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        actions: [
-          Stack(
-            children: <Widget>[
-              IconButton(
-                  icon: ImageIcon(
-                    AssetImage('assets/image/bell_admin.png'),
-                  ),
-                  onPressed: () {
-                    // setState(() {
-                    //   counter = 0;
-                    // });
-                  }),
-              // counter != 0
-              //     ?
-              Positioned(
-                right: 8,
-                top: 6,
-                child: Container(
-                  width: 18,
-                  height: 18,
-                  decoration: BoxDecoration(
-                    color: rcvdBtn,
-                    border: Border.all(width: 2, color: rcvdBtn20),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  // constraints: BoxConstraints(
-                  //   minWidth: 18,
-                  //   minHeight: 18,
-                  // ),
-                  child: Text(
-                    '4',
-                    // '$counter',
-                    style: CustomTextStyle.cc10bold,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              )
-              // : new Container()
-            ],
-          ),
-          // IconButton(
-          //   icon: Padding(
-          //     padding: EdgeInsets.fromLTRB(0, 0, 18, 0),
-          //     child: ImageIcon(
-          //       AssetImage('assets/image/bell_admin.png'),
-          //     ),
-          //   ),
-          //   onPressed: () {
-          //     Navigator.pop(context);
-          //   },
-          // ),
-        ],
-      ),
+      appBar: AppBarAdmin(title: 'Dashboard'),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: bgColor,

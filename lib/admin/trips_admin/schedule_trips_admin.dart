@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 
 class ScheduleTripAdmin extends StatefulWidget {
   const ScheduleTripAdmin({super.key});
@@ -14,8 +15,8 @@ class _ScheduleTripAdminState extends State<ScheduleTripAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Trips'),
+      appBar: AppBarAdmin(
+        title: 'Trips',
       ),
       body: Container(
         color: cardColor,

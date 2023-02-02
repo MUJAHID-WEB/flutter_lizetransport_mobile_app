@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import '../../../common/forms.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class NewPassengerTrips extends StatefulWidget {
@@ -15,6 +16,9 @@ class _NewPassengerTripsState extends State<NewPassengerTrips> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarAdmin(
+        title: 'New Passengers',
+      ),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: cardColor,

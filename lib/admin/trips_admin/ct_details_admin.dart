@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 
 class CtDetailsAdmin extends StatefulWidget {
   const CtDetailsAdmin({super.key});
@@ -14,8 +15,8 @@ class _CtDetailsAdminState extends State<CtDetailsAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Trips'),
+      appBar: AppBarAdmin(
+        title: 'Trips',
       ),
       body: Container(
         color: cardColor,

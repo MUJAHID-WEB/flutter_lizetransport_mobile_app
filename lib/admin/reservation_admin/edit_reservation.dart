@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/appbar.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
@@ -15,8 +16,8 @@ class _EditResAdminState extends State<EditResAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Reservation'),
+      appBar: AppBarAdmin(
+        title: 'Edit Reservations',
       ),
       body: Container(
         color: cardColor,

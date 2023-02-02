@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 
 class FtEmployeeAdmin extends StatefulWidget {
   const FtEmployeeAdmin({super.key});
@@ -14,8 +15,8 @@ class _FtEmployeeAdminState extends State<FtEmployeeAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flying Team'),
+      appBar: AppBarAdmin(
+        title: 'John Ngolo Doe',
       ),
       body: Container(
           color: cardColor,

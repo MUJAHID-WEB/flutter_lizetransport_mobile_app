@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 
 class TeamInviteAdmin extends StatefulWidget {
@@ -15,8 +16,8 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Invite Member'),
+      appBar: AppBarAdmin(
+        title: 'Invite Member',
       ),
       body: Container(
           color: cardColor,
