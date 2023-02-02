@@ -5,6 +5,9 @@ import 'package:lize/common/forms.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 import '../../common/text_style.dart';
+import '../reservation_admin/new_passenger_reservation.dart';
+import '../reservation_admin/pricing.dart';
+import '../reservation_admin/reservation_admin.dart';
 
 class DashboardAdmin extends StatefulWidget {
   const DashboardAdmin({super.key});
@@ -14,6 +17,7 @@ class DashboardAdmin extends StatefulWidget {
 }
 
 class _DashboardAdminState extends State<DashboardAdmin> {
+  //
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 
 import 'admin/dashboard_admin/dashboard_admin.dart';
+import 'common/bottom_nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const DashboardAdmin(),
+      home: const HomePage(),
     );
   }
 }
