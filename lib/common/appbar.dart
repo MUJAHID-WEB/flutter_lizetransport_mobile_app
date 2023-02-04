@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/config.dart';
 import 'package:lize/common/colors.dart';
+import 'package:lize/common/drawer.dart';
 import 'package:lize/common/text_style.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-class AppBarAdmin extends StatelessWidget with PreferredSizeWidget {
+class AppBarAdmin extends StatefulWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
   final String title;
@@ -12,20 +15,26 @@ class AppBarAdmin extends StatelessWidget with PreferredSizeWidget {
         super(key: key);
 
   @override
+  State<AppBarAdmin> createState() => _AppBarAdminState();
+}
+
+class _AppBarAdminState extends State<AppBarAdmin> {
+  //ZoomDrawerController _controller;
+  final _controller = ZoomDrawerController();
+  @override
+  // void initState() {
+  //   _controller = ZoomDrawerController();
+  //   super.initState();
+  // }
+
+  @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        title,
+        widget.title,
         style: CustomTextStyle.tp18semi,
       ),
-      leading: IconButton(
-        icon: ImageIcon(
-          AssetImage('assets/image/menu.png'),
-        ),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
+      leading: MenuWidget(),
       actions: [
         Stack(
           children: <Widget>[
@@ -51,10 +60,6 @@ class AppBarAdmin extends StatelessWidget with PreferredSizeWidget {
                   border: Border.all(width: 2, color: rcvdBtn20),
                   borderRadius: BorderRadius.circular(50),
                 ),
-                // constraints: BoxConstraints(
-                //   minWidth: 18,
-                //   minHeight: 18,
-                // ),
                 child: Text(
                   '4',
                   // '$counter',
@@ -67,6 +72,21 @@ class AppBarAdmin extends StatelessWidget with PreferredSizeWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+//
+class MenuWidget extends StatelessWidget {
+  const MenuWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () => ZoomDrawer.of(context)!.toggle(),
+      icon: ImageIcon(
+        AssetImage('assets/image/menu.png'),
+      ),
     );
   }
 }

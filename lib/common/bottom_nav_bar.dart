@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
+import 'package:lize/common/text_style.dart';
 
 import '../admin/dashboard_admin/dashboard_admin.dart';
-import '../admin/reservation_admin/new_passenger_reservation.dart';
-import '../admin/reservation_admin/passanger_reservation.dart';
-import '../admin/reservation_admin/pricing.dart';
+import '../admin/message_admin/msg_list_admin.dart';
+import '../admin/reservation_admin/reservation_admin.dart';
+import '../admin/trips_admin/current_trips_admin.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,9 +20,9 @@ class _HomePageState extends State<HomePage> {
 
   final _pages = [
     DashboardAdmin(),
-    Pricing(),
-    NewPassengerReservation(),
-    PassengerResAdmin(),
+    ReservationAdmin(),
+    CurrentTripAdmin(),
+    MsgListAdmin(),
   ];
 
   void _onItemTapped(int index) {
@@ -34,41 +35,64 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: textSecondary,
-        selectedItemColor: secondaryColor,
-        showUnselectedLabels: true,
-        showSelectedLabels: true,
-        backgroundColor: Colors.yellowAccent,
-        elevation: 5,
-        items: [
-          BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage('assets/image/home.png'),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: blackColor05,
+              blurRadius: 12,
             ),
-            label: "Dashboard",
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
-          BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage('assets/image/phone_admin.png'),
+          child: SizedBox(
+            height: 85,
+            child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              iconSize: 25,
+              unselectedItemColor: textSecondary,
+              selectedItemColor: secondaryColor,
+              showUnselectedLabels: true,
+              showSelectedLabels: true,
+              selectedLabelStyle: CustomTextStyle.sc14semi,
+              unselectedLabelStyle: CustomTextStyle.ts14med,
+              backgroundColor: cardColor,
+              elevation: 12,
+              items: [
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/image/home.png'),
+                  ),
+                  label: "Dashboard",
+                ),
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/image/phone_admin.png'),
+                  ),
+                  label: "Reservation",
+                ),
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/image/trips_admin.png'),
+                  ),
+                  label: "Trips",
+                ),
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/image/msg_admin.png'),
+                  ),
+                  label: "Messages",
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              onTap: _onItemTapped,
             ),
-            label: "Reservation",
           ),
-          BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage('assets/image/trips_admin.png'),
-            ),
-            label: "Trips",
-          ),
-          BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage('assets/image/msg_admin.png'),
-            ),
-            label: "Messages",
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+        ),
       ),
     );
   }

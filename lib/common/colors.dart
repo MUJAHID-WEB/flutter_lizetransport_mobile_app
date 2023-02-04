@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const bgColor2 = Color(0xFFE1DEDE);
 const bgColor = Color(0xFFEDF2F6);
+const bgColorPage = Color(0xFFFBFBFB);
 
 const cardColor = Color(0xFFFFFFFF);
 const cardColor05 = Color(0x0DFFFFFF);

@@ -24,7 +24,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
       appBar: AppBarAdmin(title: 'Dashboard'),
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: bgColor,
+        color: bgColorPage,
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: ListView(
@@ -80,71 +80,74 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                   ),
                   //
 
-                  Container(
-                    width: 360.01,
-                    height: 136,
-                    decoration: BoxDecoration(
-                      color: cardColor,
-                      border: Border.all(width: 1, color: blackColor05),
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(20, 20, 0, 12),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('New Reservations',
-                                  style: CustomTextStyle.tp16semi),
-                              Container(
-                                  width: 72,
-                                  height: 28,
-                                  decoration: BoxDecoration(
-                                    color: paidBtn10,
-                                    // border:
-                                    //     Border.all(width: 1, color: blackColor05),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(26.0)),
-                                  ),
-                                  child: Text('+ 18.7%',
-                                      style: CustomTextStyle.paid14med)),
-                              Text('1,315', style: CustomTextStyle.pc28bold),
-                            ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Container(
+                      width: 360.01,
+                      height: 136,
+                      decoration: BoxDecoration(
+                        color: cardColor,
+                        border: Border.all(width: 1, color: blackColor05),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(20, 20, 0, 12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('New Reservations',
+                                    style: CustomTextStyle.tp16semi),
+                                Container(
+                                    width: 72,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                      color: paidBtn10,
+                                      // border:
+                                      //     Border.all(width: 1, color: blackColor05),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(26.0)),
+                                    ),
+                                    child: Text('+ 18.7%',
+                                        style: CustomTextStyle.paid14med)),
+                                Text('1,315', style: CustomTextStyle.pc28bold),
+                              ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 1),
-                          child: Divider(
-                            thickness: 5,
-                            color: paidBtn,
-                            height: 15,
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 1),
+                            child: Divider(
+                              thickness: 5,
+                              color: paidBtn,
+                              height: 15,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 20, 0, 12),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('New Reservations',
-                                  style: CustomTextStyle.tp16semi),
-                              Container(
-                                  width: 72,
-                                  height: 28,
-                                  decoration: BoxDecoration(
-                                    color: unpaidBtn10,
-                                    // border:
-                                    //     Border.all(width: 1, color: blackColor05),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(26.0)),
-                                  ),
-                                  child: Text('+ 18.7%',
-                                      style: CustomTextStyle.unpaid14med)),
-                              Text('1,315', style: CustomTextStyle.pc28bold),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 20, 0, 12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('New Invoices',
+                                    style: CustomTextStyle.tp16semi),
+                                Container(
+                                    width: 72,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                      color: unpaidBtn10,
+                                      // border:
+                                      //     Border.all(width: 1, color: blackColor05),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(26.0)),
+                                    ),
+                                    child: Text('+ 11.7%',
+                                        style: CustomTextStyle.unpaid14med)),
+                                Text('135', style: CustomTextStyle.pc28bold),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],

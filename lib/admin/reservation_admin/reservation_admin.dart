@@ -18,110 +18,114 @@ class _ReservationAdminState extends State<ReservationAdmin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarAdmin(title: 'Reservation'),
-      body: Container(
-          color: cardColor,
-          height: MediaQuery.of(context).size.height,
-          width: double.infinity,
-          child: Column(
-            children: [
-              //RCVD
-              Column(
+      body: ListView(
+        children: [
+          Container(
+              color: bgColorPage,
+              height: MediaQuery.of(context).size.height,
+              width: double.infinity,
+              child: Column(
                 children: [
-                  //
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: Divider(),
-                  ),
-                  //creator
-                  RcvdTitle(
-                    id: 'Moses Dabo',
-                    date: '23/08/2022 -> 30/08/2022',
-                    btntext: 'Received',
-                  ),
+                  //RCVD
+                  Column(
+                    children: [
+                      //
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: Divider(),
+                      ),
+                      //creator
+                      RcvdTitle(
+                        id: 'Moses Dabo',
+                        date: '23/08/2022 -> 30/08/2022',
+                        btntext: 'Received',
+                      ),
 
-                  //Table
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        TableW(
-                          heading: 'Reservation',
-                          data: 'R2902',
+                      //Table
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            TableW(
+                              heading: 'Reservation',
+                              data: 'R2902',
+                            ),
+                            TableC(
+                              heading: 'Passengers',
+                              data: '06',
+                            ),
+                            TableW(
+                              heading: 'Aircraft',
+                              data: 'A319',
+                            ),
+                            TableC(
+                              heading: 'City',
+                              data: 'Abidjan',
+                            ),
+                            TableW(
+                              heading: 'Cost',
+                              data: '-',
+                            ),
+                            EditButton330(
+                              btnText: 'Edit',
+                            ),
+                          ],
                         ),
-                        TableC(
-                          heading: 'Passengers',
-                          data: '06',
+                      ),
+                    ],
+                  ),
+                  // Assign
+                  Column(
+                    children: [
+                      //
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Divider(),
+                      ),
+                      //creator
+                      AssignTitle(
+                        id: 'Moses Dabo',
+                        date: '23/08/2022 -> 30/08/2022',
+                        btntext: 'Assigned',
+                      ),
+
+                      //Table
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            TableW(
+                              heading: 'Reservation',
+                              data: 'R2902',
+                            ),
+                            TableC(
+                              heading: 'Passengers',
+                              data: '06',
+                            ),
+                            TableW(
+                              heading: 'Aircraft',
+                              data: 'A319',
+                            ),
+                            TableC(
+                              heading: 'City',
+                              data: 'Abidjan',
+                            ),
+                            TableW(
+                              heading: 'Cost',
+                              data: '2,000.00',
+                            ),
+                            EditButton330(
+                              btnText: 'Edit',
+                            ),
+                          ],
                         ),
-                        TableW(
-                          heading: 'Aircraft',
-                          data: 'A319',
-                        ),
-                        TableC(
-                          heading: 'City',
-                          data: 'Abidjan',
-                        ),
-                        TableW(
-                          heading: 'Cost',
-                          data: '-',
-                        ),
-                        EditButton330(
-                          btnText: 'Edit',
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
-              ),
-              // Assign
-              Column(
-                children: [
-                  //
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Divider(),
-                  ),
-                  //creator
-                  AssignTitle(
-                    id: 'Moses Dabo',
-                    date: '23/08/2022 -> 30/08/2022',
-                    btntext: 'Assigned',
-                  ),
-
-                  //Table
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        TableW(
-                          heading: 'Reservation',
-                          data: 'R2902',
-                        ),
-                        TableC(
-                          heading: 'Passengers',
-                          data: '06',
-                        ),
-                        TableW(
-                          heading: 'Aircraft',
-                          data: 'A319',
-                        ),
-                        TableC(
-                          heading: 'City',
-                          data: 'Abidjan',
-                        ),
-                        TableW(
-                          heading: 'Cost',
-                          data: '2,000.00',
-                        ),
-                        EditButton330(
-                          btnText: 'Edit',
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          )),
+              )),
+        ],
+      ),
     );
   }
 }
