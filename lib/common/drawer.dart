@@ -7,6 +7,7 @@ import 'package:lize/common/colors.dart';
 
 import '../admin/dashboard_admin/dashboard_admin.dart';
 import '../admin/dashboard_admin/menu_admin.dart';
+import '../user/dashboard/menu/menu.dart';
 
 class hpage extends StatefulWidget {
   const hpage({super.key});
@@ -31,6 +32,38 @@ class _hpageState extends State<hpage> {
       mainScreen: HomePage(),
       mainScreenScale: 0.36,
       menuScreen: MenuAdmin(),
+      menuScreenWidth: double.infinity,
+      duration: Duration(milliseconds: 550),
+      //openDragSensitivity: 525,
+    );
+  }
+}
+
+// user
+
+class HomeUser extends StatefulWidget {
+  const HomeUser({super.key});
+
+  @override
+  State<HomeUser> createState() => _HomeUserState();
+}
+
+class _HomeUserState extends State<HomeUser> {
+  @override
+  Widget build(BuildContext context) {
+    return ZoomDrawer(
+      style: DrawerStyle.defaultStyle,
+      showShadow: true,
+      drawerShadowsBackgroundColor: Color(0x66EDF2F6),
+      shadowLayer1Color: primaryColor,
+      shadowLayer2Color: Color(0x66EDF2F6),
+      borderRadius: 30,
+      angle: 0,
+      slideWidth: MediaQuery.of(context).size.width * 0.6,
+      // controller: _controller,
+      mainScreen: HomePageUser(),
+      mainScreenScale: 0.36,
+      menuScreen: MenuUser(),
       menuScreenWidth: double.infinity,
       duration: Duration(milliseconds: 550),
       //openDragSensitivity: 525,

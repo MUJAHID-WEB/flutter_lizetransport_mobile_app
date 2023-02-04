@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/appbar.dart';
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 
@@ -14,8 +15,8 @@ class _DashboardUserState extends State<DashboardUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Dashboard'),
+      appBar: AppBarUser(
+        title: 'Dashboard',
       ),
       body: Container(
           color: cardColor,
