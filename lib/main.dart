@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
 import 'package:lize/user/dashboard/dboard/dboard.dart';
+import 'package:lize/user/dashboard/menu/menu.dart';
 
 import 'admin/dashboard_admin/dashboard_admin.dart';
 import 'admin/dashboard_admin/menu_admin.dart';
