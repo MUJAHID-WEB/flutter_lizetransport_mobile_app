@@ -35,6 +35,9 @@ class _DashboardUserState extends State<DashboardUser> {
                 NewsCard(),
                 //Social Media Card
                 MediaCard(),
+                SizedBox(
+                  height: 20,
+                )
               ],
             )),
       ]),
@@ -135,11 +138,10 @@ class CurrentTripsCard extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(30, 20, 0, 0),
+            padding: const EdgeInsets.fromLTRB(30, 20, 253, 0),
             child: Text(
               'Current Trips',
               style: CustomTextStyle.tp16semi,
-              textAlign: TextAlign.left,
             ),
           ),
           Padding(
@@ -294,6 +296,7 @@ class NewsCard extends StatelessWidget {
                       Text(
                         '12 August 2022',
                         style: CustomTextStyle.ts12reg,
+                        textAlign: TextAlign.left,
                       ),
                       SizedBox(
                         height: 19,
@@ -317,115 +320,110 @@ class MediaCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //height: 445,
-      width: double.infinity,
-      color: cardColor,
-      child: Column(
-        children: [
-          //Heading
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                //title
-                Text(
-                  'Latest News',
-                  style: CustomTextStyle.sc16semi,
-                ),
-                //arrow btn
-                Row(
+        //height: 445,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/image/social_db.jpg",
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(
+          color: blackColor50,
+          child: Column(
+            children: [
+              //Heading
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 30,
-                      width: 30,
-                      //alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: cardColor,
-                          border: Border.all(width: 1, color: blackColor05),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Center(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: ImageIcon(
-                            AssetImage(
-                              'assets/image/arrow_back.png',
+                    //title
+                    Text(
+                      'Social Media',
+                      style: CustomTextStyle.cc16semi,
+                    ),
+                    //arrow btn
+                    Row(
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 30,
+                          //alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              border: Border.all(width: 1, color: cardColor10),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: ImageIcon(
+                                AssetImage(
+                                  'assets/image/arrow_back.png',
+                                ),
+                                color: cardColor50,
+                              ),
                             ),
-                            color: textSecondary50,
                           ),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    //
-                    Container(
-                      height: 30,
-                      width: 30,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          border: Border.all(width: 1, color: blackColor05),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Center(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: ImageIcon(
-                            AssetImage(
-                              'assets/image/arrow_forward.png',
+                        SizedBox(
+                          width: 10,
+                        ),
+                        //
+                        Container(
+                          height: 30,
+                          width: 30,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: cardColor10,
+                              border: Border.all(width: 1, color: blackColor05),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: ImageIcon(
+                                AssetImage(
+                                  'assets/image/arrow_forward.png',
+                                ),
+                                color: cardColor,
+                              ),
                             ),
-                            color: cardColor,
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
-          ),
-          //News slide horizontally
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              children: [
-                //banner
-                Image.asset(
-                  'assets/image/news_db.jpg',
-                ),
-                //News title
-                Text(
-                  'Press Release',
-                  style: CustomTextStyle.tp16bold,
-                  textAlign: TextAlign.start,
-                ),
-                //news
-                Column(
+              ),
+              //News slide horizontally
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 114, 30, 25),
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    //News title
+                    Text(
+                      'Press Release',
+                      style: CustomTextStyle.cc16bold,
+                    ),
+                    //news
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Text(
                         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-                        style: CustomTextStyle.ts12reg,
+                        style: CustomTextStyle.cc12reg,
                       ),
                     ),
-                    //date
-                    Text(
-                      '12 August 2022',
-                      style: CustomTextStyle.ts12reg,
-                    ),
-                    SizedBox(
-                      height: 19,
-                    )
                   ],
                 ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+              ),
+            ],
+          ),
+        )
+        //
+        );
   }
 }
