@@ -1,73 +1,118 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/text_style.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/colors.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class OnboardUser extends StatefulWidget {
+  const OnboardUser({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<OnboardUser> createState() => _OnboardUserState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _OnboardUserState extends State<OnboardUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: ListView(children: [
+        Container(
+            color: bgColor,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     fit: BoxFit.fill,
+            //     image: AssetImage('assets/image/onboard01.jpg'),
+            //   ),
+            // ),
+            child: Stack(
+              children: [
+                //Banner Image
+                Image.asset(
+                  'assets/image/onboard01.jpg',
+                  fit: BoxFit.fill,
+                ),
+
+                //card
+                Positioned(
+                  top: 450,
+                  child: Container(
+                    //height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    color: cardColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          //Page Number
+                          Text.rich(TextSpan(
+                              text: '01',
+                              style: CustomTextStyle.tp18bold,
+                              children: <InlineSpan>[
+                                TextSpan(
+                                  text: '/03',
+                                  style: CustomTextStyle.ts18bold,
+                                )
+                              ])),
+
+                          //slogan
+                          Text.rich(
+                            TextSpan(
+                              text: 'Let\'s Make your ',
+                              style: CustomTextStyle.tp24bold,
+                              children: <InlineSpan>[
+                                TextSpan(
+                                  text: 'business trips ',
+                                  style: CustomTextStyle.pc24bold,
+                                ),
+                                TextSpan(
+                                  text: 'with more comfort & easier.',
+                                  style: CustomTextStyle.tp24bold,
+                                )
+                              ],
+                            ),
+                            maxLines: 3,
+                          ),
+                          //description
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: Text(
+                              'All type of plans are available as per your budget and accommodation will be free.',
+                              style: CustomTextStyle.ts14reg,
+                            ),
+                          ),
+
+                          Row(
+                            children: [
+                              //progress
+                              //button
+                              TextButton(
+                                  onPressed: () {},
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'Get Started',
+                                        style: CustomTextStyle.ts12reg,
+                                      ),
+                                      ImageIcon(
+                                        AssetImage(
+                                          'assets/image/onbtn.png',
+                                        ),
+                                        color: textSecondary50,
+                                      ),
+                                    ],
+                                  ))
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  //
+                )
+              ],
+            )),
+      ]),
     );
   }
 }

@@ -12,6 +12,10 @@ class CustomTextStyle {
       TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w600);
   static TextStyle tp16bold =
       TextStyle(color: textPrimary, fontSize: 16, fontWeight: FontWeight.w700);
+  static TextStyle tp18bold =
+      TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w700);
+  static TextStyle tp24bold =
+      TextStyle(color: textPrimary, fontSize: 24, fontWeight: FontWeight.w700);
   static TextStyle pc12semi =
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle pc12med =
@@ -20,6 +24,8 @@ class CustomTextStyle {
       TextStyle(color: primaryColor, fontSize: 14, fontWeight: FontWeight.w500);
   static TextStyle pc28bold =
       TextStyle(color: primaryColor, fontSize: 28, fontWeight: FontWeight.w700);
+  static TextStyle pc24bold =
+      TextStyle(color: primaryColor, fontSize: 24, fontWeight: FontWeight.w700);
   static TextStyle pc20semi =
       TextStyle(color: primaryColor, fontSize: 20, fontWeight: FontWeight.w600);
   static TextStyle sc12med = TextStyle(
@@ -68,8 +74,12 @@ class CustomTextStyle {
       color: textSecondary, fontSize: 14, fontWeight: FontWeight.w500);
   static TextStyle ts16med = TextStyle(
       color: textSecondary, fontSize: 16, fontWeight: FontWeight.w500);
+  static TextStyle ts18bold = TextStyle(
+      color: textSecondary, fontSize: 18, fontWeight: FontWeight.w700);
   static TextStyle ts12reg = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w400);
+  static TextStyle ts14reg = TextStyle(
+      color: textSecondary, fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle cc16med =
       TextStyle(color: cardColor, fontSize: 16, fontWeight: FontWeight.w500);
   static TextStyle cc16semi =
