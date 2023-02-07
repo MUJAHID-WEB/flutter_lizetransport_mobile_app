@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:lize/user/onboarding/onboard02.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:lize/common/text_style.dart';
 
 import '../../../common/colors.dart';
+import '../../common/bottom_nav_bar.dart';
+import '../dashboard/dboard/dboard.dart';
 
-class OnboardUser extends StatefulWidget {
-  const OnboardUser({super.key});
+class OnboardUser03 extends StatefulWidget {
+  const OnboardUser03({super.key});
 
   @override
-  State<OnboardUser> createState() => _OnboardUserState();
+  State<OnboardUser03> createState() => _OnboardUser03State();
 }
 
-class _OnboardUserState extends State<OnboardUser> {
+class _OnboardUser03State extends State<OnboardUser03> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +26,13 @@ class _OnboardUserState extends State<OnboardUser> {
               children: [
                 //Banner Image
                 Image.asset(
-                  'assets/image/onboard01.jpg',
+                  'assets/image/onboard03.jpg',
                   fit: BoxFit.fill,
                 ),
 
                 //card
                 Positioned(
-                  top: 440,
+                  top: 410,
                   child: Container(
                     //height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
@@ -50,7 +51,7 @@ class _OnboardUserState extends State<OnboardUser> {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 15),
                             child: Text.rich(TextSpan(
-                                text: '01',
+                                text: '03',
                                 style: CustomTextStyle.tp18bold,
                                 children: <InlineSpan>[
                                   TextSpan(
@@ -65,21 +66,12 @@ class _OnboardUserState extends State<OnboardUser> {
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: SizedBox(
                               height: 108,
-                              width: 318,
+                              width: 351,
                               child: Text.rich(
                                 TextSpan(
-                                  text: 'Let\'s Make your ',
+                                  text:
+                                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                                   style: CustomTextStyle.tp24bold,
-                                  children: <InlineSpan>[
-                                    TextSpan(
-                                      text: 'business trips ',
-                                      style: CustomTextStyle.pc24bold,
-                                    ),
-                                    TextSpan(
-                                      text: 'with more comfort & easier.',
-                                      style: CustomTextStyle.tp24bold,
-                                    )
-                                  ],
                                 ),
                                 maxLines: 3,
                               ),
@@ -110,7 +102,7 @@ class _OnboardUserState extends State<OnboardUser> {
                                     animationDuration: 2500,
                                     width: 150.0,
                                     lineHeight: 6.0,
-                                    percent: 0.33,
+                                    percent: 1.0,
                                     //linearStrokeCap: LinearStrokeCap.roundAll,
                                     progressColor: primaryColor,
                                     backgroundColor: textSecondary10,
@@ -118,47 +110,68 @@ class _OnboardUserState extends State<OnboardUser> {
                                   ),
                                 ),
 
-                                //button
-                                SizedBox(
-                                  height: 60,
-                                  width: 180,
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                OnboardUser02()),
-                                      );
-                                    },
-                                    style: ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll(
-                                          primaryColor),
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
+                                //arrow btn
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 50,
+                                      width: 50,
+                                      //alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: cardColor,
+                                          border: Border.all(
+                                              width: 1, color: blackColor05),
                                           borderRadius:
-                                              BorderRadius.circular(5.0),
+                                              BorderRadius.circular(5)),
+                                      child: Center(
+                                        child: IconButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          icon: ImageIcon(
+                                            AssetImage(
+                                              'assets/image/arrow_back.png',
+                                            ),
+                                            color: textSecondary50,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Get Started',
-                                          style: CustomTextStyle.cc16semi,
-                                        ),
-                                        ImageIcon(
-                                          AssetImage(
-                                            'assets/image/onbtn.png',
-                                          ),
-                                          color: cardColor,
-                                        ),
-                                      ],
+                                    SizedBox(
+                                      width: 10,
                                     ),
-                                  ),
+                                    //
+                                    Container(
+                                      height: 50,
+                                      width: 50,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: primaryColor,
+                                          border: Border.all(
+                                              width: 1, color: blackColor05),
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Center(
+                                        child: IconButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const HomePageUser(),
+                                              ),
+                                            );
+                                          },
+                                          icon: ImageIcon(
+                                            AssetImage(
+                                              'assets/image/arrow_forward.png',
+                                            ),
+                                            color: cardColor,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),

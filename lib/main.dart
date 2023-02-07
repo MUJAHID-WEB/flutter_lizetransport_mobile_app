@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
-import 'package:lize/user/dashboard/dboard/dboard.dart';
-import 'package:lize/user/dashboard/menu/menu.dart';
-import 'package:lize/user/onboarding/onboard.dart';
 
-import 'admin/dashboard_admin/dashboard_admin.dart';
-import 'admin/dashboard_admin/menu_admin.dart';
-import 'common/bottom_nav_bar.dart';
-import 'common/drawer.dart';
+import 'package:lize/user/onboarding/onboard.dart';
+import 'package:lize/user/onboarding/onboard02.dart';
+import 'package:lize/user/onboarding/onboard03.dart';
 
 void main() {
   runApp(const MyApp());
