@@ -4,6 +4,10 @@ import 'package:lize/common/colors.dart';
 class CustomTextStyle {
   static TextStyle tp14semi =
       TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w600);
+  static TextStyle tp14med =
+      TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle tp14reg =
+      TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle tp12semi =
       TextStyle(color: textPrimary, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle tp16semi =
@@ -15,6 +19,8 @@ class CustomTextStyle {
   static TextStyle tp18bold =
       TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w700);
   static TextStyle tp24bold =
+      TextStyle(color: textPrimary, fontSize: 24, fontWeight: FontWeight.w700);
+  static TextStyle tp32800 =
       TextStyle(color: textPrimary, fontSize: 24, fontWeight: FontWeight.w700);
   static TextStyle pc12semi =
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w600);

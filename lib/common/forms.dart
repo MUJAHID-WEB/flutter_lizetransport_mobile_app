@@ -124,3 +124,47 @@ Widget makeInputbg5({label, hintText, obscureText = false}) {
     ],
   );
 }
+
+//signin user bg05 radius 05
+Widget makeInput05tp5({label, hintText, obscureText = false}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        label,
+        style: CustomTextStyle.ts16med,
+      ),
+      SizedBox(
+        height: 10,
+      ),
+      TextField(
+        style: CustomTextStyle.tp14reg,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: textPrimary05,
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: textPrimary05),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: BorderSide(
+              color: textPrimary05,
+            ),
+          ),
+
+          // border: OutlineInputBorder(
+          //   borderSide: BorderSide(color: borderColor),
+          // ),
+          hintText: hintText,
+          hintStyle: CustomTextStyle.tp14reg,
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      )
+    ],
+  );
+}

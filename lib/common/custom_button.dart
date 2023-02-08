@@ -334,3 +334,88 @@ class WhiteBtn330 extends StatelessWidget {
     );
   }
 }
+
+// sign In
+
+//SC Button 330
+class ScBtn330 extends StatelessWidget {
+  const ScBtn330({super.key, required this.btnText});
+  final String btnText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 50,
+          width: double.infinity,
+          child: TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(secondaryColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.cc16bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+////CC Button 330
+class CcBtn330 extends StatelessWidget {
+  const CcBtn330({super.key, required this.btnText, required this.image});
+  final String btnText, image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 50,
+          width: double.infinity,
+          child: TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(cardColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                    side: BorderSide(
+                      color: textSecondary,
+                      width: 1.0,
+                    )),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  image,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  btnText,
+                  style: CustomTextStyle.tp16semi,
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        )
+      ],
+    );
+  }
+}
