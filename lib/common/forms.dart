@@ -162,9 +162,50 @@ Widget makeInput05tp5({label, hintText, obscureText = false}) {
           hintStyle: CustomTextStyle.tp14reg,
         ),
       ),
+    ],
+  );
+}
+
+//signup user bg25 radius 05
+Widget makeInput05cc25({label, hintText, obscureText = false}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        label,
+        style: CustomTextStyle.cc8016med,
+      ),
+      SizedBox(
+        height: 10,
+      ),
+      TextField(
+        style: CustomTextStyle.cc14reg,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: cardColor25,
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: cardColor25),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: BorderSide(
+              color: cardColor25,
+            ),
+          ),
+
+          // border: OutlineInputBorder(
+          //   borderSide: BorderSide(color: borderColor),
+          // ),
+          hintText: hintText,
+          hintStyle: CustomTextStyle.cc14reg,
+        ),
+      ),
       SizedBox(
         height: 20,
-      )
+      ),
     ],
   );
 }

@@ -1,72 +1,187 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/colors.dart';
+import 'package:lize/common/forms.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../../../common/custom_button.dart';
+import '../../../common/text_style.dart';
+import '../../onboarding/onboard02.dart';
+import '../sign_in/signin.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class SignUpUser extends StatefulWidget {
+  const SignUpUser({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SignUpUser> createState() => _SignUpUserState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class _SignUpUserState extends State<SignUpUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        // color: secondaryColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/image/signup.jpg",
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+            fit: BoxFit.fitWidth,
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Container(
+          color: blackColor50,
+          child: ListView(
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 45, 0, 10),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: ImageIcon(
+                              AssetImage(
+                                'assets/image/back_arrow.png',
+                              ),
+                              color: cardColor,
+                            ),
+                          ),
+                        ),
+                        Image.asset(
+                          'assets/image/logo_white.png',
+                          height: 54,
+                          width: 205.24,
+                        ),
+                      ],
+                    ),
+                  ),
+                  //
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 23, vertical: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Sign Up',
+                          style: CustomTextStyle.cc32800,
+                        ),
+                        //
+                        Text(
+                          'Create new Account.',
+                          style: CustomTextStyle.cc14reg,
+                        ),
+                        //
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              makeInput05cc25(label: 'Prefix', hintText: 'Mr.'),
+                              makeInput05cc25(
+                                  label: 'First Name', hintText: 'john|'),
+                              makeInput05cc25(
+                                  label: 'Last Name', hintText: 'john|'),
+                              makeInput05cc25(
+                                  label: 'Organization',
+                                  hintText: 'Type your Organization'),
+                              makeInput05cc25(
+                                  label: 'Language', hintText: 'French'),
+                              makeInput05cc25(
+                                  label: 'Telephone', hintText: '+1'),
+                              makeInput05cc25(
+                                  label: 'Mail',
+                                  hintText: 'Enter your mail ID'),
+                              makeInput05cc25(
+                                  label: 'Password',
+                                  hintText: '********',
+                                  obscureText: true),
+                            ],
+                          ),
+                          //
+                        ),
+
+                        //
+
+                        CcbgBtn330(
+                          btnText: 'Sign Up',
+                          //onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => OnboardUser02()),
+                          //);
+                          //},
+                        ),
+                        //
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 30),
+                          child: Center(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'By Clicking Signup you agree to our',
+                                  style: CustomTextStyle.cc14reg,
+                                ),
+                                Text(
+                                  'Terms & Service',
+                                  style: TextStyle(
+                                      color: cardColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        //
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                'Already have an account? ',
+                                style: CustomTextStyle.cc6014reg,
+                              ),
+                              TextButton(
+                                child: Text(
+                                  'Sign In',
+                                  style: TextStyle(
+                                      color: cardColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LogInUser()),
+                                  );
+                                },
+                              )
+                            ],
+                            mainAxisAlignment: MainAxisAlignment.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              //
+            ],
+          ),
+          //
+        ),
       ),
     );
   }

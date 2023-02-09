@@ -104,14 +104,21 @@ class CustomTextStyle {
       TextStyle(color: cardColor, fontSize: 12, fontWeight: FontWeight.w400);
   static TextStyle cc14med =
       TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle cc8016med =
+      TextStyle(color: cardColor80, fontSize: 16, fontWeight: FontWeight.w500);
   static TextStyle cc6014reg =
       TextStyle(color: cardColor60, fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle cc14semi =
       TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w600);
   static TextStyle cc10bold =
       TextStyle(color: cardColor, fontSize: 10, fontWeight: FontWeight.w700);
+  static TextStyle cc32800 =
+      TextStyle(color: cardColor, fontSize: 32, fontWeight: FontWeight.w800);
   static TextStyle bc16semi =
       TextStyle(color: blackColor, fontSize: 16, fontWeight: FontWeight.w600);
+
+  static TextStyle Su16bold = TextStyle(
+      color: Color(0xFF2F4226), fontSize: 16, fontWeight: FontWeight.w700);
 }
 
 

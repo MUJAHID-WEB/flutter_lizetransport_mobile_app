@@ -370,7 +370,7 @@ class ScBtn330 extends StatelessWidget {
   }
 }
 
-////CC Button 330
+////CC Button 330 social
 class CcBtn330 extends StatelessWidget {
   const CcBtn330({super.key, required this.btnText, required this.image});
   final String btnText, image;
@@ -413,8 +413,43 @@ class CcBtn330 extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 18,
         )
+      ],
+    );
+  }
+}
+
+// sign up
+
+//CC Button 330
+class CcbgBtn330 extends StatelessWidget {
+  const CcbgBtn330({super.key, required this.btnText});
+  final String btnText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 50,
+          width: double.infinity,
+          child: TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(cardColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.Su16bold,
+            ),
+          ),
+        ),
       ],
     );
   }

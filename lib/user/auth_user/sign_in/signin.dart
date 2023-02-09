@@ -35,7 +35,7 @@ class _LogInUserState extends State<LogInUser> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 10),
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 12),
                 child: Row(
                   children: [
                     Padding(
@@ -60,7 +60,7 @@ class _LogInUserState extends State<LogInUser> {
               ),
               //
               Container(
-                  height: MediaQuery.of(context).size.height,
+                  height: MediaQuery.of(context).size.height / 1.175,
                   decoration: BoxDecoration(
                       color: cardColor,
                       //border: Border.all(width: 1, color: blackColor05),
@@ -83,18 +83,24 @@ class _LogInUserState extends State<LogInUser> {
                         ),
                         //
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 25),
+                          padding: const EdgeInsets.symmetric(vertical: 20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               makeInput05tp5(
                                   label: 'Email',
                                   hintText: 'johndoe@gmail.com'),
+                              SizedBox(
+                                height: 20,
+                              ),
                               makeInput05tp5(
                                   label: 'Password',
                                   hintText: '********',
                                   obscureText: true),
                               //
+                              SizedBox(
+                                height: 10,
+                              ),
 
                               Text(
                                 'Forgot your Password?',
@@ -116,7 +122,7 @@ class _LogInUserState extends State<LogInUser> {
                           //},
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          padding: const EdgeInsets.symmetric(vertical: 15),
                           child: Image.asset(
                             'assets/image/orwith.jpg',
                           ),

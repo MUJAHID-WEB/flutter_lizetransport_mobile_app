@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
 import 'package:lize/user/auth_user/sign_in/signin.dart';
+import 'package:lize/user/auth_user/sign_up/signup.dart';
 
 import 'package:lize/user/onboarding/onboard.dart';
 import 'package:lize/user/onboarding/onboard02.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const LogInUser(),
+      home: const OnboardUser(),
     );
   }
 }
