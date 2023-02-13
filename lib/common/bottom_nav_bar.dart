@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Bottom Nav Bar
+  // Bottom Nav Bar for Admin
   int _selectedIndex = 0;
 
   final _pages = [
@@ -111,7 +111,7 @@ class HomePageUser extends StatefulWidget {
 }
 
 class _HomePageUserState extends State<HomePageUser> {
-  // Bottom Nav Bar
+  // Bottom Nav Bar for user
   int _selectedIndex = 0;
 
   final _pages = [

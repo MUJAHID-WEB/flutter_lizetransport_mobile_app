@@ -339,8 +339,9 @@ class WhiteBtn330 extends StatelessWidget {
 
 //SC Button 330
 class ScBtn330 extends StatelessWidget {
-  const ScBtn330({super.key, required this.btnText});
+  const ScBtn330({super.key, required this.btnText, required this.onPressed});
   final String btnText;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -350,7 +351,7 @@ class ScBtn330 extends StatelessWidget {
           height: 50,
           width: double.infinity,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(secondaryColor),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -372,8 +373,14 @@ class ScBtn330 extends StatelessWidget {
 
 ////CC Button 330 social
 class CcBtn330 extends StatelessWidget {
-  const CcBtn330({super.key, required this.btnText, required this.image});
+  const CcBtn330({
+    super.key,
+    required this.btnText,
+    required this.image,
+    required this.onPressed,
+  });
   final String btnText, image;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -383,7 +390,7 @@ class CcBtn330 extends StatelessWidget {
           height: 50,
           width: double.infinity,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(cardColor),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -424,8 +431,9 @@ class CcBtn330 extends StatelessWidget {
 
 //CC Button 330
 class CcbgBtn330 extends StatelessWidget {
-  const CcbgBtn330({super.key, required this.btnText});
+  const CcbgBtn330({super.key, required this.btnText, required this.onPressed});
   final String btnText;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -435,7 +443,7 @@ class CcbgBtn330 extends StatelessWidget {
           height: 50,
           width: double.infinity,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(cardColor),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

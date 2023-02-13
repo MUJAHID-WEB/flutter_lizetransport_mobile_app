@@ -4,6 +4,7 @@ import 'package:lize/common/text_style.dart';
 import '../../../common/appbar.dart';
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
+import '../reservation/reservation.dart';
 
 class DashboardUser extends StatefulWidget {
   const DashboardUser({super.key});
@@ -97,7 +98,13 @@ class ReservationCard extends StatelessWidget {
                             color: primaryColor,
                             borderRadius: BorderRadius.circular(50)),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Reservation()),
+                            );
+                          },
                           icon: ImageIcon(
                             AssetImage(
                               'assets/image/plane.png',

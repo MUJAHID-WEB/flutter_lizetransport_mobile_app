@@ -26,7 +26,7 @@ class _AppBarAdminState extends State<AppBarAdmin> {
         style: CustomTextStyle.tp18semi,
       ),
       leading: IconButton(
-        onPressed: () => ZoomDrawer.of(context)!.toggle(),
+        onPressed: () => ZoomDrawer.of(context)?.toggle(),
         icon: ImageIcon(
           AssetImage('assets/image/menu.png'),
         ),
@@ -96,7 +96,7 @@ class _AppBarUserState extends State<AppBarUser> {
         style: CustomTextStyle.tp18semi,
       ),
       leading: IconButton(
-        onPressed: () => ZoomDrawer.of(context)!.toggle(),
+        onPressed: () => ZoomDrawer.of(context)?.toggle(),
         icon: ImageIcon(
           AssetImage('assets/image/menu.png'),
         ),

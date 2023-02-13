@@ -8,6 +8,9 @@ import 'package:lize/user/onboarding/onboard.dart';
 import 'package:lize/user/onboarding/onboard02.dart';
 import 'package:lize/user/onboarding/onboard03.dart';
 
+import 'common/bottom_nav_bar.dart';
+import 'common/text_style.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -40,6 +43,17 @@ class MyApp extends StatelessWidget {
           ),
           centerTitle: true,
           toolbarHeight: 61,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          unselectedItemColor: textSecondary,
+          selectedItemColor: secondaryColor,
+          showUnselectedLabels: true,
+          showSelectedLabels: true,
+          selectedLabelStyle: CustomTextStyle.sc14semi,
+          unselectedLabelStyle: CustomTextStyle.ts14med,
+          backgroundColor: cardColor,
+          elevation: 12,
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

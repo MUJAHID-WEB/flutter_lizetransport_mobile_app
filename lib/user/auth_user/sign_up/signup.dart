@@ -113,13 +113,13 @@ class _SignUpUserState extends State<SignUpUser> {
 
                         CcbgBtn330(
                           btnText: 'Sign Up',
-                          //onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => OnboardUser02()),
-                          //);
-                          //},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LogInUser()),
+                            );
+                          },
                         ),
                         //
                         Padding(
