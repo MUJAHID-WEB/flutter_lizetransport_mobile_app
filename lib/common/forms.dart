@@ -20,7 +20,7 @@ Widget makeInput({label, hintText, obscureText = false}) {
           contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: borderColor),
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(5),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),

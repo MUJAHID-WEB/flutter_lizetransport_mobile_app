@@ -4,6 +4,8 @@ import 'package:lize/common/colors.dart';
 import 'package:lize/common/text_style.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
+import '../user/dashboard/notification/notification.dart';
+
 class AppBarAdmin extends StatefulWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
@@ -109,6 +111,10 @@ class _AppBarUserState extends State<AppBarUser> {
                   AssetImage('assets/image/bell.png'),
                 ),
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NotificationUser()),
+                  );
                   // setState(() {
                   //   counter = 0;
                   // });

@@ -1,73 +1,158 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/appbar.dart';
+import 'package:lize/common/colors.dart';
+import 'package:lize/common/text_style.dart';
 
-void main() {
-  runApp(const MyApp());
+import '../../../common/bottom_nav_bar.dart';
+import '../../../common/custom_button.dart';
+import '../../../common/dropdown.dart';
+import '../../../common/forms.dart';
+
+class NotificationUser extends StatefulWidget {
+  const NotificationUser({super.key});
+
+  @override
+  State<NotificationUser> createState() => _NotificationUserState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class _NotificationUserState extends State<NotificationUser> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return Scaffold(
+      appBar: AppBarUser(title: 'Notifications'),
+      resizeToAvoidBottomInset: false,
+      body: ListView(children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+          child: Container(
+            color: cardColor,
+            width: double.infinity,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //date
+                  Text(
+                    'Today - 10 June, 2020',
+                    style: CustomTextStyle.dc12reg,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  //
+                  Nmsg(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(
+                      thickness: 2,
+                      color: dividerColor,
+                    ),
+                  ),
+                  Nmsg(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(
+                      thickness: 2,
+                      color: dividerColor,
+                    ),
+                  ),
+                  Nmsg(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(
+                      thickness: 2,
+                      color: dividerColor,
+                    ),
+                  ),
+                  Nmsg(),
+                  SizedBox(
+                    height: 30,
+                  ),
+
+                  //
+                  Text(
+                    'Today - 07 June, 2020',
+                    style: CustomTextStyle.dc12reg,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  //
+                  Nmsg(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(
+                      thickness: 2,
+                      color: dividerColor,
+                    ),
+                  ),
+                  Nmsg(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ]),
+      //bottomNavigationBar: HomePageUser(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+//
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class Nmsg extends StatelessWidget {
+  const Nmsg({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+    return Row(
+      children: [
+        //bell
+        Container(
+          height: 40,
+          width: 40,
+          //alignment: Alignment.topRight,
+          decoration: BoxDecoration(
+              color: secondaryColor20,
+              //border: Border.all(width: 1, color: blackColor05),
+              borderRadius: BorderRadius.circular(10)),
+          child: Center(
+            child: ImageIcon(
+              AssetImage(
+                'assets/image/bell.png',
+              ),
+              color: secondaryColor,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+        SizedBox(
+          width: 10,
+        ),
+
+        SizedBox(
+          width: 270,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //heading
+              Text(
+                'Loreum Ipsum',
+                style: CustomTextStyle.sc16semi,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              //notifications
+              Text(
+                'Your prescription End date 25 Oct.add to the doctor\'s new prescription appointment.',
+                style: CustomTextStyle.ts14reg,
+                maxLines: 4,
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }

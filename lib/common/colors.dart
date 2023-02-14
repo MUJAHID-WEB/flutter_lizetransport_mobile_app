@@ -39,5 +39,7 @@ const assignBtn = Color(0xFFFF7A30);
 const assignBtn20 = Color(0x33FF7A30);
 const completedBtn = Color(0xFF172066);
 const completedBtn20 = Color(0x33172066);
+const dateColor = Color(0xFF6A6E83);
+const dividerColor = Color(0xFFEDF2F6);
 
 //

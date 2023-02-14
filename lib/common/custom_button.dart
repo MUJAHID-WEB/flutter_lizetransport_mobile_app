@@ -462,3 +462,59 @@ class CcbgBtn330 extends StatelessWidget {
     );
   }
 }
+
+//
+//User Button 335
+class UserButton335 extends StatelessWidget {
+  const UserButton335({super.key, required this.btnText, this.onPressed});
+  final String btnText;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 60,
+          //width: 335,
+          child: TextButton(
+            onPressed: onPressed,
+            style: ButtonStyle(
+              // padding: MaterialStateProperty.all<EdgeInsets>(
+              //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
+              backgroundColor: MaterialStatePropertyAll(primaryColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                  // side: BorderSide(
+                  //   color: primaryColor,
+                  //   width: 1.0,
+                  // ),
+                ),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ImageIcon(
+                  AssetImage('assets/image/send.png'),
+                  color: cardColor,
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text(
+                  btnText,
+                  style: CustomTextStyle.cc16semi,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

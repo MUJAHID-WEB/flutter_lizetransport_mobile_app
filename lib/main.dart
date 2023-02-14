@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/user/auth_user/sign_in/signin.dart';
 import 'package:lize/user/auth_user/sign_up/signup.dart';
+import 'package:lize/user/dashboard/notification/notification.dart';
+import 'package:lize/user/dashboard/reservation/reservation.dart';
+import 'package:lize/user/invoice/unpaid/unpaid.dart';
+import 'package:lize/user/message/msg_list/msg_list.dart';
 
 import 'package:lize/user/onboarding/onboard.dart';
 import 'package:lize/user/onboarding/onboard02.dart';
 import 'package:lize/user/onboarding/onboard03.dart';
+import 'package:lize/user/profile/profile_main/profile_main.dart';
 
 import 'common/bottom_nav_bar.dart';
+import 'common/dropdown.dart';
 import 'common/text_style.dart';
 
 void main() {
@@ -57,7 +63,8 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const OnboardUser(),
+      //home: const OnboardUser(),
+      home: ProfileUser(),
     );
   }
 }
