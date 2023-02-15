@@ -16,8 +16,12 @@ class CustomTextStyle {
       TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w600);
   static TextStyle tp16bold =
       TextStyle(color: textPrimary, fontSize: 16, fontWeight: FontWeight.w700);
+  static TextStyle tp16med =
+      TextStyle(color: textPrimary, fontSize: 16, fontWeight: FontWeight.w500);
   static TextStyle tp20bold =
       TextStyle(color: textPrimary, fontSize: 20, fontWeight: FontWeight.w700);
+  static TextStyle tp20semi =
+      TextStyle(color: textPrimary, fontSize: 20, fontWeight: FontWeight.w600);
   static TextStyle tp18bold =
       TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w700);
   static TextStyle tp24bold =
@@ -108,6 +112,8 @@ class CustomTextStyle {
       TextStyle(color: cardColor, fontSize: 12, fontWeight: FontWeight.w400);
   static TextStyle cc14med =
       TextStyle(color: cardColor, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle cc18semi =
+      TextStyle(color: cardColor, fontSize: 18, fontWeight: FontWeight.w600);
   static TextStyle cc8016med =
       TextStyle(color: cardColor80, fontSize: 16, fontWeight: FontWeight.w500);
   static TextStyle cc6014reg =

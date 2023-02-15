@@ -518,3 +518,95 @@ class UserButton335 extends StatelessWidget {
     );
   }
 }
+
+//
+//Save Button 335 user profile
+class SaveButton335 extends StatelessWidget {
+  const SaveButton335({super.key, required this.btnText, this.onPressed});
+  final String btnText;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 60,
+          //width: 335,
+          child: TextButton(
+            onPressed: onPressed,
+            style: ButtonStyle(
+              // padding: MaterialStateProperty.all<EdgeInsets>(
+              //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
+              backgroundColor: MaterialStatePropertyAll(primaryColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                  // side: BorderSide(
+                  //   color: primaryColor,
+                  //   width: 1.0,
+                  // ),
+                ),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  btnText,
+                  style: CustomTextStyle.cc16semi,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// BookNow Button
+
+class BookNow extends StatelessWidget {
+  const BookNow({super.key, required this.btnText});
+  final String btnText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 50,
+          width: 160,
+          child: TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              // padding: MaterialStateProperty.all<EdgeInsets>(
+              //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
+              backgroundColor: MaterialStatePropertyAll(cardColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(21.0),
+                  side: BorderSide(
+                    color: cardColor20,
+                    width: 1.0,
+                  ),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.ts16med,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
