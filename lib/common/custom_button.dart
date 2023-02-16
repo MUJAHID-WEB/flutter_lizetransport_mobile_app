@@ -571,8 +571,9 @@ class SaveButton335 extends StatelessWidget {
 // BookNow Button
 
 class BookNow extends StatelessWidget {
-  const BookNow({super.key, required this.btnText});
+  const BookNow({super.key, required this.btnText, this.onPressed});
   final String btnText;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -582,27 +583,71 @@ class BookNow extends StatelessWidget {
           height: 15,
         ),
         SizedBox(
-          height: 50,
-          width: 160,
+          height: 42,
+          width: 120,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               // padding: MaterialStateProperty.all<EdgeInsets>(
               //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
-              backgroundColor: MaterialStatePropertyAll(cardColor),
+              backgroundColor: MaterialStatePropertyAll(cardColor20),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(21.0),
-                  side: BorderSide(
-                    color: cardColor20,
-                    width: 1.0,
-                  ),
+                  // side: BorderSide(
+                  //   color: cardColor20,
+                  //   width: 1.0,
+                  // ),
                 ),
               ),
             ),
             child: Text(
               btnText,
-              style: CustomTextStyle.ts16med,
+              style: CustomTextStyle.cc16semi,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// Add to Reservation Button
+
+class AddReservation extends StatelessWidget {
+  const AddReservation({super.key, required this.btnText, this.onPressed});
+  final String btnText;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 42,
+          width: 184,
+          child: TextButton(
+            onPressed: onPressed,
+            style: ButtonStyle(
+              // padding: MaterialStateProperty.all<EdgeInsets>(
+              //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
+              backgroundColor: MaterialStatePropertyAll(cardColor20),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(21.0),
+                  // side: BorderSide(
+                  //   color: cardColor20,
+                  //   width: 1.0,
+                  // ),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.cc16semi,
             ),
           ),
         ),

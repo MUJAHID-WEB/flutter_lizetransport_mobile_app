@@ -45,5 +45,6 @@ const completedBtn20 = Color(0x33172066);
 const dateColor = Color(0xFF6A6E83);
 const dividerColor = Color(0xFFEDF2F6);
 const overlayColor = Color(0xFFD9D9D9);
+const RedColor = Color(0xFFF36A6A);
 
 //

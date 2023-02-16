@@ -138,7 +138,7 @@ class _DropdownItem02State extends State<DropdownItem02> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Select Transportation',
+          'Passengers',
           style: CustomTextStyle.tp14semi,
         ),
 

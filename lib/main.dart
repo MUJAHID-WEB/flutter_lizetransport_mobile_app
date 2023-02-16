@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
+import 'package:lize/user/amenities/drinks/drinks.dart';
 import 'package:lize/user/plane/private_jet/private_jet.dart';
 
 import 'package:lize/user/trips/current_trip/current_trip.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       //home: const OnboardUser(),
-      home: PlaneUser(),
+      home: AmenitiesUser(),
     );
   }
 }
