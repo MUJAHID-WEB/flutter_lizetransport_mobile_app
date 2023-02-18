@@ -44,7 +44,9 @@ class _LogInUserState extends State<LogInUser> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                         icon: ImageIcon(
                           AssetImage(
                             'assets/image/back_arrow.png',
@@ -120,7 +122,7 @@ class _LogInUserState extends State<LogInUser> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomePageUser()),
+                                  builder: (context) => HomeUser()),
                             );
                           },
                         ),

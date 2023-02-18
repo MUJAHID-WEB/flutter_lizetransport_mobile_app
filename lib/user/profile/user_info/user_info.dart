@@ -18,7 +18,7 @@ class _UserInfoState extends State<UserInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUser(
+      appBar: AppBarUserBack(
         title: 'User Information',
       ),
       resizeToAvoidBottomInset: false,

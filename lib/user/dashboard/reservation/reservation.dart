@@ -19,7 +19,7 @@ class _ReservationState extends State<Reservation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUser(title: 'Reservation'),
+      appBar: AppBarUserBack(title: 'Reservation'),
       resizeToAvoidBottomInset: false,
       body: ListView(children: [
         Padding(

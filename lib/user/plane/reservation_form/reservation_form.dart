@@ -18,7 +18,7 @@ class _ReservationPlaneState extends State<ReservationPlane> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUser(
+      appBar: AppBarUserBack(
         title: 'Planes',
       ),
       resizeToAvoidBottomInset: false,

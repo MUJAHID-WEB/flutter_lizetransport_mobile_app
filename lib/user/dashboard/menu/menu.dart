@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/text_style.dart';
 
+import '../../../common/bottom_nav_bar.dart';
 import '../../../common/colors.dart';
+import '../../auth_user/sign_in/signin.dart';
+import '../dboard/dboard.dart';
 
 class MenuUser extends StatefulWidget {
   const MenuUser({super.key});
@@ -53,11 +56,17 @@ class _MenuUserState extends State<MenuUser> {
                         ],
                       ),
                       //cross
-                      ImageIcon(
-                        AssetImage(
-                          'assets/image/cancel.png',
+                      //Navigator.of(context).pop();
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: ImageIcon(
+                          AssetImage(
+                            'assets/image/cancel.png',
+                          ),
+                          color: cardColor,
                         ),
-                        color: cardColor,
                       ),
                     ],
                   ),
@@ -70,6 +79,13 @@ class _MenuUserState extends State<MenuUser> {
                       MenuListW(
                         iconMain: AssetImage("assets/image/dashboard.png"),
                         title: 'Dashboard',
+                        // onPressed: () {
+                        //   Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => HomePageUser()),
+                        //   );
+                        // },
                       ),
                       MenuListW50(
                         iconMain: AssetImage("assets/image/trip.png"),
@@ -93,6 +109,13 @@ class _MenuUserState extends State<MenuUser> {
                       MenuListW(
                         iconMain: AssetImage("assets/image/logout_admin.png"),
                         title: 'Logout',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LogInUser()),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -109,29 +132,34 @@ class _MenuUserState extends State<MenuUser> {
 //
 
 class MenuListW extends StatelessWidget {
-  const MenuListW({super.key, required this.iconMain, required this.title});
+  const MenuListW(
+      {super.key, required this.iconMain, required this.title, this.onPressed});
   final AssetImage iconMain;
   final String title;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
-        children: [
-          //icon
-          ImageIcon(
-            iconMain,
-            color: cardColor,
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          //title
-          Text(
-            title,
-            style: CustomTextStyle.cc14med,
-          ),
-        ],
+      child: TextButton(
+        onPressed: onPressed,
+        child: Row(
+          children: [
+            //icon
+            ImageIcon(
+              iconMain,
+              color: cardColor,
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            //title
+            Text(
+              title,
+              style: CustomTextStyle.cc14med,
+            ),
+          ],
+        ),
       ),
     );
   }

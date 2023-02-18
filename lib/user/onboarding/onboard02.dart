@@ -35,7 +35,7 @@ class _OnboardUser02State extends State<OnboardUser02> {
           ),
           //card
           Positioned(
-            top: 410,
+            top: 430,
             child: Container(
               //height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,

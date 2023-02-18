@@ -18,7 +18,7 @@ class _AddAmenitiesState extends State<AddAmenities> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUser(
+      appBar: AppBarUserBack(
         title: 'Amenities',
       ),
       body: SingleChildScrollView(

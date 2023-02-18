@@ -18,7 +18,7 @@ class _OrgInfoState extends State<OrgInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUser(
+      appBar: AppBarUserBack(
         title: 'Organizational Information',
       ),
       resizeToAvoidBottomInset: false,

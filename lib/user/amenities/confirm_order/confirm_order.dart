@@ -17,7 +17,7 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarUser(
+      appBar: AppBarUserBack(
         title: 'Amenities',
       ),
       body: SingleChildScrollView(

@@ -44,7 +44,9 @@ class _SignUpUserState extends State<SignUpUser> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
                             icon: ImageIcon(
                               AssetImage(
                                 'assets/image/back_arrow.png',

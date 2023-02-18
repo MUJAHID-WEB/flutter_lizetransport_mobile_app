@@ -4,11 +4,13 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lize/common/appbar.dart';
 import 'package:lize/common/bottom_nav_bar.dart';
 import 'package:lize/common/colors.dart';
-
+import 'package:get/get.dart';
 import '../admin/dashboard_admin/dashboard_admin.dart';
 import '../admin/dashboard_admin/menu_admin.dart';
+import '../user/dashboard/dboard/dboard.dart';
 import '../user/dashboard/menu/menu.dart';
 
+//Admin
 class hpage extends StatefulWidget {
   const hpage({super.key});
 
@@ -60,13 +62,15 @@ class _HomeUserState extends State<HomeUser> {
       borderRadius: 30,
       angle: 0,
       slideWidth: MediaQuery.of(context).size.width * 0.6,
-      // controller: _controller,
+      // controller: _.zoomDrawerController,
       mainScreen: HomePageUser(),
+      // mainScreen: DashboardUser(),
       mainScreenScale: 0.36,
       menuScreen: MenuUser(),
       menuScreenWidth: double.infinity,
       duration: Duration(milliseconds: 550),
       //openDragSensitivity: 525,
+      //  ),
     );
   }
 }

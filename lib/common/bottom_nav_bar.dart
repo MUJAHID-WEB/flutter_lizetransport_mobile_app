@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/common/text_style.dart';
@@ -7,6 +8,8 @@ import '../admin/message_admin/msg_list_admin.dart';
 import '../admin/reservation_admin/reservation_admin.dart';
 import '../admin/trips_admin/current_trips_admin.dart';
 import '../user/dashboard/dboard/dboard.dart';
+import '../user/invoice/cancelled/cancelled.dart';
+import '../user/invoice/paid/paid.dart';
 import '../user/invoice/unpaid/unpaid.dart';
 import '../user/message/msg_list/msg_list.dart';
 import '../user/profile/profile_main/profile_main.dart';
@@ -102,7 +105,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-//
+//User BottomNavigationBar
 class HomePageUser extends StatefulWidget {
   const HomePageUser({super.key});
 
@@ -114,7 +117,7 @@ class _HomePageUserState extends State<HomePageUser> {
   // Bottom Nav Bar for user
   int _selectedIndex = 0;
 
-  final _pages = [
+  static const List<Widget> _widgetOptions = <Widget>[
     DashboardUser(),
     UnpaidInvoice(),
     MsgListUser(),
@@ -130,7 +133,8 @@ class _HomePageUserState extends State<HomePageUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
+      body: _widgetOptions.elementAt(_selectedIndex),
+      //_pages[_selectedIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           boxShadow: <BoxShadow>[
@@ -148,7 +152,7 @@ class _HomePageUserState extends State<HomePageUser> {
           child: SizedBox(
             height: 84,
             child: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
+              type: BottomNavigationBarType.shifting,
               iconSize: 25,
               unselectedItemColor: textSecondary,
               selectedItemColor: secondaryColor,
@@ -193,3 +197,66 @@ class _HomePageUserState extends State<HomePageUser> {
     );
   }
 }
+
+// class HomePageUser extends StatelessWidget {
+//   const HomePageUser({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return CupertinoTabScaffold(
+//       tabBar: CupertinoTabBar(items: <BottomNavigationBarItem>[
+//         BottomNavigationBarItem(
+//           icon: ImageIcon(
+//             AssetImage('assets/image/dashboard.png'),
+//           ),
+//           label: "Dashboard",
+//         ),
+//         BottomNavigationBarItem(
+//           icon: ImageIcon(
+//             AssetImage('assets/image/invoice.png'),
+//           ),
+//           label: "Invoices",
+//         ),
+//         BottomNavigationBarItem(
+//           icon: ImageIcon(
+//             AssetImage('assets/image/msg.png'),
+//           ),
+//           label: "Messages",
+//         ),
+//         BottomNavigationBarItem(
+//           icon: ImageIcon(
+//             AssetImage('assets/image/profile.png'),
+//           ),
+//           label: "My Profile",
+//         ),
+//       ]),
+//       tabBuilder: (context, index) {
+//         switch (index) {
+//           case 0:
+//             return CupertinoTabView(builder: (context) {
+//               return CupertinoPageScaffold(child: DashboardUser());
+//             });
+//           case 1:
+//             return CupertinoTabView(builder: (context) {
+//               return CupertinoPageScaffold(child: UnpaidInvoice());
+//             });
+//           case 3:
+//             return CupertinoTabView(builder: (context) {
+//               return CupertinoPageScaffold(child: MsgListUser());
+//             });
+//           case 4:
+//             return CupertinoTabView(builder: (context) {
+//               return CupertinoPageScaffold(child: ProfileUser());
+//             });
+//           default:
+//             return CupertinoTabView(
+//               builder: (context) {
+//                 return CupertinoPageScaffold(child: DashboardUser());
+//               },
+//             );
+//         }
+
+//       },
+//     );
+//   }
+// }

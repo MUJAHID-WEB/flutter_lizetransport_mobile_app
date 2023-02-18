@@ -14,7 +14,16 @@ class UnpaidInvoice extends StatefulWidget {
   State<UnpaidInvoice> createState() => _UnpaidInvoiceState();
 }
 
-class _UnpaidInvoiceState extends State<UnpaidInvoice> {
+class _UnpaidInvoiceState extends State<UnpaidInvoice>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = new TabController(length: 3, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +33,7 @@ class _UnpaidInvoiceState extends State<UnpaidInvoice> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
           child: Container(
             color: cardColor,
             height: MediaQuery.of(context).size.height,
@@ -32,153 +41,157 @@ class _UnpaidInvoiceState extends State<UnpaidInvoice> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 20, 253, 0),
+                  padding: const EdgeInsets.fromLTRB(30, 20, 253, 10),
                   child: Text(
                     'Invoices',
                     style: CustomTextStyle.tp16semi,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  child: Divider(),
-                ),
+                Divider(),
+
                 //
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+                TabBar(
+                  isScrollable: true,
+                  unselectedLabelColor: textSecondary,
+                  unselectedLabelStyle: CustomTextStyle.ts14reg,
+                  labelColor: secondaryColor,
+                  labelStyle: CustomTextStyle.sc14semi,
+                  tabs: [
+                    Tab(
+                      text: 'Unpaid Invoices',
+                    ),
+                    Tab(
+                      text: 'Paid Invoices',
+                    ),
+                    Tab(
+                      text: 'Cancelled Invoices',
+                    )
+                  ],
+                  controller: _tabController,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicatorColor: cardColor,
+                ),
+                Expanded(
+                  child: TabBarView(
                     children: [
-                      //
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Unpaid Invoices',
-                          style: CustomTextStyle.sc14semi,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PaidInvoice()),
-                          );
-                        },
-                        child: Text(
-                          'Paid Invoices',
-                          style: CustomTextStyle.ts14reg,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CancelledInvoice()),
-                          );
-                        },
-                        child: Text(
-                          'cancelled Invoices',
-                          style: CustomTextStyle.ts14reg,
-                        ),
-                      ),
+                      Unpaid(),
+                      paid(),
+                      Cancelled(),
                     ],
+                    controller: _tabController,
                   ),
-                ),
-
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    UnpExTitle(
-                      id: 'I909112',
-                      date: '23/08/2022',
-                      btntext: 'Unpaid',
-                    ),
-
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Trip',
-                            data: 'T901122',
-                          ),
-                          TableC(
-                            heading: 'Payment Method',
-                            data: 'ACH',
-                          ),
-                          TableW(
-                            heading: 'Due Date',
-                            data: '01/31/2023',
-                          ),
-                          TableC(
-                            heading: 'Invoice Amount',
-                            data: '13.500.000',
-                          ),
-                          TableW(
-                            heading: 'Balance Due',
-                            data: '4.500.000',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                //
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    UnpExTitle(
-                      id: 'I909112',
-                      date: '23/08/2022',
-                      btntext: 'Unpaid',
-                    ),
-
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Trip',
-                            data: 'T901122',
-                          ),
-                          TableC(
-                            heading: 'Payment Method',
-                            data: 'ACH',
-                          ),
-                          TableW(
-                            heading: 'Due Date',
-                            data: '01/31/2023',
-                          ),
-                          TableC(
-                            heading: 'Invoice Amount',
-                            data: '13.500.000',
-                          ),
-                          TableW(
-                            heading: 'Balance Due',
-                            data: '4.500.000',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+}
+
+//
+class Unpaid extends StatelessWidget {
+  const Unpaid({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Column(
+          children: [
+            //
+            Divider(),
+
+            //creator
+            UnpExTitle(
+              id: 'I909112',
+              date: '23/08/2022',
+              btntext: 'Unpaid',
+            ),
+
+            //Table
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: [
+                  TableW(
+                    heading: 'Trip',
+                    data: 'T901122',
+                  ),
+                  TableC(
+                    heading: 'Payment Method',
+                    data: 'ACH',
+                  ),
+                  TableW(
+                    heading: 'Due Date',
+                    data: '01/31/2023',
+                  ),
+                  TableC(
+                    heading: 'Invoice Amount',
+                    data: '13.500.000',
+                  ),
+                  TableW(
+                    heading: 'Balance Due',
+                    data: '4.500.000',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        //
+        Column(
+          children: [
+            //
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Divider(),
+            ),
+            //creator
+            UnpExTitle(
+              id: 'I909112',
+              date: '23/08/2022',
+              btntext: 'Unpaid',
+            ),
+
+            //Table
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: [
+                  TableW(
+                    heading: 'Trip',
+                    data: 'T901122',
+                  ),
+                  TableC(
+                    heading: 'Payment Method',
+                    data: 'ACH',
+                  ),
+                  TableW(
+                    heading: 'Due Date',
+                    data: '01/31/2023',
+                  ),
+                  TableC(
+                    heading: 'Invoice Amount',
+                    data: '13.500.000',
+                  ),
+                  TableW(
+                    heading: 'Balance Due',
+                    data: '4.500.000',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
