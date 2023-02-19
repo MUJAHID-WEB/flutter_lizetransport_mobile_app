@@ -6,6 +6,8 @@ class CustomTextStyle {
       TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w600);
   static TextStyle tp14med =
       TextStyle(color: textPrimary, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle tp12med =
+      TextStyle(color: textPrimary, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle tp18med =
       TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.w500);
   static TextStyle tp14reg =

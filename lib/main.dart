@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
-import 'package:lize/user/amenities/drinks/drinks.dart';
-import 'package:lize/user/invoice/unpaid/unpaid.dart';
+import 'package:lize/user/message/msg_list/msg_list.dart';
 import 'package:lize/user/onboarding/onboard.dart';
-import 'package:lize/user/plane/private_jet/private_jet.dart';
-import 'package:lize/user/profile/profile_main/profile_main.dart';
-import 'package:lize/user/profile/profile_visa/profile_visa.dart';
-import 'package:lize/user/trips/cancelled_trip/cancelled_trip.dart';
 
-import 'package:lize/user/trips/current_trip/current_trip.dart';
-
-import 'common/drawer.dart';
 import 'common/text_style.dart';
 
 void main() {
@@ -60,8 +52,8 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const OnboardUser(),
-      //home: CancelTrips(),
+      //home: const OnboardUser(),
+      home: MsgListUser(),
     );
   }
 }

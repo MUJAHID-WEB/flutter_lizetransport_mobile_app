@@ -3,7 +3,10 @@ import 'package:lize/common/text_style.dart';
 
 import '../../../common/bottom_nav_bar.dart';
 import '../../../common/colors.dart';
+import '../../amenities/add_amenities/add_amenities.dart';
 import '../../auth_user/sign_in/signin.dart';
+import '../../plane/private_jet/private_jet.dart';
+import '../../trips/current_trip/current_trip.dart';
 import '../dboard/dboard.dart';
 
 class MenuUser extends StatefulWidget {
@@ -26,8 +29,7 @@ class _MenuUserState extends State<MenuUser> {
             Column(
               children: [
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 50),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -59,7 +61,12 @@ class _MenuUserState extends State<MenuUser> {
                       //Navigator.of(context).pop();
                       IconButton(
                         onPressed: () {
-                          Navigator.of(context).pop();
+                          // Navigator.of(context).pop();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePageUser()),
+                          );
                         },
                         icon: ImageIcon(
                           AssetImage(
@@ -73,35 +80,63 @@ class _MenuUserState extends State<MenuUser> {
                 ),
                 //menu list
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 38),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     children: [
                       MenuListW(
                         iconMain: AssetImage("assets/image/dashboard.png"),
                         title: 'Dashboard',
-                        // onPressed: () {
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => HomePageUser()),
-                        //   );
-                        // },
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePageUser()),
+                          );
+                        },
                       ),
                       MenuListW50(
                         iconMain: AssetImage("assets/image/trip.png"),
                         title: 'My Trips',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CurrentTrips()),
+                          );
+                        },
                       ),
                       MenuListW50(
                         iconMain: AssetImage("assets/image/plane_menu.png"),
                         title: 'Planes',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PlaneUser()),
+                          );
+                        },
                       ),
                       MenuListW50(
                         iconMain: AssetImage("assets/image/amenities.png"),
                         title: 'Amenities',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddAmenities()),
+                          );
+                        },
                       ),
                       MenuListW50(
                         iconMain: AssetImage("assets/image/help.png"),
                         title: 'Help',
+                        onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => HomePageUser()),
+                          // );
+                        },
                       ),
                       SizedBox(height: 200),
 
@@ -139,27 +174,26 @@ class MenuListW extends StatelessWidget {
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: TextButton(
-        onPressed: onPressed,
-        child: Row(
-          children: [
-            //icon
-            ImageIcon(
-              iconMain,
-              color: cardColor,
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            //title
-            Text(
-              title,
-              style: CustomTextStyle.cc14med,
-            ),
-          ],
-        ),
+    return ListTile(
+      // selectedColor: cardColor,
+      // selectedTileColor: cardColor,
+      onTap: onPressed,
+      title: Row(
+        children: [
+          //icon
+          ImageIcon(
+            iconMain,
+            color: cardColor,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          //title
+          Text(
+            title,
+            style: CustomTextStyle.cc14med,
+          ),
+        ],
       ),
     );
   }
@@ -168,14 +202,18 @@ class MenuListW extends StatelessWidget {
 //
 
 class MenuListW50 extends StatelessWidget {
-  const MenuListW50({super.key, required this.iconMain, required this.title});
+  const MenuListW50(
+      {super.key, required this.iconMain, required this.title, this.onPressed});
   final AssetImage iconMain;
   final String title;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
+    return ListTile(
+      // selectedColor: cardColor,
+      // selectedTileColor: cardColor,
+      onTap: onPressed,
+      title: Row(
         children: [
           //icon
           ImageIcon(

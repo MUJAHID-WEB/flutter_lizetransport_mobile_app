@@ -51,6 +51,7 @@ class HomeUser extends StatefulWidget {
 }
 
 class _HomeUserState extends State<HomeUser> {
+  final _drawerController = ZoomDrawerController();
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
@@ -62,9 +63,9 @@ class _HomeUserState extends State<HomeUser> {
       borderRadius: 30,
       angle: 0,
       slideWidth: MediaQuery.of(context).size.width * 0.6,
-      // controller: _.zoomDrawerController,
-      mainScreen: HomePageUser(),
+      controller: _drawerController,
       // mainScreen: DashboardUser(),
+      mainScreen: HomePageUser(),
       mainScreenScale: 0.36,
       menuScreen: MenuUser(),
       menuScreenWidth: double.infinity,

@@ -10,6 +10,7 @@ import '../reservation_trip/reservation_trip.dart';
 
 class CurrentTrips extends StatefulWidget {
   const CurrentTrips({super.key});
+  // final zoomController;
 
   @override
   State<CurrentTrips> createState() => _CurrentTripsState();

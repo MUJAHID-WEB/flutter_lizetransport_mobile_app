@@ -82,8 +82,10 @@ class AppBarUser extends StatefulWidget with PreferredSizeWidget {
   final Size preferredSize;
   final String title;
 
-  AppBarUser({Key? key, required this.title})
-      : preferredSize = const Size.fromHeight(61.0),
+  AppBarUser({
+    Key? key,
+    required this.title,
+  })  : preferredSize = const Size.fromHeight(61.0),
         super(key: key);
 
   @override
@@ -100,6 +102,7 @@ class _AppBarUserState extends State<AppBarUser> {
       ),
       leading: IconButton(
         onPressed: () => ZoomDrawer.of(context)!.toggle(),
+        //onPressed: () => widget.zoomController.toggle(),
         icon: ImageIcon(
           AssetImage('assets/image/menu.png'),
         ),

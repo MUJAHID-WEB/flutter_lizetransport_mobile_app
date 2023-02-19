@@ -9,6 +9,8 @@ import '../reservation/reservation.dart';
 class DashboardUser extends StatefulWidget {
   const DashboardUser({super.key});
 
+  //final zoomController;
+
   @override
   State<DashboardUser> createState() => _DashboardUserState();
 }
@@ -20,6 +22,13 @@ class _DashboardUserState extends State<DashboardUser> {
       appBar: AppBarUser(
         title: 'Dashboard',
       ),
+      // appBar: AppBar(
+      //   title: Text("widget.title"),
+      //   leading: InkWell(
+      //     onTap: () => widget.zoomController.toggle(),
+      //     child: Icon(Icons.menu),
+      //   ),
+      // ),
       body: ListView(children: [
         Container(
             color: bgColor,
