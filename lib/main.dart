@@ -52,8 +52,7 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: const OnboardUser(),
-      home: MsgListUser(),
+      home: const OnboardUser(),
     );
   }
 }
