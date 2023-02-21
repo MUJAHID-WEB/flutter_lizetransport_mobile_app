@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/common/text_style.dart';
 
+//Select Transportation 05
 class DropdownItem extends StatefulWidget {
   const DropdownItem({super.key, required this.label});
   final String label;
@@ -9,7 +10,6 @@ class DropdownItem extends StatefulWidget {
   State<DropdownItem> createState() => _DropdownItemState();
 }
 
-//Select Transportation
 class _DropdownItemState extends State<DropdownItem> {
   String selectedValue = "FALCON 8X/LX-EBO";
   @override
@@ -77,6 +77,154 @@ List<DropdownMenuItem<String>> get dropdownItems {
   return menuItems;
 }
 
+//Select Transportation 30
+class DropdownItem30 extends StatefulWidget {
+  const DropdownItem30({super.key, required this.label});
+  final String label;
+  @override
+  State<DropdownItem30> createState() => _DropdownItem30State();
+}
+
+class _DropdownItem30State extends State<DropdownItem30> {
+  String selectedValue = "FALCON 8X/LX-EBO";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Select Transportation',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: dropdownItems30,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get dropdownItems30 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO"), value: "FALCON 8X/LX-EBO"),
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO2"), value: "FALCON 8X/LX-EBO2"),
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO3"), value: "FALCON 8X/LX-EBO3"),
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO4"), value: "FALCON 8X/LX-EBO4"),
+  ];
+  return menuItems;
+}
+
+//Dashboard Admin Revenue
+class DropdownRevenue extends StatefulWidget {
+  const DropdownRevenue({super.key, required this.label});
+  final String label;
+  @override
+  State<DropdownRevenue> createState() => _DropdownRevenueState();
+}
+
+class _DropdownRevenueState extends State<DropdownRevenue> {
+  String selectedValue = "Weekly";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 22, 0, 0),
+          child: Text(
+            'Revenue of last week',
+            style: CustomTextStyle.bc16semi,
+          ),
+        ),
+
+        //
+        Padding(
+          padding: const EdgeInsets.fromLTRB(10, 0, 250, 10),
+          child: DropdownButtonFormField(
+            focusColor: cardColor,
+            value: selectedValue,
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: cardColor),
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: cardColor,
+                ),
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              filled: true,
+              fillColor: cardColor,
+            ),
+            dropdownColor: cardColor,
+            icon: ImageIcon(
+              AssetImage('assets/image/dropdown.png'),
+              color: textSecondary,
+            ),
+            style: CustomTextStyle.ts14reg,
+            items: dropdownItems06,
+            onChanged: (String? newValue) {
+              setState(() {
+                selectedValue = newValue!;
+              });
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get dropdownItems06 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("Weekly"), value: "Weekly"),
+    DropdownMenuItem(child: Text("Monthly"), value: "Monthly"),
+    DropdownMenuItem(child: Text("Yearly"), value: "Yearly"),
+  ];
+  return menuItems;
+}
+
+//
+
 //class _DropdownItemState extends State<DropdownItem> {
 //   String? selectedValue = null;
 //   final _dropdownFormKey = GlobalKey<FormState>();
@@ -122,7 +270,7 @@ List<DropdownMenuItem<String>> get dropdownItems {
 //   }
 // }
 
-//Passengers
+//Passengers 05
 class DropdownItem02 extends StatefulWidget {
   const DropdownItem02({super.key, required this.label});
   final String label;
@@ -193,6 +341,78 @@ List<DropdownMenuItem<String>> get dropdownItems02 {
   return menuItems;
 }
 
+//Passengers 30
+class DropdownItem0230 extends StatefulWidget {
+  const DropdownItem0230({super.key, required this.label});
+  final String label;
+  @override
+  State<DropdownItem0230> createState() => _DropdownItem0230State();
+}
+
+class _DropdownItem0230State extends State<DropdownItem0230> {
+  String selectedValue = "01";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Passengers',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: dropdownItems0230,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get dropdownItems0230 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("01"), value: "01"),
+    DropdownMenuItem(child: Text("O2"), value: "O2"),
+    DropdownMenuItem(child: Text("O3"), value: "O3"),
+    DropdownMenuItem(child: Text("O4"), value: "O4"),
+  ];
+  return menuItems;
+}
+
+//
 //
 //Prefix profile user info
 class PrUserInfo extends StatefulWidget {

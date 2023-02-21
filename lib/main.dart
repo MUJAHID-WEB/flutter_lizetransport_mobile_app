@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:lize/common/colors.dart';
-import 'package:lize/user/message/msg_list/msg_list.dart';
+
 import 'package:lize/user/onboarding/onboard.dart';
 
+import 'admin/dashboard_admin/menu_admin.dart';
+import 'admin/onboard_admin/onboard_admin.dart';
+import 'admin/reservation_admin/edit_reservation.dart';
+import 'admin/reservation_admin/reservation_admin.dart';
 import 'common/text_style.dart';
 
 void main() {
@@ -20,8 +24,8 @@ class MyApp extends StatelessWidget {
       title: 'Lize Transport',
       theme: ThemeData(
         fontFamily: 'Poppins',
-
-        scaffoldBackgroundColor: bgColor, //user
+        scaffoldBackgroundColor: bgColorPage, //admin
+        // scaffoldBackgroundColor: bgColor, //user
         appBarTheme: AppBarTheme(
           actionsIconTheme: IconThemeData(color: textPrimary, size: 24),
           iconTheme: IconThemeData(color: textPrimary, size: 24),
@@ -52,7 +56,9 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const OnboardUser(),
+      //home: const OnboardUser(),
+      //home: OnboardAdmin(), //Admin
+      home: EditResAdmin(),
     );
   }
 }

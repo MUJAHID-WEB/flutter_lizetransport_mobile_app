@@ -44,6 +44,8 @@ class CustomTextStyle {
       TextStyle(color: primaryColor, fontSize: 24, fontWeight: FontWeight.w700);
   static TextStyle pc20semi =
       TextStyle(color: primaryColor, fontSize: 20, fontWeight: FontWeight.w600);
+  static TextStyle pc16semi =
+      TextStyle(color: primaryColor, fontSize: 16, fontWeight: FontWeight.w600);
   static TextStyle pc20bold =
       TextStyle(color: primaryColor, fontSize: 20, fontWeight: FontWeight.w700);
   static TextStyle sc12med = TextStyle(

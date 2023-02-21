@@ -4,8 +4,9 @@ import 'package:lize/common/text_style.dart';
 
 //Edit Button 330
 class EditButton330 extends StatelessWidget {
-  const EditButton330({super.key, required this.btnText});
+  const EditButton330({super.key, required this.btnText, this.onPressed});
   final String btnText;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class EditButton330 extends StatelessWidget {
           height: 50,
           width: 330,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               // padding: MaterialStateProperty.all<EdgeInsets>(
               //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
@@ -301,9 +302,9 @@ class NextBtn extends StatelessWidget {
 //
 //White Button 330
 class WhiteBtn330 extends StatelessWidget {
-  const WhiteBtn330({super.key, required this.btnText});
+  const WhiteBtn330({super.key, required this.btnText, this.onPressed});
   final String btnText;
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -315,7 +316,7 @@ class WhiteBtn330 extends StatelessWidget {
           height: 50,
           width: 335,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(cardColor),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

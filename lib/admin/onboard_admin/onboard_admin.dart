@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
+
+import '../auth_admin/login.dart';
 
 class OnboardAdmin extends StatefulWidget {
   const OnboardAdmin({super.key});
@@ -9,6 +13,22 @@ class OnboardAdmin extends StatefulWidget {
 }
 
 class _OnboardAdminState extends State<OnboardAdmin> {
+  @override
+  void initState() {
+    super.initState();
+    startTime();
+  }
+
+  startTime() async {
+    var duration = Duration(seconds: 3);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LogInAdmin()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

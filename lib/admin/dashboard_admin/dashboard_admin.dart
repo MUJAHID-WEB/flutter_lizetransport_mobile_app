@@ -4,6 +4,7 @@ import 'package:lize/common/forms.dart';
 
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
+import '../../common/dropdown.dart';
 import '../../common/text_style.dart';
 import '../reservation_admin/new_passenger_reservation.dart';
 import '../reservation_admin/pricing.dart';
@@ -79,7 +80,6 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                     ],
                   ),
                   //
-
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Container(
@@ -109,14 +109,18 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(26.0)),
                                     ),
-                                    child: Text('+ 18.7%',
-                                        style: CustomTextStyle.paid14med)),
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(7, 5, 0, 0),
+                                      child: Text('+ 18.7%',
+                                          style: CustomTextStyle.paid14med),
+                                    )),
                                 Text('1,315', style: CustomTextStyle.pc28bold),
                               ],
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 1),
+                            padding: EdgeInsets.symmetric(horizontal: 2),
                             child: Divider(
                               thickness: 5,
                               color: paidBtn,
@@ -140,9 +144,46 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(26.0)),
                                     ),
-                                    child: Text('+ 11.7%',
-                                        style: CustomTextStyle.unpaid14med)),
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(7, 5, 0, 0),
+                                      child: Text('+ 11.7%',
+                                          style: CustomTextStyle.unpaid14med),
+                                    )),
                                 Text('135', style: CustomTextStyle.pc28bold),
+                              ],
+                            ),
+                          ),
+                          //
+                        ],
+                      ),
+                    ),
+                  ),
+                  //
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Container(
+                      width: double.infinity,
+                      height: 400,
+                      decoration: BoxDecoration(
+                        color: cardColor,
+                        border: Border.all(width: 1, color: blackColor05),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          DropdownRevenue(
+                            label: 'Revenue of last week',
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 20, 0, 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Feb 18', style: CustomTextStyle.ts12reg),
+                                Text('\$5,458',
+                                    style: CustomTextStyle.pc24bold),
                               ],
                             ),
                           ),

@@ -75,6 +75,78 @@ class _AppBarAdminState extends State<AppBarAdmin> {
   }
 }
 
+//Appbar Admin Back
+class AppBarAdminBack extends StatefulWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+  final String title;
+
+  AppBarAdminBack({Key? key, required this.title})
+      : preferredSize = const Size.fromHeight(61.0),
+        super(key: key);
+
+  @override
+  State<AppBarAdminBack> createState() => _AppBarAdminBackState();
+}
+
+class _AppBarAdminBackState extends State<AppBarAdminBack> {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(
+        widget.title,
+        style: CustomTextStyle.tp18semi,
+      ),
+      leading: IconButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        icon: ImageIcon(
+          AssetImage('assets/image/arrow_back.png'),
+          color: textPrimary,
+        ),
+      ),
+      actions: [
+        Stack(
+          children: <Widget>[
+            IconButton(
+                icon: ImageIcon(
+                  AssetImage('assets/image/bell_admin.png'),
+                ),
+                onPressed: () {
+                  // setState(() {
+                  //   counter = 0;
+                  // });
+                }),
+            // counter != 0
+            //     ?
+            Positioned(
+              right: 8,
+              top: 6,
+              child: Container(
+                width: 18,
+                height: 18,
+                decoration: BoxDecoration(
+                  color: rcvdBtn,
+                  border: Border.all(width: 2, color: rcvdBtn20),
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Text(
+                  '4',
+                  // '$counter',
+                  style: CustomTextStyle.cc10bold,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            )
+            // : new Container()
+          ],
+        ),
+      ],
+    );
+  }
+}
+
 // AppBar User menu
 
 class AppBarUser extends StatefulWidget with PreferredSizeWidget {

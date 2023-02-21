@@ -40,6 +40,7 @@ dependencies:
   flutter_zoom_drawer:
   get:
   percent_indicator: ^4.0.1
+  page_transition:
 
 dev_dependencies:
   flutter_test:

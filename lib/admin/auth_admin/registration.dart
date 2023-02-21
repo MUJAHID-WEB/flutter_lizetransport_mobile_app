@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/auth_admin/login.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/common/forms.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../common/custom_button.dart';
 import '../../common/text_style.dart';
@@ -56,7 +58,19 @@ class _SignUpAdminState extends State<SignUpAdmin> {
 
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 30, 0, 70),
-                      child: WhiteBtn330(btnText: 'Register'),
+                      child: WhiteBtn330(
+                        btnText: 'Register',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.leftToRight,
+                              duration: Duration(milliseconds: 500),
+                              child: LogInAdmin(),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     //
                     Row(
@@ -74,7 +88,15 @@ class _SignUpAdminState extends State<SignUpAdmin> {
                                 fontWeight: FontWeight.w600),
                           ),
                           onPressed: () {
-                            //signup screen
+                            //signin screen
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.leftToRight,
+                                duration: Duration(milliseconds: 500),
+                                child: LogInAdmin(),
+                              ),
+                            );
                           },
                         )
                       ],

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/auth_admin/registration.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/common/forms.dart';
+import 'package:page_transition/page_transition.dart';
 
+import '../../common/bottom_nav_bar.dart';
 import '../../common/custom_button.dart';
 import '../../common/text_style.dart';
+import '../dashboard_admin/dashboard_admin.dart';
 
 class LogInAdmin extends StatefulWidget {
   const LogInAdmin({super.key});
@@ -57,7 +61,20 @@ class _LogInAdminState extends State<LogInAdmin> {
 
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 40, 0, 140),
-                      child: WhiteBtn330(btnText: 'Log In'),
+                      child: WhiteBtn330(
+                        btnText: 'Log In',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 500),
+                              child: DashboardAdmin(),
+                              //child: HomePage(),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     //
                     Row(
@@ -75,7 +92,14 @@ class _LogInAdminState extends State<LogInAdmin> {
                                 fontWeight: FontWeight.w600),
                           ),
                           onPressed: () {
-                            //signup screen
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                child: SignUpAdmin(),
+                              ),
+                            );
                           },
                         )
                       ],
