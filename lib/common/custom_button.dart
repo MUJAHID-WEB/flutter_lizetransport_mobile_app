@@ -173,9 +173,9 @@ class DeleteButton160 extends StatelessWidget {
 
 //Add/Confirm Button 335
 class AddButton335 extends StatelessWidget {
-  const AddButton335({super.key, required this.btnText});
+  const AddButton335({super.key, required this.btnText, this.onPressed});
   final String btnText;
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -187,7 +187,7 @@ class AddButton335 extends StatelessWidget {
           height: 50,
           width: 335,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               // padding: MaterialStateProperty.all<EdgeInsets>(
               //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
@@ -216,8 +216,9 @@ class AddButton335 extends StatelessWidget {
 // Back and Cancel Button
 
 class BacknCancelBtn extends StatelessWidget {
-  const BacknCancelBtn({super.key, required this.btnText});
+  const BacknCancelBtn({super.key, required this.btnText, this.onPressed});
   final String btnText;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -230,7 +231,7 @@ class BacknCancelBtn extends StatelessWidget {
           height: 50,
           width: 160,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               // padding: MaterialStateProperty.all<EdgeInsets>(
               //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
@@ -259,9 +260,9 @@ class BacknCancelBtn extends StatelessWidget {
 // Next Button
 
 class NextBtn extends StatelessWidget {
-  const NextBtn({super.key, required this.btnText});
+  const NextBtn({super.key, required this.btnText, this.onPressed});
   final String btnText;
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -273,7 +274,7 @@ class NextBtn extends StatelessWidget {
           height: 50,
           width: 160,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               // padding: MaterialStateProperty.all<EdgeInsets>(
               //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),

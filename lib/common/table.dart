@@ -525,8 +525,10 @@ class NpassangerTitle extends StatelessWidget {
     super.key,
     required this.id,
     required this.btntext,
+    this.onPressed,
   });
   final String id, btntext;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -547,7 +549,7 @@ class NpassangerTitle extends StatelessWidget {
             width: 135,
             height: 34,
             child: TextButton(
-              onPressed: () {},
+              onPressed: onPressed,
               style: ButtonStyle(
                   // padding: MaterialStateProperty.all<EdgeInsets>(
                   //     EdgeInsets.symmetric(vertical: 8, horizontal: 28)),

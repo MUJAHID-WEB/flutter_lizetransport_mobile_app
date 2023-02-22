@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/reservation_admin/passanger_reservation.dart';
+import 'package:lize/admin/reservation_admin/reservation_admin.dart';
 import 'package:lize/common/colors.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/forms.dart';
 import '../../common/custom_button.dart';
@@ -50,10 +53,34 @@ class _PricingState extends State<Pricing> {
                       ),
                       //
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          BacknCancelBtn(btnText: 'Back'),
-                          NextBtn(btnText: 'Reserve')
+                          BacknCancelBtn(
+                            btnText: 'Back',
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: Duration(milliseconds: 500),
+                                  child: PassengerResAdmin(),
+                                ),
+                              );
+                            },
+                          ),
+                          NextBtn(
+                            btnText: 'Reserve',
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: Duration(milliseconds: 500),
+                                  child: ReservationAdmin(),
+                                ),
+                              );
+                            },
+                          ),
                         ],
                       ),
                     ],

@@ -8,6 +8,7 @@ import 'admin/dashboard_admin/menu_admin.dart';
 import 'admin/onboard_admin/onboard_admin.dart';
 import 'admin/reservation_admin/edit_reservation.dart';
 import 'admin/reservation_admin/reservation_admin.dart';
+import 'admin/reservation_admin/reservation_details_admin.dart';
 import 'common/text_style.dart';
 
 void main() {
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
       ),
       //home: const OnboardUser(),
       //home: OnboardAdmin(), //Admin
-      home: EditResAdmin(),
+      home: ReservationAdmin(),
     );
   }
 }

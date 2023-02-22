@@ -3,6 +3,7 @@ import 'package:flutter_zoom_drawer/config.dart';
 import 'package:lize/common/colors.dart';
 import 'package:lize/common/text_style.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../user/dashboard/notification/notification.dart';
 import 'drawer.dart';
@@ -143,6 +144,61 @@ class _AppBarAdminBackState extends State<AppBarAdminBack> {
           ],
         ),
       ],
+    );
+  }
+}
+
+//
+class AppBarAdminProgress extends StatefulWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+
+  AppBarAdminProgress({
+    Key? key,
+  })  : preferredSize = const Size.fromHeight(150.0),
+        super(key: key);
+
+  @override
+  State<AppBarAdminProgress> createState() => _AppBarAdminProgressState();
+}
+
+class _AppBarAdminProgressState extends State<AppBarAdminProgress> {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          //progress
+          SizedBox(
+            height: 100,
+            width: 50,
+            child: CircularPercentIndicator(
+              animation: true,
+              animationDuration: 2500,
+              radius: 30.0,
+              lineWidth: 6.0,
+              percent: 0.33,
+              //linearStrokeCap: LinearStrokeCap.roundAll,
+              progressColor: primaryColor,
+              backgroundColor: textSecondary10,
+            ),
+          ),
+          //title
+          Column(
+            children: [
+              Text(
+                'Reservation Details',
+                style: CustomTextStyle.pc16semi,
+              ),
+              Text(
+                'Next : Passengers',
+                style: CustomTextStyle.ts14reg,
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

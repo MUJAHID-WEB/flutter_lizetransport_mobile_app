@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/reservation_admin/passanger_reservation.dart';
 import 'package:lize/common/appbar.dart';
 import 'package:lize/common/colors.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/forms.dart';
+import '../../common/custom_button.dart';
 
 class NewPassengerReservation extends StatefulWidget {
   const NewPassengerReservation({super.key});
@@ -45,6 +48,20 @@ class _NewPassengerReservationState extends State<NewPassengerReservation> {
                       makeInput30(
                         label: "Citizenship",
                         hintText: "Senegal",
+                      ),
+                      //
+                      AddButton335(
+                        btnText: 'Add Passenger',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 500),
+                              child: PassengerResAdmin(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),

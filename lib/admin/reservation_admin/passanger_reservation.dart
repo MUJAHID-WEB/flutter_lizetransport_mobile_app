@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/reservation_admin/pricing.dart';
+import 'package:lize/admin/reservation_admin/reservation_details_admin.dart';
+import 'package:lize/common/text_style.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/custom_button.dart';
+import 'new_passenger_reservation.dart';
 
 class PassengerResAdmin extends StatefulWidget {
   const PassengerResAdmin({super.key});
@@ -36,6 +41,16 @@ class _PassengerResAdminState extends State<PassengerResAdmin> {
                   NpassangerTitle(
                     id: 'Passenger',
                     btntext: 'New Passenger',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          child: NewPassengerReservation(),
+                        ),
+                      );
+                    },
                   ),
 
                   //Table
@@ -101,8 +116,32 @@ class _PassengerResAdminState extends State<PassengerResAdmin> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            BacknCancelBtn(btnText: 'Back'),
-                            NextBtn(btnText: 'Next')
+                            BacknCancelBtn(
+                              btnText: 'Back',
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    duration: Duration(milliseconds: 500),
+                                    child: ReservationDetailsAdmin(),
+                                  ),
+                                );
+                              },
+                            ),
+                            NextBtn(
+                              btnText: 'Next',
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    duration: Duration(milliseconds: 500),
+                                    child: Pricing(),
+                                  ),
+                                );
+                              },
+                            )
                           ],
                         ),
                       ],
