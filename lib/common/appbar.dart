@@ -148,61 +148,6 @@ class _AppBarAdminBackState extends State<AppBarAdminBack> {
   }
 }
 
-//
-class AppBarAdminProgress extends StatefulWidget with PreferredSizeWidget {
-  @override
-  final Size preferredSize;
-
-  AppBarAdminProgress({
-    Key? key,
-  })  : preferredSize = const Size.fromHeight(150.0),
-        super(key: key);
-
-  @override
-  State<AppBarAdminProgress> createState() => _AppBarAdminProgressState();
-}
-
-class _AppBarAdminProgressState extends State<AppBarAdminProgress> {
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          //progress
-          SizedBox(
-            height: 100,
-            width: 50,
-            child: CircularPercentIndicator(
-              animation: true,
-              animationDuration: 2500,
-              radius: 30.0,
-              lineWidth: 6.0,
-              percent: 0.33,
-              //linearStrokeCap: LinearStrokeCap.roundAll,
-              progressColor: primaryColor,
-              backgroundColor: textSecondary10,
-            ),
-          ),
-          //title
-          Column(
-            children: [
-              Text(
-                'Reservation Details',
-                style: CustomTextStyle.pc16semi,
-              ),
-              Text(
-                'Next : Passengers',
-                style: CustomTextStyle.ts14reg,
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
 // AppBar User menu
 
 class AppBarUser extends StatefulWidget with PreferredSizeWidget {

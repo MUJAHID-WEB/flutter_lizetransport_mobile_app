@@ -47,9 +47,9 @@ class EditButton330 extends StatelessWidget {
 
 //Edit Button 160
 class EditButton160 extends StatelessWidget {
-  const EditButton160({super.key, required this.btnText});
+  const EditButton160({super.key, required this.btnText, this.onPressed});
   final String btnText;
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -61,7 +61,7 @@ class EditButton160 extends StatelessWidget {
           height: 50,
           width: 160,
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
               // padding: MaterialStateProperty.all<EdgeInsets>(
               //     EdgeInsets.symmetric(vertical: 13, horizontal: 150)),
@@ -101,7 +101,7 @@ class DeleteButton330 extends StatelessWidget {
         ),
         SizedBox(
           height: 50,
-          width: 330,
+          width: double.infinity,
           child: TextButton(
             onPressed: () {},
             style: ButtonStyle(
@@ -131,9 +131,9 @@ class DeleteButton330 extends StatelessWidget {
 
 //Delete Button 160
 class DeleteButton160 extends StatelessWidget {
-  const DeleteButton160({super.key, required this.btnText});
+  const DeleteButton160({super.key, required this.btnText, this.onPressed});
   final String btnText;
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -185,7 +185,7 @@ class AddButton335 extends StatelessWidget {
         ),
         SizedBox(
           height: 50,
-          width: 335,
+          width: double.infinity,
           child: TextButton(
             onPressed: onPressed,
             style: ButtonStyle(
@@ -650,6 +650,44 @@ class AddReservation extends StatelessWidget {
             child: Text(
               btnText,
               style: CustomTextStyle.cc16semi,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// AvailablePlane Button
+
+class AvailablePlane extends StatelessWidget {
+  const AvailablePlane({super.key, required this.btnText, this.onPressed});
+  final String btnText;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 42,
+          width: 120,
+          child: TextButton(
+            onPressed: onPressed,
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(paidBtn20),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(21.0),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.paid16semi,
             ),
           ),
         ),

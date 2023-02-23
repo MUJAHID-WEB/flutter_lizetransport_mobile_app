@@ -41,6 +41,7 @@ dependencies:
   get:
   percent_indicator: ^4.0.1
   page_transition:
+  dotted_border: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:

@@ -20,7 +20,7 @@ class _UnpaidInvoiceState extends State<UnpaidInvoice>
 
   @override
   void initState() {
-    _tabController = new TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     super.initState();
   }
 

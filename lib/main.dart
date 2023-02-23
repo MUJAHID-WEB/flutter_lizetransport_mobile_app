@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/plane_admin/plane_current_trips.dart';
 
 import 'package:lize/common/colors.dart';
 
 import 'package:lize/user/onboarding/onboard.dart';
 
 import 'admin/dashboard_admin/menu_admin.dart';
+import 'admin/invoice_admin/invoice_admin.dart';
 import 'admin/onboard_admin/onboard_admin.dart';
+import 'admin/plane_admin/plane_details.dart';
+import 'admin/plane_admin/private_jet_admin.dart';
 import 'admin/reservation_admin/edit_reservation.dart';
 import 'admin/reservation_admin/reservation_admin.dart';
 import 'admin/reservation_admin/reservation_details_admin.dart';
@@ -59,7 +63,7 @@ class MyApp extends StatelessWidget {
       ),
       //home: const OnboardUser(),
       //home: OnboardAdmin(), //Admin
-      home: ReservationAdmin(),
+      home: PlaneCtripAdmin(),
     );
   }
 }

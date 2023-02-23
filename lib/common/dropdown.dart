@@ -224,6 +224,364 @@ List<DropdownMenuItem<String>> get dropdownItems06 {
 }
 
 //
+//Admin Invoice Select Client
+class SelectClient extends StatefulWidget {
+  const SelectClient({super.key, required this.label});
+  final String label;
+  @override
+  State<SelectClient> createState() => _SelectClientState();
+}
+
+class _SelectClientState extends State<SelectClient> {
+  String selectedValue = "Moussa Dao";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Select Client',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: dropdownItems100,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get dropdownItems100 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("Moussa Dao"), value: "Moussa Dao"),
+    DropdownMenuItem(child: Text("Moussa"), value: "Moussa"),
+    DropdownMenuItem(child: Text("Mujahid"), value: "Mujahid"),
+  ];
+  return menuItems;
+}
+
+//
+
+//Admin Invoice Products
+class ProductAdmin extends StatefulWidget {
+  const ProductAdmin({super.key, required this.label});
+  final String label;
+  @override
+  State<ProductAdmin> createState() => _ProductAdminState();
+}
+
+class _ProductAdminState extends State<ProductAdmin> {
+  String selectedValue = "FALCON 8X/LX-EBO";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Products',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: ProAdmin,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get ProAdmin {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO"), value: "FALCON 8X/LX-EBO"),
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO2"), value: "FALCON 8X/LX-EBO2"),
+    DropdownMenuItem(
+        child: Text("FALCON 8X/LX-EBO3"), value: "FALCON 8X/LX-EBO3"),
+  ];
+  return menuItems;
+}
+
+//
+//Admin Invoice Reservation
+class ResAdmin extends StatefulWidget {
+  const ResAdmin({super.key, required this.label});
+  final String label;
+  @override
+  State<ResAdmin> createState() => _ResAdminState();
+}
+
+class _ResAdminState extends State<ResAdmin> {
+  String selectedValue = "R2390";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Reservation',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: ResAdmin02,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get ResAdmin02 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("R2390"), value: "R2390"),
+    DropdownMenuItem(child: Text("R2390O2"), value: "R2390O2"),
+    DropdownMenuItem(child: Text("R2390O3"), value: "FR2390O3"),
+  ];
+  return menuItems;
+}
+
+//
+//Admin Invoice Trip
+class TripAdmin extends StatefulWidget {
+  const TripAdmin({super.key, required this.label});
+  final String label;
+  @override
+  State<TripAdmin> createState() => _TripAdminState();
+}
+
+class _TripAdminState extends State<TripAdmin> {
+  String selectedValue = "T2390";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Trip',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: TripAdmin02,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get TripAdmin02 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("T2390"), value: "T2390"),
+    DropdownMenuItem(child: Text("T23902"), value: "T23902"),
+    DropdownMenuItem(child: Text("T23903"), value: "T23903"),
+  ];
+  return menuItems;
+}
+
+//
+//Admin Invoice Trip
+class Status extends StatefulWidget {
+  const Status({super.key, required this.label});
+  final String label;
+  @override
+  State<Status> createState() => _StatusState();
+}
+
+class _StatusState extends State<Status> {
+  String selectedValue = "Unavailable";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Status',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: Status01,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get Status01 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("Unavailable"), value: "Unavailable"),
+    DropdownMenuItem(child: Text("Available"), value: "Available"),
+  ];
+  return menuItems;
+}
+
+//
 
 //class _DropdownItemState extends State<DropdownItem> {
 //   String? selectedValue = null;

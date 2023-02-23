@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:lize/common/filter.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
+import '../reservation_admin/passanger_reservation.dart';
+import 'add_new_invoice_select_clients.dart';
 
 class InvoiceAdmin extends StatefulWidget {
   const InvoiceAdmin({super.key});
@@ -29,9 +33,10 @@ class _InvoiceAdminState extends State<InvoiceAdmin> {
                 //Unpaid
                 Column(
                   children: [
+                    FilterHead(title: 'Invoices'),
                     //
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: Divider(),
                     ),
                     //creator
@@ -72,9 +77,20 @@ class _InvoiceAdminState extends State<InvoiceAdmin> {
                             children: [
                               EditButton160(
                                 btnText: 'Edit',
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: Duration(milliseconds: 500),
+                                      child: SelectClientAdmin(),
+                                    ),
+                                  );
+                                },
                               ),
                               DeleteButton160(
                                 btnText: 'Delete',
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -129,9 +145,20 @@ class _InvoiceAdminState extends State<InvoiceAdmin> {
                             children: [
                               EditButton160(
                                 btnText: 'Edit',
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: Duration(milliseconds: 500),
+                                      child: SelectClientAdmin(),
+                                    ),
+                                  );
+                                },
                               ),
                               DeleteButton160(
                                 btnText: 'Delete',
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -186,9 +213,20 @@ class _InvoiceAdminState extends State<InvoiceAdmin> {
                             children: [
                               EditButton160(
                                 btnText: 'Edit',
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: Duration(milliseconds: 500),
+                                      child: SelectClientAdmin(),
+                                    ),
+                                  );
+                                },
                               ),
                               DeleteButton160(
                                 btnText: 'Delete',
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -203,6 +241,16 @@ class _InvoiceAdminState extends State<InvoiceAdmin> {
                   padding: const EdgeInsets.symmetric(vertical: 30),
                   child: AddButton335(
                     btnText: 'Add New Invoice',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          child: SelectClientAdmin(),
+                        ),
+                      );
+                    },
                   ),
                 )
               ],

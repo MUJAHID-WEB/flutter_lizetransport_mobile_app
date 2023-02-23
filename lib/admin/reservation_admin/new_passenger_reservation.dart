@@ -19,7 +19,7 @@ class _NewPassengerReservationState extends State<NewPassengerReservation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarAdmin(title: 'New Passengers'),
+      appBar: AppBarAdminBack(title: 'New Passengers'),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: cardColor,
