@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/plane_admin/plane_details.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
@@ -249,89 +251,105 @@ class PrivateJet extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 0, 10, 15),
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: cardColor,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: textSecondary.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 5,
-                    offset: Offset(2, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  PlaneBookAdmin(
-                    imagePlane: AssetImage("assets/image/plane01.jpg"),
-                    model: 'BE350',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => AddPlaneDetails()),
-                      );
-                    },
-                  ),
-
-                  //Table
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.rightToLeft,
+                  duration: Duration(milliseconds: 500),
+                  child: PlaneDetailsAdmin(),
+                ),
+              );
+            },
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 15),
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: cardColor,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: textSecondary.withOpacity(0.5),
+                          spreadRadius: 3,
+                          blurRadius: 5,
+                          offset: Offset(2, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
                     child: Column(
                       children: [
-                        TableW(
-                          heading: 'LTI Name',
-                          data: 'Airbus A319 LTI-LBZ',
+                        PlaneBookAdmin(
+                          imagePlane: AssetImage("assets/image/plane01.jpg"),
+                          model: 'BE350',
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddPlaneDetails()),
+                            );
+                          },
                         ),
-                        TableC(
-                          heading: 'Manufacturer',
-                          data: 'Airbus',
-                        ),
-                        TableW(
-                          heading: 'Model',
-                          data: 'A319',
-                        ),
-                        TableC(
-                          heading: 'LTI Plane Number',
-                          data: 'LTI-J3209911',
-                        ),
-                        TableW(
-                          heading: 'Wingspan',
-                          data: '26,2128M',
-                        ),
-                        TableC(
-                          heading: 'Height',
-                          data: '7,9248M',
-                        ),
-                        TableW(
-                          heading: 'Length',
-                          data: '14.224M',
-                        ),
-                        TableC(
-                          heading: 'Fuel capacity',
-                          data: '3611 Lbs',
-                        ),
-                        TableW(
-                          heading: 'Max takeoff weight',
-                          data: '6804Kgs',
+
+                        //Table
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            children: [
+                              TableW(
+                                heading: 'LTI Name',
+                                data: 'Airbus A319 LTI-LBZ',
+                              ),
+                              TableC(
+                                heading: 'Manufacturer',
+                                data: 'Airbus',
+                              ),
+                              TableW(
+                                heading: 'Model',
+                                data: 'A319',
+                              ),
+                              TableC(
+                                heading: 'LTI Plane Number',
+                                data: 'LTI-J3209911',
+                              ),
+                              TableW(
+                                heading: 'Wingspan',
+                                data: '26,2128M',
+                              ),
+                              TableC(
+                                heading: 'Height',
+                                data: '7,9248M',
+                              ),
+                              TableW(
+                                heading: 'Length',
+                                data: '14.224M',
+                              ),
+                              TableC(
+                                heading: 'Fuel capacity',
+                                data: '3611 Lbs',
+                              ),
+                              TableW(
+                                heading: 'Max takeoff weight',
+                                data: '6804Kgs',
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+                //Additinal Information
+                AdditionalInfo(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Divider(),
+                ),
+              ],
             ),
-          ),
-          //Additinal Information
-          AdditionalInfo(),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Divider(),
           ),
 
           //

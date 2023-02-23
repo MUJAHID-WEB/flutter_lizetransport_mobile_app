@@ -17,7 +17,7 @@ class EditButton330 extends StatelessWidget {
         ),
         SizedBox(
           height: 50,
-          width: 330,
+          width: double.infinity,
           child: TextButton(
             onPressed: onPressed,
             style: ButtonStyle(
@@ -658,10 +658,10 @@ class AddReservation extends StatelessWidget {
   }
 }
 
-// AvailablePlane Button
+// Available Button
 
-class AvailablePlane extends StatelessWidget {
-  const AvailablePlane({super.key, required this.btnText, this.onPressed});
+class AvailableBtn extends StatelessWidget {
+  const AvailableBtn({super.key, required this.btnText, this.onPressed});
   final String btnText;
   final void Function()? onPressed;
 
@@ -688,6 +688,44 @@ class AvailablePlane extends StatelessWidget {
             child: Text(
               btnText,
               style: CustomTextStyle.paid16semi,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// SoldOut Button
+
+class SoldOut extends StatelessWidget {
+  const SoldOut({super.key, required this.btnText, this.onPressed});
+  final String btnText;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 42,
+          width: 120,
+          child: TextButton(
+            onPressed: onPressed,
+            style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(unpaidBtn20),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(21.0),
+                ),
+              ),
+            ),
+            child: Text(
+              btnText,
+              style: CustomTextStyle.unpaidbtn16semi,
             ),
           ),
         ),

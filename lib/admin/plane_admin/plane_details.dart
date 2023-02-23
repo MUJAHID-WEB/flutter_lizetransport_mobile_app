@@ -260,7 +260,7 @@ class PlaneAvailable extends StatelessWidget {
                       ),
                     ),
                     //Book Now
-                    AvailablePlane(
+                    AvailableBtn(
                       btnText: 'Available',
                       onPressed: onPressed,
                     ),

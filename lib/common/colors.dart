@@ -46,5 +46,6 @@ const dateColor = Color(0xFF6A6E83);
 const dividerColor = Color(0xFFEDF2F6);
 const overlayColor = Color(0xFFD9D9D9);
 const RedColor = Color(0xFFF36A6A);
-
+const deliveryColor = Color(0xFF6418C3);
+const deliveryColor20 = Color(0x336418C3);
 //

@@ -370,7 +370,7 @@ List<DropdownMenuItem<String>> get ProAdmin {
 }
 
 //
-//Admin Invoice Reservation
+//Admin  Reservation
 class ResAdmin extends StatefulWidget {
   const ResAdmin({super.key, required this.label});
   final String label;
@@ -441,7 +441,7 @@ List<DropdownMenuItem<String>> get ResAdmin02 {
 }
 
 //
-//Admin Invoice Trip
+//Admin  Trip
 class TripAdmin extends StatefulWidget {
   const TripAdmin({super.key, required this.label});
   final String label;
@@ -512,7 +512,7 @@ List<DropdownMenuItem<String>> get TripAdmin02 {
 }
 
 //
-//Admin Invoice Trip
+//Admin Status
 class Status extends StatefulWidget {
   const Status({super.key, required this.label});
   final String label;
@@ -577,6 +577,78 @@ List<DropdownMenuItem<String>> get Status01 {
   List<DropdownMenuItem<String>> menuItems = [
     DropdownMenuItem(child: Text("Unavailable"), value: "Unavailable"),
     DropdownMenuItem(child: Text("Available"), value: "Available"),
+  ];
+  return menuItems;
+}
+
+//
+//Admin TypeAdmin
+class TypeAdmin extends StatefulWidget {
+  const TypeAdmin({super.key, required this.label});
+  final String label;
+  @override
+  State<TypeAdmin> createState() => _TypeAdminState();
+}
+
+class _TypeAdminState extends State<TypeAdmin> {
+  String selectedValue = "Drinks";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Type',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: Type02,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get Type02 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("Drinks"), value: "Drinks"),
+    DropdownMenuItem(child: Text("Food"), value: "Food"),
+    DropdownMenuItem(child: Text("Technologies"), value: "Technologies"),
+    DropdownMenuItem(child: Text("Flowers"), value: "Flowers"),
   ];
   return menuItems;
 }

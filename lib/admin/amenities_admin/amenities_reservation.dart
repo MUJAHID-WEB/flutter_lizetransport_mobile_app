@@ -4,14 +4,14 @@ import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
 
-class PlaneCtripAdmin extends StatefulWidget {
-  const PlaneCtripAdmin({super.key});
+class AmenitiesReservation extends StatefulWidget {
+  const AmenitiesReservation({super.key});
 
   @override
-  State<PlaneCtripAdmin> createState() => _PlaneCtripAdminState();
+  State<AmenitiesReservation> createState() => _AmenitiesReservationState();
 }
 
-class _PlaneCtripAdminState extends State<PlaneCtripAdmin> {
+class _AmenitiesReservationState extends State<AmenitiesReservation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
