@@ -654,6 +654,78 @@ List<DropdownMenuItem<String>> get Type02 {
 }
 
 //
+//Admin OrgAdmin
+class OrgAdmin extends StatefulWidget {
+  const OrgAdmin({super.key, required this.label});
+  final String label;
+  @override
+  State<OrgAdmin> createState() => _OrgAdminState();
+}
+
+class _OrgAdminState extends State<OrgAdmin> {
+  String selectedValue = "Ebonf";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Organizations',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: Org02,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get Org02 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("Ebonf"), value: "Ebonf"),
+    DropdownMenuItem(child: Text("Ebonf02"), value: "Ebonf02"),
+    DropdownMenuItem(child: Text("Ebonf03"), value: "Ebonf03"),
+    DropdownMenuItem(child: Text("Ebonf04"), value: "Ebonf04"),
+  ];
+  return menuItems;
+}
+
+//
 
 //class _DropdownItemState extends State<DropdownItem> {
 //   String? selectedValue = null;

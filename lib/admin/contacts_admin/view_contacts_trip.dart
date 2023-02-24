@@ -15,200 +15,195 @@ class ContactTripAdmin extends StatefulWidget {
 class _ContactTripAdminState extends State<ContactTripAdmin> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBarAdmin(
-        title: 'View Contacts',
-      ),
-      body: Container(
-          color: cardColor,
-          height: MediaQuery.of(context).size.height,
-          width: double.infinity,
-          child: ListView(children: [
+    return Container(
+      color: cardColor,
+      height: MediaQuery.of(context).size.height,
+      width: double.infinity,
+      child: ListView(children: [
+        Column(
+          children: [
+            //Unpaid
             Column(
               children: [
-                //Unpaid
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    StartedTitle(
-                      id: 'Moses Dabo',
-                      date: '23/08/2022 -> 30/08/2022',
-                      btntext: 'Started',
-                    ),
-
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Reservation',
-                            data: 'R2902',
-                          ),
-                          TableC(
-                            heading: 'Passengers',
-                            data: '06',
-                          ),
-                          TableW(
-                            heading: 'Aircraft',
-                            data: 'A319',
-                          ),
-                          TableC(
-                            heading: 'City',
-                            data: 'Abidjan',
-                          ),
-                          TableW(
-                            heading: 'Cost',
-                            data: '-',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                //
+                SizedBox(
+                  height: 10,
                 ),
-                //Paid
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    CancelledTitle(
-                      id: 'Moses Dabo',
-                      date: '23/08/2022 -> 30/08/2022',
-                      btntext: 'Cancelled',
-                    ),
-
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Reservation',
-                            data: 'R2902',
-                          ),
-                          TableC(
-                            heading: 'Passengers',
-                            data: '06',
-                          ),
-                          TableW(
-                            heading: 'Aircraft',
-                            data: 'A319',
-                          ),
-                          TableC(
-                            heading: 'City',
-                            data: 'Abidjan',
-                          ),
-                          TableW(
-                            heading: 'Cost',
-                            data: '2,000,000',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                //creator
+                StartedTitle(
+                  id: 'Moses Dabo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Started',
                 ),
-                //Paid
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    RcvdTitle(
-                      id: 'Moses Dabo',
-                      date: '23/08/2022 -> 30/08/2022',
-                      btntext: 'Scheduled',
-                    ),
 
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Reservation',
-                            data: 'R2902',
-                          ),
-                          TableC(
-                            heading: 'Passengers',
-                            data: '06',
-                          ),
-                          TableW(
-                            heading: 'Aircraft',
-                            data: 'A319',
-                          ),
-                          TableC(
-                            heading: 'City',
-                            data: 'Abidjan',
-                          ),
-                          TableW(
-                            heading: 'Cost',
-                            data: '2,000,000',
-                          ),
-                        ],
+                //Table
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Reservation',
+                        data: 'R2902',
                       ),
-                    ),
-                  ],
-                ),
-                //Paid
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    PaidVarTitle(
-                      id: 'Moses Dabo',
-                      date: '23/08/2022 -> 30/08/2022',
-                      btntext: 'Completed',
-                    ),
-
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Reservation',
-                            data: 'R2902',
-                          ),
-                          TableC(
-                            heading: 'Passengers',
-                            data: '06',
-                          ),
-                          TableW(
-                            heading: 'Aircraft',
-                            data: 'A319',
-                          ),
-                          TableC(
-                            heading: 'City',
-                            data: 'Abidjan',
-                          ),
-                          TableW(
-                            heading: 'Cost',
-                            data: '2,000,000',
-                          ),
-                        ],
+                      TableC(
+                        heading: 'Passengers',
+                        data: '06',
                       ),
-                    ),
-                  ],
+                      TableW(
+                        heading: 'Aircraft',
+                        data: 'A319',
+                      ),
+                      TableC(
+                        heading: 'City',
+                        data: 'Abidjan',
+                      ),
+                      TableW(
+                        heading: 'Cost',
+                        data: '-',
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ])),
+            //Paid
+            Column(
+              children: [
+                //
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Divider(),
+                ),
+                //creator
+                CancelledTitle(
+                  id: 'Moses Dabo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Cancelled',
+                ),
+
+                //Table
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Reservation',
+                        data: 'R2902',
+                      ),
+                      TableC(
+                        heading: 'Passengers',
+                        data: '06',
+                      ),
+                      TableW(
+                        heading: 'Aircraft',
+                        data: 'A319',
+                      ),
+                      TableC(
+                        heading: 'City',
+                        data: 'Abidjan',
+                      ),
+                      TableW(
+                        heading: 'Cost',
+                        data: '2,000,000',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            //Paid
+            Column(
+              children: [
+                //
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Divider(),
+                ),
+                //creator
+                RcvdTitle(
+                  id: 'Moses Dabo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Scheduled',
+                ),
+
+                //Table
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Reservation',
+                        data: 'R2902',
+                      ),
+                      TableC(
+                        heading: 'Passengers',
+                        data: '06',
+                      ),
+                      TableW(
+                        heading: 'Aircraft',
+                        data: 'A319',
+                      ),
+                      TableC(
+                        heading: 'City',
+                        data: 'Abidjan',
+                      ),
+                      TableW(
+                        heading: 'Cost',
+                        data: '2,000,000',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            //Paid
+            Column(
+              children: [
+                //
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  child: Divider(),
+                ),
+                //creator
+                PaidVarTitle(
+                  id: 'Moses Dabo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Completed',
+                ),
+
+                //Table
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Reservation',
+                        data: 'R2902',
+                      ),
+                      TableC(
+                        heading: 'Passengers',
+                        data: '06',
+                      ),
+                      TableW(
+                        heading: 'Aircraft',
+                        data: 'A319',
+                      ),
+                      TableC(
+                        heading: 'City',
+                        data: 'Abidjan',
+                      ),
+                      TableW(
+                        heading: 'Cost',
+                        data: '2,000,000',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ]),
     );
   }
 }

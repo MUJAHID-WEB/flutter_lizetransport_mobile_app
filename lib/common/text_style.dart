@@ -152,6 +152,8 @@ class CustomTextStyle {
       color: Color(0xFF2F4226), fontSize: 16, fontWeight: FontWeight.w700);
   static TextStyle red14med =
       TextStyle(color: RedColor, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle dc12med = TextStyle(
+      color: deliveryColor, fontSize: 12, fontWeight: FontWeight.w500);
 }
 
 

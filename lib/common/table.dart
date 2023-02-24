@@ -772,3 +772,106 @@ class StatusCancelTitle extends StatelessWidget {
     );
   }
 }
+
+// Delivered Table
+class DeliveredTitle extends StatelessWidget {
+  const DeliveredTitle({
+    super.key,
+    required this.id,
+    required this.date,
+    required this.btntext,
+  });
+  final String id, date, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+              Text(
+                date,
+                style: CustomTextStyle.ts12med,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(deliveryColor20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.dc12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ContactsTitle Table
+class ContactsTitle extends StatelessWidget {
+  const ContactsTitle({
+    super.key,
+    required this.id,
+    required this.image,
+    required this.btntext,
+  });
+  final String id, image, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.asset(
+                image,
+                height: 30,
+                width: 30,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(primaryColor20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.pc12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

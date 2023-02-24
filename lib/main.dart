@@ -6,6 +6,7 @@ import 'package:lize/common/colors.dart';
 import 'package:lize/user/onboarding/onboard.dart';
 
 import 'admin/amenities_admin/amenities_drinks.dart';
+import 'admin/contacts_admin/contacts.dart';
 import 'admin/dashboard_admin/menu_admin.dart';
 import 'admin/invoice_admin/invoice_admin.dart';
 import 'admin/onboard_admin/onboard_admin.dart';
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
       ),
       //home: const OnboardUser(),
       //home: OnboardAdmin(), //Admin
-      home: AmenitiesAdmin(),
+      home: ContactsAdmin(),
     );
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/contacts_admin/view_contacts_reservation.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
+import 'new_contacts.dart';
 
 class ContactsAdmin extends StatefulWidget {
   const ContactsAdmin({super.key});
@@ -36,9 +39,9 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
 
@@ -66,7 +69,20 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        EditButton160(btnText: 'Edit'),
+                        EditButton160(
+                          btnText: 'Edit',
+                          onPressed: () {
+                            //ContactsNew
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                child: ContactReservationAdmin(),
+                              ),
+                            );
+                          },
+                        ),
                         DeleteButton160(btnText: "Delete")
                       ],
                     ),
@@ -81,9 +97,9 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
 
@@ -111,7 +127,20 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        EditButton160(btnText: 'Edit'),
+                        EditButton160(
+                          btnText: 'Edit',
+                          onPressed: () {
+                            //ContactsNew
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                child: ContactReservationAdmin(),
+                              ),
+                            );
+                          },
+                        ),
                         DeleteButton160(btnText: "Delete")
                       ],
                     ),
@@ -126,9 +155,9 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
 
@@ -156,7 +185,20 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        EditButton160(btnText: 'Edit'),
+                        EditButton160(
+                          btnText: 'Edit',
+                          onPressed: () {
+                            //ContactsNew
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                child: ContactReservationAdmin(),
+                              ),
+                            );
+                          },
+                        ),
                         DeleteButton160(btnText: "Delete")
                       ],
                     ),
@@ -171,9 +213,9 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
 
@@ -201,7 +243,20 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        EditButton160(btnText: 'Edit'),
+                        EditButton160(
+                          btnText: 'Edit',
+                          onPressed: () {
+                            //ContactsNew
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                child: ContactReservationAdmin(),
+                              ),
+                            );
+                          },
+                        ),
                         DeleteButton160(btnText: "Delete")
                       ],
                     ),
@@ -216,9 +271,9 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
 
@@ -246,7 +301,20 @@ class _ContactsAdminState extends State<ContactsAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        EditButton160(btnText: 'Edit'),
+                        EditButton160(
+                          btnText: 'Edit',
+                          onPressed: () {
+                            //ContactsNew
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 500),
+                                child: ContactReservationAdmin(),
+                              ),
+                            );
+                          },
+                        ),
                         DeleteButton160(btnText: "Delete")
                       ],
                     ),
@@ -257,9 +325,19 @@ class _ContactsAdminState extends State<ContactsAdmin> {
             //
             // Add New Plane
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30),
+              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
               child: AddButton335(
                 btnText: 'New Contacts',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      duration: Duration(milliseconds: 500),
+                      child: ContactsNew(),
+                    ),
+                  );
+                },
               ),
             )
           ])),

@@ -34,7 +34,7 @@ class _AmenitiesOrderAdminState extends State<AmenitiesOrderAdmin> {
                   child: Divider(),
                 ),
                 //creator
-                StartedTitle(
+                DeliveredTitle(
                   id: 'R2390',
                   date: '23/08/2022',
                   btntext: 'Delivered',

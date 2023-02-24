@@ -14,65 +14,61 @@ class AmenitiesPastTripAdmin extends StatefulWidget {
 class _AmenitiesPastTripAdminState extends State<AmenitiesPastTripAdmin> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBarAdmin(
-        title: 'Barbera/LTI-90',
-      ),
-      body: Container(
-          color: cardColor,
-          height: MediaQuery.of(context).size.height,
-          width: double.infinity,
-          child: ListView(children: [
+    return Container(
+      color: cardColor,
+      height: MediaQuery.of(context).size.height,
+      width: double.infinity,
+      child: ListView(children: [
+        Column(
+          children: [
+            //Unpaid
             Column(
               children: [
-                //Unpaid
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    PaidVarTitle(
-                      id: 'Moses Dabo',
-                      date: '23/08/2022 -> 30/08/2022',
-                      btntext: 'Completed',
-                    ),
+                //
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Divider(),
+                ),
+                //creator
+                PaidVarTitle(
+                  id: 'Moses Dabo',
+                  date: '23/08/2022 -> 30/08/2022',
+                  btntext: 'Completed',
+                ),
 
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Reservation',
-                            data: 'R2902',
-                          ),
-                          TableC(
-                            heading: 'Passengers',
-                            data: '06',
-                          ),
-                          TableW(
-                            heading: 'Aircraft',
-                            data: 'A319',
-                          ),
-                          TableC(
-                            heading: 'City',
-                            data: 'Abidjan',
-                          ),
-                          TableW(
-                            heading: 'Cost',
-                            data: '25,000.00',
-                          ),
-                        ],
+                //Table
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TableW(
+                        heading: 'Reservation',
+                        data: 'R2902',
                       ),
-                    ),
-                  ],
+                      TableC(
+                        heading: 'Passengers',
+                        data: '06',
+                      ),
+                      TableW(
+                        heading: 'Aircraft',
+                        data: 'A319',
+                      ),
+                      TableC(
+                        heading: 'City',
+                        data: 'Abidjan',
+                      ),
+                      TableW(
+                        heading: 'Cost',
+                        data: '25,000.00',
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ])),
+          ],
+        ),
+      ]),
     );
   }
 }

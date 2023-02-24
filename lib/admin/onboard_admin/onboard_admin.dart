@@ -34,14 +34,15 @@ class _OnboardAdminState extends State<OnboardAdmin> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-          color: cardColor,
-          height: MediaQuery.of(context).size.height,
-          width: double.infinity,
-          child: Image.asset(
-            'assets/image/logo_admin.png',
-            height: 140.79,
-            width: 239.34,
-          )),
+        color: cardColor,
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        child: Image.asset(
+          'assets/image/logo_admin.png',
+          height: 140.79,
+          width: 239.34,
+        ),
+      ),
     );
   }
 }
