@@ -17,6 +17,7 @@ const blackColor00 = Color(0x00000000);
 const blackColor05 = Color(0x0D000000);
 const blackColor50 = Color(0x80000000);
 const primaryColor = Color(0xFF72ADD7);
+const primaryColor10 = Color(0x1A72ADD7);
 const primaryColor20 = Color(0x3372ADD7);
 const secondaryColor = Color(0xFF172066);
 const secondaryColor20 = Color(0x33172066);
