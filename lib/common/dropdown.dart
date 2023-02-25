@@ -726,7 +726,78 @@ List<DropdownMenuItem<String>> get Org02 {
 }
 
 //
+//Admin MembersJoin
+class MembersJoin extends StatefulWidget {
+  const MembersJoin({super.key, required this.label});
+  final String label;
+  @override
+  State<MembersJoin> createState() => _MembersJoinState();
+}
 
+class _MembersJoinState extends State<MembersJoin> {
+  String selectedValue = "20";
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'How many members can join?',
+          style: CustomTextStyle.tp14semi,
+        ),
+
+        SizedBox(
+          height: 10,
+        ),
+        //
+        DropdownButtonFormField(
+          value: selectedValue,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            filled: true,
+            fillColor: cardColor,
+          ),
+          dropdownColor: cardColor,
+          icon: ImageIcon(
+            AssetImage('assets/image/dropdown.png'),
+          ),
+          style: CustomTextStyle.ts12med,
+          items: MembersJoin02,
+          onChanged: (String? newValue) {
+            setState(() {
+              selectedValue = newValue!;
+            });
+          },
+        ),
+        SizedBox(
+          height: 25,
+        )
+      ],
+    );
+  }
+}
+
+List<DropdownMenuItem<String>> get MembersJoin02 {
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("20"), value: "20"),
+    DropdownMenuItem(child: Text("201"), value: "201"),
+    DropdownMenuItem(child: Text("202"), value: "202"),
+    DropdownMenuItem(child: Text("203"), value: "203"),
+  ];
+  return menuItems;
+}
+
+//
 //class _DropdownItemState extends State<DropdownItem> {
 //   String? selectedValue = null;
 //   final _dropdownFormKey = GlobalKey<FormState>();

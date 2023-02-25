@@ -9,6 +9,7 @@ import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 import '../../common/text_style.dart';
 import '../reservation_admin/edit_reservation.dart';
+import 'new_contacts.dart';
 
 class ContactReservationAdmin extends StatefulWidget {
   const ContactReservationAdmin({super.key});
@@ -156,10 +157,14 @@ class ContactInfo extends StatelessWidget {
                 child: Center(
                   child: IconButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => const UserInfo()),
-                      // );
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          child: ContactsNew(),
+                        ),
+                      );
                     },
                     icon: ImageIcon(
                       AssetImage(
@@ -206,10 +211,7 @@ class ConInfo extends StatelessWidget {
             child: Center(
               child: IconButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const UserInfo()),
-                  // );
+                  //
                 },
                 icon: ImageIcon(
                   icon,
@@ -221,9 +223,20 @@ class ConInfo extends StatelessWidget {
           //Detail
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              info,
-              style: CustomTextStyle.pc16med,
+            child: Row(
+              children: [
+                Text(
+                  info,
+                  style: CustomTextStyle.pc16med,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                ImageIcon(
+                  AssetImage('assets/image/copy.png'),
+                  color: primaryColor,
+                ),
+              ],
             ),
           ),
         ],

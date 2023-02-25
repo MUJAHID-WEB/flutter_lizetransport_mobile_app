@@ -83,6 +83,47 @@ Widget makeInput30({label, hintText, obscureText = false}) {
   );
 }
 
+// borderRadius: 30, Search icon
+//
+Widget Search30({label, hintText, obscureText = false}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        label,
+        style: CustomTextStyle.tp14semi,
+      ),
+      SizedBox(
+        height: 10,
+      ),
+      TextField(
+        style: CustomTextStyle.ts12med,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: borderColor),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            borderSide: BorderSide(
+              color: borderColor,
+            ),
+          ),
+          hintText: hintText,
+          hintStyle: CustomTextStyle.ts12med,
+          // icon: ImageIcon(AssetImage('assets/image/search.png')),
+          // iconColor: textSecondary,
+        ),
+      ),
+      SizedBox(
+        height: 25,
+      )
+    ],
+  );
+}
+
 // borderRadius: 30
 //bg -05
 //

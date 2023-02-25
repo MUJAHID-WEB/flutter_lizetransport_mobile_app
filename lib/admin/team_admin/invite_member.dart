@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lize/admin/team_admin/team_lt_intl.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
+import '../../common/text_style.dart';
 
 class TeamInviteAdmin extends StatefulWidget {
   const TeamInviteAdmin({super.key});
@@ -13,6 +17,8 @@ class TeamInviteAdmin extends StatefulWidget {
 }
 
 class _TeamInviteAdminState extends State<TeamInviteAdmin> {
+  // TextEditingController controller = TextEditingController(text: "");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,19 +32,48 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
           child: ListView(children: [
             Column(
               children: [
-                //
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Select Contact',
+                        style: CustomTextStyle.tp14semi,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      CupertinoSearchTextField(
+                        // controller: controller,
+                        //onChanged: (value) {},
+                        //onSubmitted: (value) {},
+                        //autocorrect: true,
+                        placeholder: 'Search',
+                        placeholderStyle: CustomTextStyle.ts12med,
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 15, 20, 10),
+                        prefixInsets:
+                            EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
 
+                        decoration: BoxDecoration(
+                            color: cardColor,
+                            borderRadius: BorderRadius.circular(30),
+                            border: Border.all(
+                              color: borderColor,
+                              width: 1.0,
+                            )),
+                        //
+                      ),
+                    ],
+                  ),
+                ),
+                //
                 Column(
                   children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
 
@@ -69,16 +104,15 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
                   children: [
                     //
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
-
                     //Table
                     Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -106,16 +140,15 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
                   children: [
                     //
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
-
                     //Table
                     Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -143,16 +176,15 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
                   children: [
                     //
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
-
                     //Table
                     Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -181,16 +213,15 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
                   children: [
                     //
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: EdgeInsets.symmetric(vertical: 10),
                       child: Divider(),
                     ),
                     //creator
-                    StartedTitle(
+                    ContactsTitle(
                       id: 'John Doe',
-                      date: '',
+                      image: 'assets/image/avatar.jpg',
                       btntext: 'Facility Manager',
                     ),
-
                     //Table
                     Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -220,8 +251,32 @@ class _TeamInviteAdminState extends State<TeamInviteAdmin> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                BacknCancelBtn(btnText: 'Back'),
-                NextBtn(btnText: "Send Invite")
+                BacknCancelBtn(
+                  btnText: 'Back',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        child: TeamLtlAdmin(),
+                      ),
+                    );
+                  },
+                ),
+                NextBtn(
+                  btnText: "Send Invite",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        child: TeamLtlAdmin(),
+                      ),
+                    );
+                  },
+                )
               ],
             ),
             //

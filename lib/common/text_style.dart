@@ -40,6 +40,8 @@ class CustomTextStyle {
       TextStyle(color: primaryColor, fontSize: 12, fontWeight: FontWeight.w500);
   static TextStyle pc14med =
       TextStyle(color: primaryColor, fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle pc14reg =
+      TextStyle(color: primaryColor, fontSize: 14, fontWeight: FontWeight.w400);
   static TextStyle pc17med =
       TextStyle(color: primaryColor, fontSize: 17, fontWeight: FontWeight.w500);
   static TextStyle pc28bold =
@@ -102,6 +104,8 @@ class CustomTextStyle {
   ///
   static TextStyle ts12med = TextStyle(
       color: textSecondary, fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle ts12semi = TextStyle(
+      color: textSecondary, fontSize: 12, fontWeight: FontWeight.w600);
   static TextStyle ts14med = TextStyle(
       color: textSecondary, fontSize: 14, fontWeight: FontWeight.w500);
   static TextStyle ts16med = TextStyle(

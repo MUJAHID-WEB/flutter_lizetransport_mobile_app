@@ -875,3 +875,162 @@ class ContactsTitle extends StatelessWidget {
     );
   }
 }
+
+// AvailableTitle Table
+class AvailableTitle extends StatelessWidget {
+  const AvailableTitle({
+    super.key,
+    required this.id,
+    required this.image,
+    required this.btntext,
+  });
+  final String id, image, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.asset(
+                image,
+                height: 30,
+                width: 30,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(paidBtn20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.paidbtn12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// UnavailableTitle Table
+class UnavailableTitle extends StatelessWidget {
+  const UnavailableTitle({
+    super.key,
+    required this.id,
+    required this.image,
+    required this.btntext,
+  });
+  final String id, image, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.asset(
+                image,
+                height: 30,
+                width: 30,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(unpaidBtn20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.unpaidbtn12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// SuspendTitle Table
+class SuspendedTitle extends StatelessWidget {
+  const SuspendedTitle({
+    super.key,
+    required this.id,
+    required this.image,
+    required this.btntext,
+  });
+  final String id, image, btntext;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.asset(
+                image,
+                height: 30,
+                width: 30,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                id,
+                style: CustomTextStyle.tp16bold,
+              ),
+            ],
+          ),
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                    EdgeInsets.symmetric(vertical: 8, horizontal: 28)),
+                backgroundColor: MaterialStatePropertyAll(rcvdBtn20),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ))),
+            child: Text(
+              btntext,
+              style: CustomTextStyle.rcvdbtn12med,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

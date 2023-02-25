@@ -3,18 +3,8 @@ import 'package:lize/admin/plane_admin/plane_current_trips.dart';
 
 import 'package:lize/common/colors.dart';
 
-import 'package:lize/user/onboarding/onboard.dart';
-
-import 'admin/amenities_admin/amenities_drinks.dart';
-import 'admin/contacts_admin/contacts.dart';
-import 'admin/dashboard_admin/menu_admin.dart';
-import 'admin/invoice_admin/invoice_admin.dart';
-import 'admin/onboard_admin/onboard_admin.dart';
-import 'admin/plane_admin/plane_details.dart';
-import 'admin/plane_admin/private_jet_admin.dart';
-import 'admin/reservation_admin/edit_reservation.dart';
-import 'admin/reservation_admin/reservation_admin.dart';
-import 'admin/reservation_admin/reservation_details_admin.dart';
+import 'admin/flying_team_admin/flying_team.dart';
+import 'admin/team_admin/team_admin.dart';
 import 'common/text_style.dart';
 
 void main() {
@@ -65,7 +55,7 @@ class MyApp extends StatelessWidget {
       ),
       //home: const OnboardUser(),
       //home: OnboardAdmin(), //Admin
-      home: ContactsAdmin(),
+      home: FlyingTeamAdmin(),
     );
   }
 }
