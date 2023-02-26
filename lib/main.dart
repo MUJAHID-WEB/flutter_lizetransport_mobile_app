@@ -6,6 +6,7 @@ import 'package:lize/common/colors.dart';
 import 'admin/flying_team_admin/flying_team.dart';
 import 'admin/message_admin/msg_list_admin.dart';
 import 'admin/team_admin/team_admin.dart';
+import 'admin/trips_admin/ct_details_admin.dart';
 import 'admin/trips_admin/current_trips_admin.dart';
 import 'common/text_style.dart';
 
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
       ),
       //home: const OnboardUser(),
       //home: OnboardAdmin(), //Admin
-      home: CurrentTripAdmin(),
+      home: CurrentTrips(),
     );
   }
 }

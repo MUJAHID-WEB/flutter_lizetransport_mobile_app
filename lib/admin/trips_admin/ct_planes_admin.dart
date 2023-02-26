@@ -14,59 +14,54 @@ class CtPlaneAdmin extends StatefulWidget {
 class _CtPlaneAdminState extends State<CtPlaneAdmin> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBarAdmin(
-        title: 'Trips',
-      ),
-      body: Container(
-        color: cardColor,
-        height: MediaQuery.of(context).size.height,
-        width: double.infinity,
-        child: ListView(
-          children: [
-            Column(
-              children: [
-                //Inprogress
-                Column(
-                  children: [
-                    //
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20),
-                      child: Divider(),
-                    ),
-                    //creator
-                    InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
+    return Container(
+      color: cardColor,
+      height: MediaQuery.of(context).size.height,
+      width: double.infinity,
+      child: ListView(
+        children: [
+          Column(
+            children: [
+              //Inprogress
+              Column(
+                children: [
+                  //
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Divider(),
+                  ),
+                  //creator
+                  InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
 
-                    //Table
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        children: [
-                          TableW(
-                            heading: 'Date Departed',
-                            data: '02/31/2022',
-                          ),
-                          TableC(
-                            heading: 'Pilot',
-                            data: 'Jerome Baga',
-                          ),
-                          TableW(
-                            heading: 'Plane',
-                            data: 'A319',
-                          ),
-                          TableC(
-                            heading: 'Key Passenger',
-                            data: 'Moses Barry',
-                          ),
-                        ],
-                      ),
+                  //Table
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        TableW(
+                          heading: 'Date Departed',
+                          data: '02/31/2022',
+                        ),
+                        TableC(
+                          heading: 'Pilot',
+                          data: 'Jerome Baga',
+                        ),
+                        TableW(
+                          heading: 'Plane',
+                          data: 'A319',
+                        ),
+                        TableC(
+                          heading: 'Key Passenger',
+                          data: 'Moses Barry',
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
