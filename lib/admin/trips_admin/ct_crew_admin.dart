@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
+import 'crew_admin.dart';
 
 class CtCrewAdmin extends StatefulWidget {
   const CtCrewAdmin({super.key});
@@ -22,57 +24,29 @@ class _CtCrewAdminState extends State<CtCrewAdmin> {
         children: [
           Column(
             children: [
-              //Inprogress
-              Column(
-                children: [
-                  //
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: Divider(),
-                  ),
-                  //creator
-                  InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
-
-                  //Table
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        TableW(
-                          heading: 'Date Departed',
-                          data: '02/31/2022',
-                        ),
-                        TableC(
-                          heading: 'Pilot',
-                          data: 'Jerome Baga',
-                        ),
-                        TableW(
-                          heading: 'Plane',
-                          data: 'A319',
-                        ),
-                        TableC(
-                          heading: 'Key Passenger',
-                          data: 'Moses Barry',
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-
               //New Passenger
 
               Column(
                 children: [
                   //
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Divider(),
                   ),
                   //creator
                   NpassangerTitle(
                     id: 'Crew',
                     btntext: 'New Crew',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          child: CrewTrips(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -81,7 +55,7 @@ class _CtCrewAdminState extends State<CtCrewAdmin> {
                 children: [
                   //
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Divider(),
                   ),
                   //creator
@@ -121,7 +95,7 @@ class _CtCrewAdminState extends State<CtCrewAdmin> {
                 children: [
                   //
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Divider(),
                   ),
                   //creator
@@ -161,7 +135,7 @@ class _CtCrewAdminState extends State<CtCrewAdmin> {
                 children: [
                   //
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Divider(),
                   ),
                   //creator
@@ -201,7 +175,7 @@ class _CtCrewAdminState extends State<CtCrewAdmin> {
                 children: [
                   //
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Divider(),
                   ),
                   //creator

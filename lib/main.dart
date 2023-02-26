@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
       ),
       //home: const OnboardUser(),
       //home: OnboardAdmin(), //Admin
-      home: CurrentTrips(),
+      home: CtDetailsAdmin(),
     );
   }
 }

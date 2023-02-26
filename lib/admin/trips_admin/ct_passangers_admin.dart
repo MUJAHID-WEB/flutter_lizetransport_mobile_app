@@ -22,51 +22,13 @@ class _CtPassengerAdminState extends State<CtPassengerAdmin> {
         children: [
           Column(
             children: [
-              //Inprogress
-              Column(
-                children: [
-                  //
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: Divider(),
-                  ),
-                  //creator
-                  InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
-
-                  //Table
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        TableW(
-                          heading: 'Date Departed',
-                          data: '02/31/2022',
-                        ),
-                        TableC(
-                          heading: 'Pilot',
-                          data: 'Jerome Baga',
-                        ),
-                        TableW(
-                          heading: 'Plane',
-                          data: 'A319',
-                        ),
-                        TableC(
-                          heading: 'Key Passenger',
-                          data: 'Moses Barry',
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-
               //New Passenger
 
               Column(
                 children: [
                   //
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Divider(),
                   ),
                   //creator

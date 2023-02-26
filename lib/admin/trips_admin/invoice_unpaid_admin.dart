@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
+import 'invoice_edit_trips_admin.dart';
 
 class UnpInvoiceAdmin extends StatefulWidget {
   const UnpInvoiceAdmin({super.key});
@@ -22,40 +24,29 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
       child: ListView(children: [
         Column(
           children: [
-            //Inprogress
+            //New Passenger
+
             Column(
               children: [
                 //
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Divider(),
                 ),
                 //creator
-                InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
-
-                //Table
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    children: [
-                      TableW(
-                        heading: 'Date Departed',
-                        data: '02/31/2022',
+                NpassangerTitle(
+                  id: 'Invoices',
+                  btntext: 'Add Invoice',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        duration: Duration(milliseconds: 500),
+                        child: InvoiceTripsEdit(),
                       ),
-                      TableC(
-                        heading: 'Pilot',
-                        data: 'Jerome Baga',
-                      ),
-                      TableW(
-                        heading: 'Plane',
-                        data: 'A319',
-                      ),
-                      TableC(
-                        heading: 'Key Passenger',
-                        data: 'Moses Barry',
-                      ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -64,7 +55,7 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
               children: [
                 //
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Divider(),
                 ),
                 //creator
@@ -102,6 +93,16 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
                       // Edit Btn
                       EditButton330(
                         btnText: 'Edit',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 500),
+                              child: InvoiceTripsEdit(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -113,7 +114,7 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
               children: [
                 //
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Divider(),
                 ),
                 //creator
@@ -151,6 +152,16 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
                       // Edit Btn
                       EditButton330(
                         btnText: 'Edit',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 500),
+                              child: InvoiceTripsEdit(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -162,7 +173,7 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
               children: [
                 //
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Divider(),
                 ),
                 //creator
@@ -200,6 +211,16 @@ class _UnpInvoiceAdminState extends State<UnpInvoiceAdmin> {
                       // Edit Btn
                       EditButton330(
                         btnText: 'Edit',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 500),
+                              child: InvoiceTripsEdit(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),

@@ -40,9 +40,13 @@ class _CtDetailsAdminState extends State<CtDetailsAdmin>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //
             SizedBox(
               height: 20,
+            ),
+            CurrentTrips(),
+            //
+            SizedBox(
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -107,46 +111,46 @@ class _CtDetailsAdminState extends State<CtDetailsAdmin>
 }
 
 //
-class CurrentTrips extends StatelessWidget {
+class CurrentTrips extends StatefulWidget {
   const CurrentTrips({super.key});
 
   @override
+  State<CurrentTrips> createState() => _CurrentTripsState();
+}
+
+class _CurrentTripsState extends State<CurrentTrips> {
+  @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
-        //Started
-        Column(
-          children: [
-            //
+        //
 
-            //creator
-            InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
+        //creator
+        InprogressTitle(id: 'L9021', btntext: 'Inprogress'),
 
-            //Table
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  TableW(
-                    heading: 'Date Departed',
-                    data: '02/31/2022',
-                  ),
-                  TableC(
-                    heading: 'Pilot',
-                    data: 'Jerome Baga',
-                  ),
-                  TableW(
-                    heading: 'Plane',
-                    data: 'A319',
-                  ),
-                  TableC(
-                    heading: 'Key Passenger',
-                    data: 'Moses Barry',
-                  ),
-                ],
+        //Table
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              TableW(
+                heading: 'Date Departed',
+                data: '02/31/2022',
               ),
-            ),
-          ],
+              TableC(
+                heading: 'Pilot',
+                data: 'Jerome Baga',
+              ),
+              TableW(
+                heading: 'Plane',
+                data: 'A319',
+              ),
+              TableC(
+                heading: 'Key Passenger',
+                data: 'Moses Barry',
+              ),
+            ],
+          ),
         ),
       ],
     );
