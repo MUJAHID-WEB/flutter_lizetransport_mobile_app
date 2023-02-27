@@ -33,12 +33,12 @@ class _AppBarAdminState extends State<AppBarAdmin> {
       ),
       // automaticallyImplyLeading: true,
 
-      // leading: IconButton(
-      //   onPressed: () => ZoomDrawer.of(context)?.toggle(),
-      //   icon: ImageIcon(
-      //     AssetImage('assets/image/menu.png'),
-      //   ),
-      // ),
+      leading: IconButton(
+        onPressed: () => ZoomDrawer.of(context)?.toggle(),
+        icon: ImageIcon(
+          AssetImage('assets/image/menu.png'),
+        ),
+      ),
       actions: [
         Stack(
           children: <Widget>[
