@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CalenderAdmin extends StatelessWidget {
-  const CalenderAdmin({super.key});
+class SettingAdmin extends StatelessWidget {
+  const SettingAdmin({super.key});
 
   @override
   Widget build(BuildContext context) {

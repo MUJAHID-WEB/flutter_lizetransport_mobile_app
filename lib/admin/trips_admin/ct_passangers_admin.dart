@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/colors.dart';
 import '../../../common/table.dart';
 import '../../common/appbar.dart';
+import 'new_passangers_trips_admin.dart';
 
 class CtPassengerAdmin extends StatefulWidget {
   const CtPassengerAdmin({super.key});
@@ -35,6 +37,16 @@ class _CtPassengerAdminState extends State<CtPassengerAdmin> {
                   NpassangerTitle(
                     id: 'Passengers',
                     btntext: 'New Passenger',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 500),
+                          child: NewPassengerTrips(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

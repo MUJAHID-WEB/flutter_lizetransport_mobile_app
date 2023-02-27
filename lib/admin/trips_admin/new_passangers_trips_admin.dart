@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lize/common/colors.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../common/forms.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
+import 'ct_details_admin.dart';
+import 'ct_passangers_admin.dart';
 
 class NewPassengerTrips extends StatefulWidget {
   const NewPassengerTrips({super.key});
@@ -16,7 +19,7 @@ class _NewPassengerTripsState extends State<NewPassengerTrips> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarAdmin(
+      appBar: AppBarAdminBack(
         title: 'New Passengers',
       ),
       resizeToAvoidBottomInset: false,
@@ -29,7 +32,7 @@ class _NewPassengerTripsState extends State<NewPassengerTrips> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 48),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
                     children: [
                       makeInput30(
@@ -51,6 +54,16 @@ class _NewPassengerTripsState extends State<NewPassengerTrips> {
                       //
                       AddButton335(
                         btnText: 'Add Passenger',
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Duration(milliseconds: 500),
+                              child: CtDetailsAdmin(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lize/admin/trips_admin/ct_details_admin.dart';
 import 'package:lize/common/colors.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -134,7 +135,7 @@ class _InvoiceTripsEditState extends State<InvoiceTripsEdit> {
                             PageTransition(
                               type: PageTransitionType.leftToRight,
                               duration: Duration(milliseconds: 500),
-                              child: UnpInvoiceAdmin(),
+                              child: CtDetailsAdmin(),
                             ),
                           );
                         },
@@ -147,7 +148,7 @@ class _InvoiceTripsEditState extends State<InvoiceTripsEdit> {
                             PageTransition(
                               type: PageTransitionType.rightToLeft,
                               duration: Duration(milliseconds: 500),
-                              child: UnpInvoiceAdmin(),
+                              child: CtDetailsAdmin(),
                             ),
                           );
                         },

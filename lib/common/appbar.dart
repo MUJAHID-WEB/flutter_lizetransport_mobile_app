@@ -13,8 +13,10 @@ class AppBarAdmin extends StatefulWidget with PreferredSizeWidget {
   final Size preferredSize;
   final String title;
 
-  AppBarAdmin({Key? key, required this.title})
-      : preferredSize = const Size.fromHeight(61.0),
+  AppBarAdmin({
+    Key? key,
+    required this.title,
+  })  : preferredSize = const Size.fromHeight(61.0),
         super(key: key);
 
   @override
@@ -29,12 +31,14 @@ class _AppBarAdminState extends State<AppBarAdmin> {
         widget.title,
         style: CustomTextStyle.tp18semi,
       ),
-      leading: IconButton(
-        onPressed: () => ZoomDrawer.of(context)?.toggle(),
-        icon: ImageIcon(
-          AssetImage('assets/image/menu.png'),
-        ),
-      ),
+      // automaticallyImplyLeading: true,
+
+      // leading: IconButton(
+      //   onPressed: () => ZoomDrawer.of(context)?.toggle(),
+      //   icon: ImageIcon(
+      //     AssetImage('assets/image/menu.png'),
+      //   ),
+      // ),
       actions: [
         Stack(
           children: <Widget>[

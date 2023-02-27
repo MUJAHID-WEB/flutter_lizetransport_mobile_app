@@ -6,6 +6,7 @@ import '../../../common/forms.dart';
 import '../../common/appbar.dart';
 import '../../common/custom_button.dart';
 import 'ct_crew_admin.dart';
+import 'ct_details_admin.dart';
 
 class CrewTrips extends StatefulWidget {
   const CrewTrips({super.key});
@@ -59,7 +60,7 @@ class _CrewTripsState extends State<CrewTrips> {
                             PageTransition(
                               type: PageTransitionType.rightToLeft,
                               duration: Duration(milliseconds: 500),
-                              child: CtCrewAdmin(),
+                              child: CtDetailsAdmin(),
                             ),
                           );
                         },

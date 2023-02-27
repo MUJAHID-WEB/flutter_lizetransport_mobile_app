@@ -6,6 +6,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../../common/bottom_nav_bar.dart';
 import '../../common/custom_button.dart';
+import '../../common/drawer.dart';
 import '../../common/text_style.dart';
 import '../dashboard_admin/dashboard_admin.dart';
 
@@ -69,8 +70,8 @@ class _LogInAdminState extends State<LogInAdmin> {
                             PageTransition(
                               type: PageTransitionType.rightToLeft,
                               duration: Duration(milliseconds: 500),
-                              child: DashboardAdmin(),
-                              //child: HomePage(),
+                              //child: DashboardAdmin(),
+                              child: hpage(),
                             ),
                           );
                         },
