@@ -42,6 +42,9 @@ dependencies:
   percent_indicator: ^4.0.1
   page_transition:
   dotted_border: ^2.0.0+3
+  shared_preferences:
+  jwt_decoder:
+  flutter_secure_storage:
 
 dev_dependencies:
   flutter_test:

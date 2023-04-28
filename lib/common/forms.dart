@@ -167,7 +167,7 @@ Widget makeInputbg5({label, hintText, obscureText = false}) {
 }
 
 //signin user bg05 radius 05
-Widget makeInput05tp5({label, hintText, obscureText = false}) {
+Widget makeInput05tp5({label, hintText, controller, obscureText = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -179,6 +179,7 @@ Widget makeInput05tp5({label, hintText, obscureText = false}) {
         height: 10,
       ),
       TextField(
+        controller: controller,
         style: CustomTextStyle.tp14reg,
         obscureText: obscureText,
         decoration: InputDecoration(
